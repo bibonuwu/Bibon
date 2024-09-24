@@ -1,0 +1,26 @@
+﻿<Window x:Class="Bibon.Pages.system"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Welcome" Height="700" Width="500" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+    
+    
+    <Window.Background>
+        <ImageBrush ImageSource="/Assets/Welcome.png" Stretch="Fill"/>
+    </Window.Background>
+    <Border>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Foreground="White" HorizontalAlignment="Center" FontSize="36" FontFamily="Nirmala UI" FontWeight="Bold" Margin="0,30,0,0">Hi,</Label>
+                <Label x:Name="myLabel" Foreground="White" HorizontalAlignment="Center" FontSize="36" FontFamily="Nirmala UI" FontWeight="Bold" Margin="0,30,0,0">aik</Label>
+
+            </StackPanel>
+            <Image Source="/Assets/Icons/whitecion.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="0,100,0,100" />
+            <Label Foreground="White" HorizontalAlignment="Center" FontSize="16" FontFamily="Nirmala UI" Opacity="0.9">loading...</Label>
+
+            <Label Foreground="White" HorizontalAlignment="Center" FontSize="24" FontFamily="Nirmala UI">Welcome to BIBON</Label>
+            <Label Foreground="White" HorizontalAlignment="Center" FontSize="14" FontFamily="Nirmala UI" Margin="0,0,0,30" Opacity="0.5">Version: #1 PRO</Label>
+
+        </StackPanel>
+        
+    </Border>
+</Window>

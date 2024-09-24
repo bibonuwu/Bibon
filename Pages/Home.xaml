@@ -1,0 +1,256 @@
+﻿<Page x:Class="WPFUIKitProfessional.Pages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"                                                        
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFUIKitProfessional.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1100"
+     FontFamily="Poppins">
+
+
+
+
+
+    <Page.Resources>
+
+
+        <Style TargetType="Button">
+            
+            
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="3" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="6" BorderBrush="#FF0084FF">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="130"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="150"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="Coral" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="100"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="120"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+            
+        </Style>
+    </Page.Resources>
+
+    <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <StackPanel >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    
+     
+                <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="300" Margin="20,20,0,0">
+                    
+                    <StackPanel Margin="0,20,0,0">
+                    
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="/Assets/1.png" Margin="0,0,10,0" StretchDirection="DownOnly" Width="20"/>
+                    <Label Content="FPS Speed" FontSize="25" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    <Image Source="/Assets/1.png" StretchDirection="DownOnly" Width="20" Margin="10,0,0,0"/>
+
+                </StackPanel>
+
+                <StackPanel Margin="20,20,20,20" Cursor="">
+
+
+                            <Button Name="btnExecute" Click="btnExecute_Click" Width="250" FontSize="16" Style="{DynamicResource PrimaryButtonStyle1}" Cursor="Hand" Content="High performance"/>
+                                <ProgressBar Name="progressBar" Height="5" Maximum="100" Margin="20,5,20,10"/>
+                                <Button Name="btnDisableBackgroundApps" Click="btnDisableBackgroundApps_Click" Width="250" FontSize="16" Style="{DynamicResource PrimaryButtonStyle1}" Content="Background application" Cursor="Hand"/>
+                    <ProgressBar Name="progressBar1" Height="5" Maximum="100" Margin="20,5,20,10" />
+
+                                <Button Name="btnDisableBackgroundApps2" Click="btnDisableBackgroundApps2_Click" Width="250" FontSize="16" Style="{DynamicResource PrimaryButtonStyle1}" Content="Taskmgr" Cursor="Hand"/>
+                                <ProgressBar Name="progressBar12" Height="5" Maximum="100" Margin="20,5,20,0" />
+
+
+
+                            </StackPanel>
+                        
+                </StackPanel>
+
+                </Border>
+
+                <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="300" Margin="20,20,0,0">
+
+                    <StackPanel Margin="0,20,0,0">
+
+
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="/Assets/4.png" Margin="0,0,10,0" StretchDirection="DownOnly" Width="20"/>
+                                <Label Content="Activation" FontSize="25" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                <Image Source="/Assets/4.png" StretchDirection="DownOnly" Width="20" Margin="10,0,0,0"/>
+
+                        </StackPanel>
+
+
+                        <StackPanel Margin="20,20,20,0">
+                            <Button Name="btnExecutePowerShell" Click="ExecutePowerShell_Click" Content="Windows" Width="250" FontSize="16" Style="{DynamicResource PrimaryButtonStyle1}" Cursor="Hand"/>
+                                <ProgressBar Name="progressBar3" Height="5" Maximum="100" Margin="20,5,20,10" />
+
+                            <Button Name="btnoffice" Click="btnoffice_Click" Content="Office" Width="250" FontSize="16" Style="{DynamicResource PrimaryButtonStyle1}" Cursor="Hand"/>
+
+                            <ProgressBar Name="progressBar5" Height="5" Maximum="100" Margin="20,5,20,10" />
+
+
+
+                            <Button Name="btnOpenWebsite" Click="btnOpenWebsite_Click" Content="VM Workstation" Width="250" FontSize="16" Style="{DynamicResource PrimaryButtonStyle1}" Cursor="Hand"/>
+
+                            <ProgressBar Name="progressBar6" Height="5" Maximum="100" Margin="20,5,20,0" />
+
+                        </StackPanel>
+                    </StackPanel>
+
+                </Border>
+
+
+
+
+                    <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="300" Margin="20,20,0,0" Width="420">
+
+                        <StackPanel Margin="0,20,0,0">
+
+
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Image Source="/Assets/3.png" Margin="0,0,10,0" StretchDirection="DownOnly" Width="20"/>
+                                <Label Content="Info System" FontSize="25" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                <Image Source="/Assets/3.png" StretchDirection="DownOnly" Width="20" Margin="10,0,0,0"/>
+
+                            </StackPanel>
+
+
+                            <StackPanel x:Name="InfoStackPanel" Margin="20,20,20,20" />
+
+
+                        </StackPanel>
+
+                    </Border>
+                </StackPanel>
+
+              
+
+                <Border Background="{DynamicResource PrimaryBackgroundColor}" Height="10" Margin="0,20,0,20" />
+
+                <StackPanel Orientation="Horizontal">
+                    
+           
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="230" Width="400">
+                        
+              
+
+                        <StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal" Margin="0,20,0,20" HorizontalAlignment="Center">
+                            <Image Source="/Assets/8.png" Margin="0,0,10,0" StretchDirection="DownOnly" Width="20"/>
+                            <Label Content="Wallpaper" FontSize="25" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}"/>
+                            <Image Source="/Assets/8.png" StretchDirection="DownOnly" Width="20" Margin="10,0,0,0"/>
+
+                        </StackPanel>
+
+
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+
+                            <Button Margin="3" Height="120" Width="100" FontWeight="Bold" Foreground="MediumPurple" Click="Button_Click_13">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Assets/Wallpaper/13.jpg" Stretch="UniformToFill"/>
+                                </Button.Background>
+                            </Button>
+
+
+                            <Button Margin="3" Height="120" Width="100" FontWeight="Bold" Foreground="MediumPurple" Click="Button_Click_16">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Assets/Wallpaper/18.jpg" Stretch="UniformToFill"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Margin="3" Height="120" Width="100" FontWeight="Bold" Foreground="MediumPurple" Click="Button_Click_17">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Assets/Wallpaper/17.jpg" Stretch="UniformToFill"/>
+                                </Button.Background>
+                            </Button>
+
+
+
+
+                        </StackPanel>
+                    </StackPanel>
+                    </Border>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="230" Width="620">
+
+                            <StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,20,0,20" HorizontalAlignment="Center">
+                                    <Image Source="/Assets/ic_near.png" Margin="0,0,10,0" StretchDirection="DownOnly" Width="30"/>
+                                    <Label Content="BIBON" FontSize="25" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                    <Image Source="/Assets/ic_near.png" StretchDirection="DownOnly" Width="30" Margin="10,0,0,0"/>
+
+                                </StackPanel>
+                                <StackPanel
+    Orientation="Vertical"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center" Margin="20,0,0,0">
+                                    
+                                    <Label Content="Windows-қа және Office қосымшаларына активация жасауға болады! (click Activation)"
+   Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                                    <Label Content="Windows-қа оптимизация және системаның жалдамдығын жақсартады! (click FPS Speed)"
+   Margin="0 10 0 10"
+   Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                                    <Label Content="Обойды өзгертуге болады! (click Wallpaper)"
+   Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+                                    <Label Content="Программа дүкені бар! (click Store)"
+Margin="0 10 0 10"
+Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+                                    <Label Content="Курс жиынтығы! (click Course)"
+Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+
+                                </StackPanel>
+                            </StackPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

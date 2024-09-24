@@ -1,0 +1,260 @@
+﻿<Page x:Class="WPFUIKitProfessional.Pages.Messages"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFUIKitProfessional.Pages"
+      mc:Ignorable="d" 
+        Background="Transparent"
+      d:DesignHeight="700" d:DesignWidth="1100"
+      Title="Messages" FontFamily="Poppins">
+
+    <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <!-- Start: ToggleButton -->
+     
+            <!-- End: ToggleButton -->
+
+            <!-- Start: Container -->
+            <StackPanel Orientation="Horizontal"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+
+                <!-- Start: Free Card -->
+                <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+              Style="{DynamicResource CardBorderStyle1}">
+                    <Grid Cursor="">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Start: Emoji -->
+                        <Border Grid.Row="0"
+                      Padding="5"
+                      Background="{DynamicResource PrimaryEmojiColor1}"
+                      HorizontalAlignment="Center" CornerRadius="50">
+                            <Ellipse Height="60"
+                           Width="60">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="/Resources/w3.png" Stretch="Fill"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Border>
+                        <!-- End: Emoji -->
+
+                        <!-- Start: Title -->
+                        <Label Grid.Row="1"
+                     HorizontalAlignment="Center"
+                     Content="Disign ART"
+                     Style="{DynamicResource FreeTeamTitlesLabelStyle1}"/>
+                        <!-- End: Title -->
+
+                        <!-- Start: Price And SubTitle -->
+                        <StackPanel Grid.Row="2"
+                          Orientation="Horizontal"
+                          HorizontalAlignment="Center">
+                            <Label Content="₸20000"
+                         Style="{DynamicResource FreeTeamPricingLabelStyle1}"/>
+                            <Label Content="/айына"
+                         Style="{DynamicResource FreeTeamSubTitlesLabelStyle1}"/>
+                        </StackPanel>
+                        <!-- End: Price And SubTitle -->
+
+                        <!-- Start: Lists -->
+                        <StackPanel Grid.Row="3"
+                          Orientation="Vertical"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                            <Label Content="UI/UX"
+                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                            <Label Content="Figma"
+                         Margin="0 10 0 10"
+                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                            <Label Content="MagicaCSG"
+                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                       
+                        </StackPanel>
+                        <!-- End: Lists --> 
+
+                        <!-- Start: Button -->
+                        <Button Grid.Row="4"
+                      Content="Subscribe"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Style="{DynamicResource PrimaryButtonStyle1}" Click="Button_Click"/>
+                        <!-- End: Button -->
+                    </Grid>
+                </Border>
+                <!-- End: Free Card -->
+
+                <!-- Start: Pro Card -->
+                <Border Background="{DynamicResource PrimaryBlueColor1}"
+              Margin="20 0 20 0"
+              Style="{DynamicResource CardBorderStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Start: Emoji -->
+                        <Border Grid.Row="0"
+                      Padding="5"
+                      Background="{DynamicResource PrimaryBlueEmojiColor1}"
+                      HorizontalAlignment="Center" CornerRadius="50">
+                            <Ellipse Height="60"
+                           Width="60">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="/Resources/w1.png"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Border>
+                        <!-- End: Emoji -->
+
+                        <!-- Start: Title -->
+                        <Label Grid.Row="1"
+                     HorizontalAlignment="Center"
+                     Content="App DEV"
+                     Style="{DynamicResource TitleLabelStyle1}"/>
+                        <!-- End: Title -->
+
+                        <!-- Start: Price And SubTitle -->
+                        <StackPanel Grid.Row="2"
+                          Orientation="Horizontal"
+                          HorizontalAlignment="Center">
+                            <Label Content="₸50000"
+                         Style="{DynamicResource PriceLabelStyle1}"/>
+                            <Label Content="/айына"
+                         Style="{DynamicResource SubTitleLabelStyle1}"/>
+                        </StackPanel>
+                        <!-- End: Price And SubTitle -->
+
+                        <!-- Start: Lists -->
+                        <StackPanel Grid.Row="3"
+                          Orientation="Vertical"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                            <Label Content="App for Windows | VS C# wpf"
+                         Style="{DynamicResource IconLabelStyle1}"/>
+
+                            <Label Content="App for Android | AS Kotlin/Java"
+                         Margin="0 10 0 10"
+                         Style="{DynamicResource IconLabelStyle1}"/>
+
+                            <Label Content="Web site | NoCode constructor"
+                         Style="{DynamicResource IconLabelStyle1}"/>
+
+                    
+                        </StackPanel>
+                        <!-- End: Lists -->
+
+                        <!-- Start: Button -->
+                        <Button Grid.Row="4"
+                      Content="Subscribe"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Style="{DynamicResource ProButtonStyle1}" Click="Button_Click_1"/>
+                        <!-- End: Button -->
+                    </Grid>
+                </Border>
+                <!-- End: Pro Card -->
+
+                <!-- Start: Team Card -->
+                <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+              Style="{DynamicResource CardBorderStyle1}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Start: Emoji -->
+                        <Border Grid.Row="0"
+                      Padding="5"
+                      Background="{DynamicResource PrimaryEmojiColor1}"
+                      HorizontalAlignment="Center" CornerRadius="50">
+                            <Ellipse Height="60"
+                           Width="60">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="/Resources/w2.png"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Border>
+                        <!-- End: Emoji -->
+
+                        <!-- Start: Title -->
+                        <Label Grid.Row="1"
+                     HorizontalAlignment="Center"
+                     Content="Hack SEC"
+                     Style="{DynamicResource FreeTeamTitlesLabelStyle1}"/>
+                        <!-- End: Title -->
+
+                        <!-- Start: Price And SubTitle -->
+                        <StackPanel Grid.Row="2"
+                          Orientation="Horizontal"
+                          HorizontalAlignment="Center">
+                            <Label Content="₸100000"
+                         Style="{DynamicResource FreeTeamPricingLabelStyle1}"/>
+                            <Label Content="/айына"
+                         Style="{DynamicResource FreeTeamSubTitlesLabelStyle1}"/>
+                        </StackPanel>
+                        <!-- End: Price And SubTitle -->
+
+                        <!-- Start: Lists -->
+                        <StackPanel Grid.Row="3"
+                          Orientation="Vertical"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                            <Label Content="Kali Linux"
+                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                            <Label Content="DDos / Fishong Security"
+                         Margin="0 10 0 10"
+                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                            <Label Content="Rat / MicroVirus / Ruby"
+                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                            <Label Content="Wifi Scan / Nmap"
+                         Margin="0 10 0 10"
+                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                            <Label Content="Cisco / OSI / DarkNet"
+                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
+
+                            <Label Content="Arduino / GitHub"
+Style="{DynamicResource FreeTeamIconLabelsStyle1}" Margin="0,10,0,10"/>
+                        </StackPanel>
+                        
+                        
+                        <!-- End: Lists -->
+
+                        <!-- Start: Button -->
+                        <Button Grid.Row="4"
+                      Content="Subscribe"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Style="{DynamicResource PrimaryButtonStyle1}" Click="Button_Click_2"/>
+                        <!-- End: Button -->
+                    </Grid>
+                </Border>
+                <!-- End: Card Team -->
+
+            </StackPanel>
+            <!-- End: Container -->
+        </Grid>
+    </Border>
+</Page>

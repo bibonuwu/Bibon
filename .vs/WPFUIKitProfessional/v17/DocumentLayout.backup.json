@@ -1,0 +1,89 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bibon\\Desktop\\WPFUIKitProfessional-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\wpfuikitprofessional-main\\pages\\collections.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\collections.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\wpfuikitprofessional-main\\pages\\collections.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\collections.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\wpfuikitprofessional-main\\pages\\analytics.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\analytics.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\wpfuikitprofessional-main\\pages\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Collections.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\WPFUIKitProfessional-main\\Pages\\Collections.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\Collections.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\WPFUIKitProfessional-main\\Pages\\Collections.xaml.cs",
+              "RelativeToolTip": "Pages\\Collections.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAQwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T16:13:40.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Collections.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\WPFUIKitProfessional-main\\Pages\\Collections.xaml",
+              "RelativeDocumentMoniker": "Pages\\Collections.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\WPFUIKitProfessional-main\\Pages\\Collections.xaml",
+              "RelativeToolTip": "Pages\\Collections.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-23T16:02:34.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Analytics.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\WPFUIKitProfessional-main\\Pages\\Analytics.xaml",
+              "RelativeDocumentMoniker": "Pages\\Analytics.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\WPFUIKitProfessional-main\\Pages\\Analytics.xaml",
+              "RelativeToolTip": "Pages\\Analytics.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-23T16:02:20.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Home.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\WPFUIKitProfessional-main\\Pages\\Home.xaml",
+              "RelativeDocumentMoniker": "Pages\\Home.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\WPFUIKitProfessional-main\\Pages\\Home.xaml",
+              "RelativeToolTip": "Pages\\Home.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-22T20:44:38.989Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
