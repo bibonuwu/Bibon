@@ -578,54 +578,69 @@ namespace WPFUIKitProfessional.Pages
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            await LoadSystemInformationAsync();
+            try
+            {
+                await LoadSystemInformationAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке информации: " + ex.Message);
+                Application.Current.Shutdown(); // Закрываем программу при возникновении критической ошибки
+            }
         }
 
         private async Task LoadSystemInformationAsync()
         {
             await Task.Run(() =>
             {
-                // Собираем всю информацию в строковые переменные
-                var systemInfo = new List<string>
-        {
-            "PC Name: " + Environment.MachineName,
-            "User Name: " + Environment.UserName,
-            "Windows Version: " + GetWindowsVersion(),
-            "Processor Architecture: " + (Environment.Is64BitOperatingSystem ? "64-bit" : "32-bit"),
-            "Manufacturer: " + GetHardwareInfo("Win32_ComputerSystem", "Manufacturer"),
-            "Model: " + GetHardwareInfo("Win32_ComputerSystem", "Model"),
-            "BIOS Version: " + GetHardwareInfo("Win32_BIOS", "Version"),
-            "RAM: " + FormatBytes(Convert.ToInt64(GetHardwareInfo("Win32_ComputerSystem", "TotalPhysicalMemory"))),
-            "GPU: " + GetHardwareInfo("Win32_VideoController", "Name"),
-            "Local IP: " + GetLocalIPAddress(),
-            "Public IP: " + GetPublicIPAddress()
-        };
-
-                // Добавляем информацию о дисках
-                DriveInfo[] drives = DriveInfo.GetDrives();
-                foreach (DriveInfo drive in drives)
+                try
                 {
-                    if (drive.IsReady)
-                    {
-                        string driveType = drive.DriveType == DriveType.Fixed ? "SSD/HDD" : "Other";
-                        systemInfo.Add($"{drive.Name} {driveType}, Free space: {FormatBytes(drive.AvailableFreeSpace)}");
-                    }
-                }
+                    var systemInfo = new List<string>
+            {
+                "PC Name: " + Environment.MachineName,
+                "User Name: " + Environment.UserName,
+                "Windows Version: " + GetWindowsVersion(),
+                "Processor Architecture: " + (Environment.Is64BitOperatingSystem ? "64-bit" : "32-bit"),
+                "Manufacturer: " + GetHardwareInfo("Win32_ComputerSystem", "Manufacturer"),
+                "Model: " + GetHardwareInfo("Win32_ComputerSystem", "Model"),
+                "BIOS Version: " + GetHardwareInfo("Win32_BIOS", "Version"),
+                "RAM: " + FormatBytes(Convert.ToInt64(GetHardwareInfo("Win32_ComputerSystem", "TotalPhysicalMemory"))),
+                "GPU: " + GetHardwareInfo("Win32_VideoController", "Name"),
+                "Local IP: " + GetLocalIPAddress(),
+                "Public IP: " + GetPublicIPAddress()
+            };
 
-                // Обновляем UI один раз
-                Dispatcher.Invoke(() =>
-                {
-                    InfoStackPanel.Children.Clear(); // Очищаем перед добавлением новой информации
-                    foreach (var info in systemInfo)
+                    // Добавляем информацию о дисках
+                    DriveInfo[] drives = DriveInfo.GetDrives();
+                    foreach (DriveInfo drive in drives)
                     {
-                        InfoStackPanel.Children.Add(new TextBlock
+                        if (drive.IsReady)
                         {
-                            Text = info,
-                            TextWrapping = TextWrapping.Wrap,
-                            Foreground = (Brush)Application.Current.Resources["PrimaryTextColor1"] // Устанавливаем цвет текста
-                        });
+                            string driveType = drive.DriveType == DriveType.Fixed ? "SSD/HDD" : "Other";
+                            systemInfo.Add($"{drive.Name} {driveType}, Free space: {FormatBytes(drive.AvailableFreeSpace)}");
+                        }
                     }
-                });
+
+                    // Обновляем UI один раз
+                    Dispatcher.Invoke(() =>
+                    {
+                        InfoStackPanel.Children.Clear(); // Очищаем перед добавлением новой информации
+                        foreach (var info in systemInfo)
+                        {
+                            InfoStackPanel.Children.Add(new TextBlock
+                            {
+                                Text = info,
+                                TextWrapping = TextWrapping.Wrap,
+                                Foreground = (Brush)Application.Current.Resources["PrimaryTextColor1"] // Устанавливаем цвет текста
+                            });
+                        }
+                    });
+                }
+                catch (Exception ex)
+                {
+                    // Логирование ошибки
+                    Console.WriteLine("Ошибка при сборе информации: " + ex.Message);
+                }
             });
         }
 
@@ -709,7 +724,6 @@ namespace WPFUIKitProfessional.Pages
 
             return "Not available";
         }
-
         private string GetPublicIPAddress()
         {
             try
