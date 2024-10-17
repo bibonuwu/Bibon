@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFUIKitProfessional", "WPFUIKitProfessional.csproj", "{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BIBON", "..\BIBON\BIBON.vdproj", "{063756B2-B9DB-4BEA-9A12-FA3713FB1E67}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BIBON 2", "..\BIBON 2\BIBON 2.vdproj", "{7F11890A-F004-4D9F-9EA8-94BFCB6BC3C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{063756B2-B9DB-4BEA-9A12-FA3713FB1E67}.Debug|Any CPU.ActiveCfg = Debug
-		{063756B2-B9DB-4BEA-9A12-FA3713FB1E67}.Release|Any CPU.ActiveCfg = Release
+		{7F11890A-F004-4D9F-9EA8-94BFCB6BC3C3}.Debug|Any CPU.ActiveCfg = Debug
+		{7F11890A-F004-4D9F-9EA8-94BFCB6BC3C3}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
