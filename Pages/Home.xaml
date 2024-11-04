@@ -26,31 +26,7 @@
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
 
-                        <ControlTemplate.Triggers>
-
-                            <Trigger Property="IsMouseOver" Value="true">
-
-                                <Trigger.EnterActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation To="130"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
-                                            <DoubleAnimation To="150"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
-                                            <ColorAnimation To="Coral" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.EnterActions>
-
-                                <Trigger.ExitActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation To="100"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
-                                            <DoubleAnimation To="120"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
-                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.ExitActions>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
+                       
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -173,7 +149,7 @@ Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="230" Width=
                         <StackPanel>
 
 
-                        <StackPanel Orientation="Horizontal" Margin="0,20,0,20" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Margin="0,20,0,10" HorizontalAlignment="Center">
                             <Image Source="/Assets/8.png" Margin="0,0,10,0" StretchDirection="DownOnly" Width="20"/>
                             <Label Content="Wallpaper" FontSize="25" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}"/>
                             <Image Source="/Assets/8.png" StretchDirection="DownOnly" Width="20" Margin="10,0,0,0"/>
@@ -182,32 +158,31 @@ Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="230" Width=
 
 
 
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    
+                                    
+                                    <Button Margin="3" Height="130" Width="110" Click="Button_Click_13">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Assets/Wallpaper/44.jpg" Stretch="UniformToFill"/>
+                                        </Button.Background>
+                                    </Button>
+
+                                    <Button Margin="3" Height="130" Width="110" Click="Button_Click_16">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Assets/Wallpaper/43.jpg" Stretch="UniformToFill"/>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Margin="3" Height="130" Width="110" Click="Button_Click_17">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Assets/Wallpaper/41.jpg" Stretch="UniformToFill"/>
+                                        </Button.Background>
+                                    </Button>
 
 
-                            <Button Margin="3" Height="120" Width="100" FontWeight="Bold" Foreground="MediumPurple" Click="Button_Click_13">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/Assets/Wallpaper/13.jpg" Stretch="UniformToFill"/>
-                                </Button.Background>
-                            </Button>
 
 
-                            <Button Margin="3" Height="120" Width="100" FontWeight="Bold" Foreground="MediumPurple" Click="Button_Click_16">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/Assets/Wallpaper/18.jpg" Stretch="UniformToFill"/>
-                                </Button.Background>
-                            </Button>
-                            <Button Margin="3" Height="120" Width="100" FontWeight="Bold" Foreground="MediumPurple" Click="Button_Click_17">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/Assets/Wallpaper/17.jpg" Stretch="UniformToFill"/>
-                                </Button.Background>
-                            </Button>
-
-
-
-
-                        </StackPanel>
-                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
                     </Border>
                 </StackPanel>
 

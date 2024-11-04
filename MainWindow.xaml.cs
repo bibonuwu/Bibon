@@ -92,7 +92,10 @@ namespace WPFUIKitProfessional
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
-            AnimateFrameContent(new Home());
+            AnimateFrameContent(new Home()); // Здесь анимация будет запущена
+
+            rdHome_Click(sender, e);
+
 
         }
 
@@ -130,6 +133,7 @@ namespace WPFUIKitProfessional
                 welcomeLabel.Visibility = Visibility.Visible;
             }
         }
+
 
 
 

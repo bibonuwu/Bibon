@@ -11,11 +11,5 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/wallpaper/13.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/wallpaper/17.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/wallpaper/18.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/microsoft.web.webview2.1.0.2739.15/runtimes/win-x86/native/webview2loade" +
-    "r.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/microsoft.web.webview2.1.0.2739.15/runtimes/win-x64/native/webview2loade" +
-    "r.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/microsoft.web.webview2.1.0.2739.15/runtimes/win-arm64/native/webview2loa" +
-    "der.dll")]
 
 

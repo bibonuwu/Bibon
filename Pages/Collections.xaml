@@ -5,17 +5,124 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WPFUIKitProfessional.Pages"
       mc:Ignorable="d" 
-            xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+            Background="Transparent"
+      d:DesignHeight="700" d:DesignWidth="1100"
+      Title="Messages" FontFamily="Poppins">
 
-      d:DesignHeight="450" d:DesignWidth="800"
-     FontFamily="Poppins">
-
-    <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
+    <!-- Добавьте ресурс для градиента -->
+    <Page.Resources>
+        <LinearGradientBrush x:Key="GradientBrush" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#B2496FFF" Offset="0.0" />
+            <!-- Добавьте дополнительные цвета для градиента, если нужно -->
+            <GradientStop Offset="1.0" />
+        </LinearGradientBrush>
+    </Page.Resources>
+    <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
-            <ProgressBar Name="progressBar" Height="10" Minimum="0" Maximum="100" Width="300" Visibility="Hidden" Foreground="#32D74B" />
-            <wv2:WebView2 Name="webView" Source="https://sites.google.com/view/abekenaik/app/"/>
 
 
+            <!-- Start: Container -->
+            <StackPanel x:Name="q1" Orientation="Horizontal"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+
+                <!-- Start: Free Card -->
+                <Border Width="290" CornerRadius="20">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#0E244B" Offset="0" />
+                            <GradientStop Color="#091C3A" Offset="0.62" />
+                            <GradientStop Color="#091C3A" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <StackPanel>
+                            <Image Source="/Assets/78.png" Width="70" Margin="0,50,0,20" />
+
+                            <Label FontSize="22" Foreground="#FFEDF4FF" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50,0,50,0">
+                                <TextBlock TextWrapping="Wrap" TextAlignment="Center" FontFamily="Nirmala UI">Windows Design by bibon</TextBlock>
+                            </Label>
+
+                        </StackPanel>
+
+                        <Button x:Name="OpenWebsiteButton14"
+        Style="{DynamicResource ProButtonStyle1}" Content="View"
+        VerticalAlignment="Bottom" Panel.ZIndex="1" Margin="20,0,20,20" Click="Window1" />
+
+                        <Image Source="/Assets/77.png" VerticalAlignment="Bottom" Margin="-20,0,-20,0" HorizontalAlignment="Center" Width="430" />
+
+                    </Grid>
+                </Border>
+                <!-- End: Free Card -->
+
+                <!-- Start: Pro Card -->
+                <Border Width="290" CornerRadius="20" Margin="20,0,20,0" Height="480" BorderBrush="#FF262626" OpacityMask="Black">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#C4D9EE" Offset="0" />
+                            <GradientStop Color="#F5ECF1" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Grid>
+                        <StackPanel>
+                            <Image Source="/Assets/78.png" Width="70" Margin="0,50,0,20" />
+
+                            <Label FontSize="22" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50,0,50,0">
+                                <TextBlock TextWrapping="Wrap" TextAlignment="Center" FontFamily="Nirmala UI">Windows Design by bibon</TextBlock>
+                            </Label>
+
+                        </StackPanel>
+
+                        <Button x:Name="OpenWebsiteButtosn14"
+Style="{DynamicResource ProButtonStyle1}" Content="View"
+VerticalAlignment="Bottom" Panel.ZIndex="1" Margin="20,0,20,20"  Click="Window2" />
+
+                        <Image Source="/Assets/79.png" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="420" Margin="-54,0,-20,0" />
+
+                    </Grid>
+
+                </Border>
+                <!-- End: Pro Card -->
+
+                <!-- Start: Team Card -->
+                <Border Width="290" CornerRadius="20" Height="480">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#A3ADAF" Offset="0" />
+                            <GradientStop Color="#BABFC3" Offset="0.5" />
+                            <GradientStop Color="#A3ADAF" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+
+
+                <Grid>
+                        <StackPanel>
+                            <Image Source="/Assets/78.png" Width="70" Margin="0,50,0,20" />
+
+                            <Label FontSize="22" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50,0,50,0">
+                                <TextBlock TextWrapping="Wrap" TextAlignment="Center" FontFamily="Nirmala UI">Windows Design by bibon</TextBlock>
+                            </Label>
+
+                        </StackPanel>
+
+                        <Button x:Name="OpenWebsiteBu2tton14"
+Style="{DynamicResource ProButtonStyle1}" Content="View"
+VerticalAlignment="Bottom" Panel.ZIndex="1" Margin="20,0,20,20"  Click="Window3" />
+
+                        <Image Source="/Assets/80.png" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="400" Margin="-30,0,-30,0" />
+
+                    </Grid>
+
+                </Border>
+                <!-- End: Card Team -->
+
+            </StackPanel>
+
+            <Frame x:Name="frameContent1" NavigationUIVisibility="Hidden" Navigated="FrameContent_Navigated"/>
+
+            <!-- End: Container -->
         </Grid>
     </Border>
 </Page>

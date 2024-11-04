@@ -143,5 +143,15 @@ namespace WPFUIKitProfessional.Pages
         {
             OpenWebsite("https://obsproject.com/welcome", OpenWebsiteButton7);
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ForwardButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

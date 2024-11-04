@@ -1,5 +1,3 @@
-2024/10/15-22:57:10.963 4888 Log #3: 2 ops saved to Table #4 OK
-2024/10/15-22:57:10.965 4888 Archiving C:\Users\bibon\Desktop\Bibon\bin\Release\BIBON.exe.WebView2\EBWebView\Default\Site Characteristics Database/000003.log: OK
-2024/10/15-22:57:10.966 4888 Table #4: 2 entries OK
-2024/10/15-22:57:10.969 4888 Archiving C:\Users\bibon\Desktop\Bibon\bin\Release\BIBON.exe.WebView2\EBWebView\Default\Site Characteristics Database/MANIFEST-000001: OK
-2024/10/15-22:57:10.975 4888 **** Repaired leveldb C:\Users\bibon\Desktop\Bibon\bin\Release\BIBON.exe.WebView2\EBWebView\Default\Site Characteristics Database; recovered 1 files; 191 bytes. Some data may have been lost. ****
+2024/10/30-12:58:14.293 3030 Reusing MANIFEST C:\Users\bibon\Desktop\Bibon\bin\Release\BIBON.exe.WebView2\EBWebView\Default\Site Characteristics Database/MANIFEST-000001
+2024/10/30-12:58:14.293 3030 Recovering log #9
+2024/10/30-12:58:14.293 3030 Reusing old log C:\Users\bibon\Desktop\Bibon\bin\Release\BIBON.exe.WebView2\EBWebView\Default\Site Characteristics Database/000009.log 

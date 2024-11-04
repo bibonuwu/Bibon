@@ -18,7 +18,7 @@
             <Label Foreground="White" HorizontalAlignment="Center" FontSize="16" FontFamily="Nirmala UI" Opacity="0.9">loading...</Label>
 
             <Label Foreground="White" HorizontalAlignment="Center" FontSize="24" FontFamily="Nirmala UI">Welcome to BIBON</Label>
-            <Label Foreground="White" HorizontalAlignment="Center" FontSize="14" FontFamily="Nirmala UI" Margin="0,0,0,30" Opacity="0.5">Version: #2 PRO</Label>
+            <Label Foreground="White" HorizontalAlignment="Center" FontSize="14" FontFamily="Nirmala UI" Margin="0,0,0,30" Opacity="0.5">Version: #3 PRO</Label>
 
         </StackPanel>
         

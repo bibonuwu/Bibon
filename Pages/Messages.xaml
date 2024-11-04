@@ -11,9 +11,7 @@
 
     <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
-            <!-- Start: ToggleButton -->
-     
-            <!-- End: ToggleButton -->
+        
 
             <!-- Start: Container -->
             <StackPanel Orientation="Horizontal"

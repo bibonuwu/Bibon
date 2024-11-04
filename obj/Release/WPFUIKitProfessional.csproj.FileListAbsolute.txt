@@ -65,9 +65,6 @@ C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Release\WPFUIKitProfessiona
 C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Release\WPFUIKit.A27DEA20.Up2Date
 C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Release\BIBON.exe
 C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Release\BIBON.pdb
-C:\Users\bibon\Desktop\Bibon\bin\Release\runtimes\win-x86\native\WebView2Loader.dll
-C:\Users\bibon\Desktop\Bibon\bin\Release\runtimes\win-x64\native\WebView2Loader.dll
-C:\Users\bibon\Desktop\Bibon\bin\Release\runtimes\win-arm64\native\WebView2Loader.dll
 C:\Users\bibon\Desktop\Bibon\bin\Release\Assets\Wallpaper\13.jpg
 C:\Users\bibon\Desktop\Bibon\bin\Release\Assets\Wallpaper\17.jpg
 C:\Users\bibon\Desktop\Bibon\bin\Release\Assets\Wallpaper\18.jpg
@@ -77,9 +74,6 @@ C:\Users\bibon\Desktop\Bibon\bin\Release\BIBON.pdb
 C:\Users\bibon\Desktop\Bibon\bin\Release\AForge.dll
 C:\Users\bibon\Desktop\Bibon\bin\Release\AForge.Video.DirectShow.dll
 C:\Users\bibon\Desktop\Bibon\bin\Release\AForge.Video.dll
-C:\Users\bibon\Desktop\Bibon\bin\Release\Microsoft.Web.WebView2.Core.dll
-C:\Users\bibon\Desktop\Bibon\bin\Release\Microsoft.Web.WebView2.WinForms.dll
-C:\Users\bibon\Desktop\Bibon\bin\Release\Microsoft.Web.WebView2.Wpf.dll
 C:\Users\bibon\Desktop\Bibon\bin\Release\Newtonsoft.Json.dll
 C:\Users\bibon\Desktop\Bibon\bin\Release\System.CodeDom.dll
 C:\Users\bibon\Desktop\Bibon\bin\Release\System.ComponentModel.Annotations.dll
@@ -89,9 +83,6 @@ C:\Users\bibon\Desktop\Bibon\bin\Release\Telegram.Bot.dll
 C:\Users\bibon\Desktop\Bibon\bin\Release\AForge.xml
 C:\Users\bibon\Desktop\Bibon\bin\Release\AForge.Video.xml
 C:\Users\bibon\Desktop\Bibon\bin\Release\AForge.Video.DirectShow.xml
-C:\Users\bibon\Desktop\Bibon\bin\Release\Microsoft.Web.WebView2.Core.xml
-C:\Users\bibon\Desktop\Bibon\bin\Release\Microsoft.Web.WebView2.WinForms.xml
-C:\Users\bibon\Desktop\Bibon\bin\Release\Microsoft.Web.WebView2.Wpf.xml
 C:\Users\bibon\Desktop\Bibon\bin\Release\Newtonsoft.Json.xml
 C:\Users\bibon\Desktop\Bibon\bin\Release\System.CodeDom.xml
 C:\Users\bibon\Desktop\Bibon\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
@@ -132,3 +123,9 @@ C:\Users\bibon\Desktop\Bibon\obj\Release\WPFUIKitProfessional.csproj.CoreCompile
 C:\Users\bibon\Desktop\Bibon\obj\Release\WPFUIKit.A27DEA20.Up2Date
 C:\Users\bibon\Desktop\Bibon\obj\Release\BIBON.exe
 C:\Users\bibon\Desktop\Bibon\obj\Release\BIBON.pdb
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\WinX\Window1.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\WinX\Window1.baml
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\WinX\Window2.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\WinX\Window2.baml
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\WinX\Window3.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\WinX\Window3.baml
