@@ -1,7 +1,11 @@
-﻿using System.Diagnostics;
+﻿using Bibon.Pages.Store;
+using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Navigation;
 
 namespace WPFUIKitProfessional.Pages
 {
@@ -10,8 +14,14 @@ namespace WPFUIKitProfessional.Pages
         public Analytics()
         {
             InitializeComponent();
+            // Вызов метода Click для кнопки
+            RadioButton_Click(MyButton, new RoutedEventArgs());
         }
-    
+
+
+
+
+
         private void OpenWebsite(string url, Button button)
         {
             Process.Start(new ProcessStartInfo
@@ -23,6 +33,28 @@ namespace WPFUIKitProfessional.Pages
             // Изменение цвета кнопки на цвет с кодом #32D74B
             button.Background = (Brush)new BrushConverter().ConvertFromString("#32D74B");
         }
+
+        private void AnimateFrameContent(Page page)
+        {
+            // Анимация для плавного исчезновения текущего содержимого
+            DoubleAnimation fadeOutAnimation = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(0.2));
+            fadeOutAnimation.Completed += (s, a) =>
+            {
+                // Меняем содержимое после завершения анимации исчезновения
+                frameContent1.Content = page;
+
+                // Анимация для плавного появления нового содержимого
+                DoubleAnimation fadeInAnimation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(0.2));
+                frameContent1.BeginAnimation(OpacityProperty, fadeInAnimation);
+            };
+
+            // Запускаем анимацию исчезновения
+            frameContent1.BeginAnimation(OpacityProperty, fadeOutAnimation);
+        }
+         
+
+
+
 
         private void OpenWebsite1_Click(object sender, RoutedEventArgs e)
         {
@@ -41,7 +73,7 @@ namespace WPFUIKitProfessional.Pages
 
         private void OpenWebsite4_Click(object sender, RoutedEventArgs e)
         {
-            OpenWebsite("https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro", OpenWebsiteButton4);
+            OpenWebsite("https://drive.google.com/file/d/1yEiwapt2XWfvBqHvjljfY_g5NLVe_Zmh/view?usp=sharing", OpenWebsiteButton4);
         }
 
         private void OpenWebsite5_Click(object sender, RoutedEventArgs e)
@@ -54,95 +86,8 @@ namespace WPFUIKitProfessional.Pages
             OpenWebsite("https://aida64.it/scarica", OpenWebsiteButton6);
         }
 
-        private void OpenWebsite12_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://www.kali.org/get-kali/#kali-virtual-machines", OpenWebsiteButton12);
-        }
-
-        private void OpenWebsite13_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://www.rarlab.com/", OpenWebsiteButton13);
-        }
-
-        private void OpenWebsite24_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://www.microsoft.com/store/productId/9NKSQGP7F2NH?ocid=pdpshare", OpenWebsiteButton24);
-        }
-
-        private void OpenWebsite11_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://store.epicgames.com/ru/", OpenWebsiteButton11);
-        }
-
-        private void OpenWebsite14_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://central.github.com/deployments/desktop/desktop/latest/win32", OpenWebsiteButton14);
-        }
-
-        private void OpenWebsite23_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://www.microsoft.com/store/productId/9NZTWSQNTD0S?ocid=pdpshare", OpenWebsiteButton23);
-        }
-
-        private void OpenWebsite10_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://drive.google.com/file/d/19fIYUcW8nXwfkqdcvPe3pp77JLAie4IV/view?usp=sharing", OpenWebsiteButton10);
-        }
-
-        private void OpenWebsite15_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://www.utorrent.com/downloads/complete/track/stable/os/win/", OpenWebsiteButton15);
-        }
-
-        private void OpenWebsite22_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://sts.kz/eshdi/", OpenWebsiteButton22);
-        }
-
-        private void OpenWebsite9_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://ncl.pki.gov.kz/", OpenWebsiteButton9);
-        }
-
-        private void OpenWebsite16_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://www.malwarebytes.com/", OpenWebsiteButton16);
-        }
-
-        private void OpenWebsite21_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://github.com/bibonuwu/Takbir-Widget/releases", OpenWebsiteButton21);
-        }
-
-        private void OpenWebsite8_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://github.com/hainguyents13/mechvibes/releases", OpenWebsiteButton8);
-        }
-
-        private void OpenWebsite17_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://tlauncher.org/installer", OpenWebsiteButton17);
-        }
-
-        private void OpenWebsite20_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://vk.com/topic-187744169_46000270", OpenWebsiteButton20);
-        }
-
-        private void OpenWebsite19_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://github.com/bibonuwu/ToDoWin/releases", OpenWebsiteButton19);
-        }
-
-        private void OpenWebsite18_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://anydesk.com/ru", OpenWebsiteButton18);
-        }
-
-        private void OpenWebsite7_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWebsite("https://obsproject.com/welcome", OpenWebsiteButton7);
-        }
+     
+     
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -153,5 +98,55 @@ namespace WPFUIKitProfessional.Pages
         {
 
         }
+
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            AnimateFrameContent(new Window4());
+
+
+        }
+
+
+
+        private void RadioButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
+
+            AnimateFrameContent(new Window1());
+
+        }
+
+        private void RadioButton_Click_2(object sender, RoutedEventArgs e)
+        {
+
+
+            AnimateFrameContent(new Window2());
+
+        }
+
+        private void RadioButton_Click_3(object sender, RoutedEventArgs e)
+        {
+
+
+            AnimateFrameContent(new Window3());
+
+        }
+
+        private void FrameContent_Navigated(object sender, NavigationEventArgs e)
+        {
+            // Если во Frame есть содержимое, скрываем кнопку и лейбл
+            if (frameContent1.Content != null)
+            {
+               
+            }
+            else
+            {
+                // Если содержимого нет, показываем их
+               
+            }
+        }
+
+
     }
 }

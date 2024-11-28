@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Windows;
-using System.Windows.Media;
-using System.ComponentModel;
-using System.Runtime.InteropServices;
-using System.Windows.Controls;
-using System.Management;
-using System.Threading.Tasks;
-using System.IO;
-using System.Net;
-using System.Net.NetworkInformation;
-using System.Threading;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
+using System.Management;
+using System.Net;
 using System.Net.Http;
+using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
 using System.Security.Principal;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace WPFUIKitProfessional.Pages
 {
@@ -32,6 +32,12 @@ namespace WPFUIKitProfessional.Pages
 
     public partial class Home : Page
     {
+
+        // Создаем кисти для изменения цвета кнопки
+        private readonly Brush yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
+        private readonly Brush greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
+        private readonly Brush redBrush = (Brush)new BrushConverter().ConvertFromString("#FF453A");
+
         private BackgroundWorker worker;
 
 
@@ -47,18 +53,23 @@ namespace WPFUIKitProfessional.Pages
         }
 
 
-      
+
         private void btnExecute_Click(object sender, RoutedEventArgs e)
         {
+            // Определяем цвета
             var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
             var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
             var redBrush = (Brush)new BrushConverter().ConvertFromString("#FF453A");
 
-            worker = new BackgroundWorker();
+            // Создаем BackgroundWorker
+            BackgroundWorker worker = new BackgroundWorker();
+
+            // Основная работа в BackgroundWorker
             worker.DoWork += (s, args) =>
             {
                 try
                 {
+                    // Запускаем команду CMD для активации энергосхемы
                     ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c powercfg /s SCHEME_MIN")
                     {
                         CreateNoWindow = true,
@@ -73,62 +84,74 @@ namespace WPFUIKitProfessional.Pages
                         string output = process.StandardOutput.ReadToEnd();
                         string error = process.StandardError.ReadToEnd();
 
+                        // Проверяем наличие ошибок
                         if (!string.IsNullOrEmpty(error))
                         {
-                            args.Result = false;
+                            args.Result = false; // Ошибка
                         }
                         else
                         {
-                            args.Result = true;
+                            args.Result = true; // Успех
                         }
                     }
                 }
                 catch (Exception)
                 {
-                    args.Result = false;
+                    args.Result = false; // Ошибка
                 }
             };
 
+            // Действия после завершения задачи
             worker.RunWorkerCompleted += (s, args) =>
             {
                 if (args.Error != null)
                 {
                     // Ошибка выполнения команды
                     btnExecute.Background = redBrush;
-                    progressBar.Foreground = redBrush;
+                    btnExecute.Content = "Error";
                 }
                 else if ((bool)args.Result)
                 {
                     // Команда выполнена успешно
                     btnExecute.Background = greenBrush;
-                    progressBar.Value = 100;
-                    progressBar.Foreground = greenBrush;
+                    btnExecute.Content = "Completed";
                 }
                 else
                 {
                     // Ошибка при выполнении команды
                     btnExecute.Background = redBrush;
-                    progressBar.Foreground = redBrush;
+                    btnExecute.Content = "Error";
                 }
+
+                // Разблокируем кнопку
+                btnExecute.IsEnabled = true;
             };
 
+            // Проверяем, не занят ли BackgroundWorker
             if (!worker.IsBusy)
             {
-                // Запуск BackgroundWorker и изменения состояния UI
-                btnExecute.Background = yellowBrush;
-                progressBar.Value = 0;
-                progressBar.Foreground = greenBrush; // Желтый при старте
+                // Изменяем UI перед запуском задачи
+                btnExecute.IsEnabled = false; // Блокируем кнопку
+                btnExecute.Background = yellowBrush; // Желтый цвет при запуске
+                btnExecute.Content = "Processing...";
+
+                // Запускаем BackgroundWorker
                 worker.RunWorkerAsync();
             }
         }
 
+
         private void btnDisableBackgroundApps_Click(object sender, RoutedEventArgs e)
         {
+            // Определяем цвета
             var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
             var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
             var redBrush = (Brush)new BrushConverter().ConvertFromString("#FF453A");
 
-            worker = new BackgroundWorker();
+            // Создаем BackgroundWorker
+            BackgroundWorker worker = new BackgroundWorker();
+
+            // Основная работа в BackgroundWorker
             worker.DoWork += (s, args) =>
             {
                 try
@@ -149,56 +172,62 @@ namespace WPFUIKitProfessional.Pages
                         string output = process.StandardOutput.ReadToEnd();
                         string error = process.StandardError.ReadToEnd();
 
+                        // Проверяем наличие ошибок
                         if (!string.IsNullOrEmpty(error))
                         {
-                            args.Result = false;
+                            args.Result = false; // Ошибка
                         }
                         else
                         {
-                            args.Result = true;
+                            args.Result = true; // Успех
                         }
                     }
                 }
                 catch (Exception)
                 {
-                    args.Result = false;
+                    args.Result = false; // Ошибка
                 }
             };
 
+            // Действия после завершения задачи
             worker.RunWorkerCompleted += (s, args) =>
             {
                 if (args.Error != null)
                 {
                     // Ошибка выполнения команды
                     btnDisableBackgroundApps.Background = redBrush;
-                    progressBar1.Foreground = redBrush;
-                    progressBar1.Value = 100;
+                    btnDisableBackgroundApps.Content = "Error";
                 }
                 else if ((bool)args.Result)
                 {
                     // Команда выполнена успешно
                     btnDisableBackgroundApps.Background = greenBrush;
-                    progressBar1.Value = 100;
-                    progressBar1.Foreground = greenBrush;
+                    btnDisableBackgroundApps.Content = "Completed";
                 }
                 else
                 {
                     // Ошибка при выполнении команды
                     btnDisableBackgroundApps.Background = redBrush;
-                    progressBar1.Foreground = redBrush;
-                    progressBar1.Value = 100;
+                    btnDisableBackgroundApps.Content = "Error";
                 }
+
+                // Разблокируем кнопку
+                btnDisableBackgroundApps.IsEnabled = true;
             };
 
+            // Проверяем, не занят ли BackgroundWorker
             if (!worker.IsBusy)
             {
-                // Запуск BackgroundWorker и изменения состояния UI
-                btnDisableBackgroundApps.Background = yellowBrush; // Желтый при старте
-                progressBar1.Value = 0;
-                progressBar1.Foreground = greenBrush; // Прогресс бар становится желтым при старте
+                // Изменяем UI перед запуском задачи
+                btnDisableBackgroundApps.IsEnabled = false; // Блокируем кнопку
+                btnDisableBackgroundApps.Background = yellowBrush; // Желтый цвет при запуске
+                btnDisableBackgroundApps.Content = "Processing...";
+
+                // Запускаем BackgroundWorker
                 worker.RunWorkerAsync();
             }
         }
+
 
         private void ExecutePowerShell_Click(object sender, RoutedEventArgs e)
         {
@@ -255,11 +284,7 @@ namespace WPFUIKitProfessional.Pages
                 }
             };
 
-            worker.ProgressChanged += (s, args) =>
-            {
-                // Обновляем прогресс-бар
-                progressBar3.Value = args.ProgressPercentage;
-            };
+         
 
             worker.RunWorkerCompleted += (s, args) =>
             {
@@ -267,22 +292,16 @@ namespace WPFUIKitProfessional.Pages
                 {
                     // Ошибка выполнения команды
                     btnExecutePowerShell.Background = redBrush;
-                    progressBar3.Foreground = redBrush;
-                    progressBar3.Value = 100;
                 }
                 else if ((bool)args.Result)
                 {
                     // Команда выполнена успешно
                     btnExecutePowerShell.Background = greenBrush;
-                    progressBar3.Value = 100;
-                    progressBar3.Foreground = greenBrush;
                 }
                 else
                 {
                     // Ошибка при выполнении команды
                     btnExecutePowerShell.Background = redBrush;
-                    progressBar3.Foreground = redBrush;
-                    progressBar3.Value = 100;
                 }
             };
 
@@ -290,8 +309,6 @@ namespace WPFUIKitProfessional.Pages
             {
                 // Запуск BackgroundWorker и обновление интерфейса UI
                 btnExecutePowerShell.Background = yellowBrush; // Желтый при старте
-                progressBar3.Value = 0;
-                progressBar3.Foreground = greenBrush; // Прогресс бар становится желтым при старте
                 worker.RunWorkerAsync();
             }
         }
@@ -351,11 +368,6 @@ namespace WPFUIKitProfessional.Pages
                 }
             };
 
-            worker.ProgressChanged += (s, args) =>
-            {
-                // Обновляем прогресс-бар
-                progressBar5.Value = args.ProgressPercentage;
-            };
 
             worker.RunWorkerCompleted += (s, args) =>
             {
@@ -363,22 +375,16 @@ namespace WPFUIKitProfessional.Pages
                 {
                     // Ошибка выполнения команды
                     btnoffice.Background = redBrush;
-                    progressBar5.Foreground = redBrush;
-                    progressBar5.Value = 100;
                 }
                 else if ((bool)args.Result)
                 {
                     // Команда выполнена успешно
                     btnoffice.Background = greenBrush;
-                    progressBar5.Value = 100;
-                    progressBar5.Foreground = greenBrush;
                 }
                 else
                 {
                     // Ошибка при выполнении команды
                     btnoffice.Background = redBrush;
-                    progressBar5.Foreground = redBrush;
-                    progressBar5.Value = 100;
                 }
             };
 
@@ -386,8 +392,6 @@ namespace WPFUIKitProfessional.Pages
             {
                 // Запуск BackgroundWorker и обновление интерфейса UI
                 btnoffice.Background = yellowBrush; // Желтый при старте
-                progressBar5.Value = 0;
-                progressBar5.Foreground = greenBrush; // Прогресс бар становится желтым при старте
                 worker.RunWorkerAsync();
             }
         }
@@ -411,7 +415,7 @@ namespace WPFUIKitProfessional.Pages
                     // Здесь мы симулируем прогресс открытия сайта
                     for (int i = 0; i <= 100; i += 20)
                     {
-                        Thread.Sleep(500); // Имитация задержки для прогресса
+                        Thread.Sleep(50); // Имитация задержки для прогресса
                         worker.ReportProgress(i); // Отчет о прогрессе
                     }
 
@@ -430,11 +434,6 @@ namespace WPFUIKitProfessional.Pages
                 }
             };
 
-            worker.ProgressChanged += (s, args) =>
-            {
-                // Обновляем прогресс-бар
-                progressBar6.Value = args.ProgressPercentage;
-            };
 
             worker.RunWorkerCompleted += (s, args) =>
             {
@@ -442,22 +441,16 @@ namespace WPFUIKitProfessional.Pages
                 {
                     // Ошибка выполнения команды
                     btnOpenWebsite.Background = redBrush;
-                    progressBar6.Foreground = redBrush;
-                    progressBar6.Value = 100;
                 }
                 else if ((bool)args.Result)
                 {
                     // Команда выполнена успешно
                     btnOpenWebsite.Background = greenBrush;
-                    progressBar6.Value = 100;
-                    progressBar6.Foreground = greenBrush;
                 }
                 else
                 {
                     // Ошибка при выполнении команды
                     btnOpenWebsite.Background = redBrush;
-                    progressBar6.Foreground = redBrush;
-                    progressBar6.Value = 100;
                 }
             };
 
@@ -465,8 +458,6 @@ namespace WPFUIKitProfessional.Pages
             {
                 // Запуск BackgroundWorker и обновление интерфейса UI
                 btnOpenWebsite.Background = yellowBrush; // Желтый при старте
-                progressBar6.Value = 0;
-                progressBar6.Foreground = greenBrush; // Прогресс бар становится желтым при старте
                 worker.RunWorkerAsync();
             }
         }
@@ -500,19 +491,20 @@ namespace WPFUIKitProfessional.Pages
 
         private void btnDisableBackgroundApps2_Click(object sender, RoutedEventArgs e)
         {
-            // Создаем кисти для изменения цвета кнопки и прогресс бара
+            // Определяем цвета
             var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
             var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
             var redBrush = (Brush)new BrushConverter().ConvertFromString("#FF453A");
 
-            worker = new BackgroundWorker();
+            // Создаем BackgroundWorker
+            BackgroundWorker worker = new BackgroundWorker();
 
             // Основная работа в BackgroundWorker
             worker.DoWork += (s, args) =>
             {
                 try
                 {
-                    // Запуск диспетчера задач
+                    // Запуск Диспетчера задач
                     ProcessStartInfo processInfo = new ProcessStartInfo("taskmgr")
                     {
                         UseShellExecute = true
@@ -538,34 +530,38 @@ namespace WPFUIKitProfessional.Pages
                 {
                     // Ошибка выполнения команды
                     btnDisableBackgroundApps2.Background = redBrush;
-                    progressBar12.Foreground = redBrush;
-                    progressBar12.Value = 100;
+                    btnDisableBackgroundApps2.Content = "Error";
                 }
                 else if ((bool)args.Result)
                 {
                     // Процесс успешно выполнен
                     btnDisableBackgroundApps2.Background = greenBrush;
-                    progressBar12.Value = 100;
-                    progressBar12.Foreground = greenBrush;
+                    btnDisableBackgroundApps2.Content = "Completed";
                 }
                 else
                 {
                     // Ошибка при выполнении команды
                     btnDisableBackgroundApps2.Background = redBrush;
-                    progressBar12.Foreground = redBrush;
-                    progressBar12.Value = 100;
+                    btnDisableBackgroundApps2.Content = "Error";
                 }
+
+                // Разблокировать кнопку
+                btnDisableBackgroundApps2.IsEnabled = true;
             };
 
+            // Проверяем, не занят ли BackgroundWorker
             if (!worker.IsBusy)
             {
-                // Стартуем BackgroundWorker и меняем состояние UI
+                // Изменяем UI перед запуском задачи
+                btnDisableBackgroundApps2.IsEnabled = false; // Блокируем кнопку
                 btnDisableBackgroundApps2.Background = yellowBrush; // Желтый цвет при запуске
-                progressBar12.Value = 0;
-                progressBar12.Foreground = yellowBrush; // Прогресс бар тоже желтый при старте
+                btnDisableBackgroundApps2.Content = "Processing...";
+
+                // Запускаем BackgroundWorker
                 worker.RunWorkerAsync();
             }
         }
+
 
 
 
@@ -821,11 +817,7 @@ namespace WPFUIKitProfessional.Pages
         }
         private void FlushDNS()
         { 
-            // Создаем кисти для изменения цвета кнопки и прогресс бара
-            var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
-            var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
-            var redBrush = (Brush)new BrushConverter().ConvertFromString("#FF453A");
-
+          
             try
             {
                 var processInfo = new ProcessStartInfo
@@ -922,6 +914,155 @@ namespace WPFUIKitProfessional.Pages
                 btnOpen1Web1site.Background = redBrush;
             }
         }
+
+
+
+
+
+
+
+        private async void btnDisableBack3groundApps2_Click(object sender, RoutedEventArgs e)
+        {
+            // Определяем кисти для разных состояний кнопки
+            var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
+            var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
+            var redBrush = (Brush)new BrushConverter().ConvertFromString("#FF453A");
+
+            // Инициализируем кнопку как "в процессе"
+            btnDisableBackgroundApps3.IsEnabled = false;
+            btnDisableBackgroundApps3.Content = "Processing...";
+            btnDisableBackgroundApps3.Background = yellowBrush;
+
+            // Выполнение PowerShell скрипта
+            string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string scriptPath = System.IO.Path.Combine(appDirectory, "DisableBack3groundApps.ps1");
+
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = "powershell.exe",
+                Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"",
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            };
+
+            try
+            {
+                // Выполняем скрипт в фоновом потоке
+                await Task.Run(() =>
+                {
+                    using (Process process = new Process { StartInfo = psi })
+                    {
+                        process.Start();
+
+                        string output = process.StandardOutput.ReadToEnd();
+                        string errors = process.StandardError.ReadToEnd();
+                        process.WaitForExit();
+
+                        // Проверяем результат выполнения
+                        if (process.ExitCode == 0)
+                        {
+                            // Успешное выполнение
+                            Dispatcher.Invoke(() =>
+                            {
+                                btnDisableBackgroundApps3.Background = greenBrush;
+                                btnDisableBackgroundApps3.Content = "Completed";
+                            });
+                        }
+                        else
+                        {
+                            // Ошибка
+                            Dispatcher.Invoke(() =>
+                            {
+                                btnDisableBackgroundApps3.Background = redBrush;
+                                btnDisableBackgroundApps3.Content = "Error";
+                            });
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                // Обработка исключений
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                btnDisableBackgroundApps3.Background = redBrush;
+            }
+            finally
+            {
+                // Разблокируем кнопку в любом случае
+                btnDisableBackgroundApps3.IsEnabled = true;
+            }
+        }
+
+        private void btnOpenWebsite_Click1(object sender, RoutedEventArgs e)
+        {
+            // Определяем цвета для изменения интерфейса
+            var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
+            var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
+            var redBrush = (Brush)new BrushConverter().ConvertFromString("#FF453A");
+
+            worker = new BackgroundWorker
+            {
+                WorkerReportsProgress = true
+            };
+
+            worker.DoWork += (s, args) =>
+            {
+                try
+                {
+                    // Здесь мы симулируем прогресс открытия сайта
+                    for (int i = 0; i <= 100; i += 20)
+                    {
+                        Thread.Sleep(50); // Имитация задержки для прогресса
+                        worker.ReportProgress(i); // Отчет о прогрессе
+                    }
+
+                    // Открываем сайт в браузере
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = "https://www.cybermania.ws/",
+                        UseShellExecute = true
+                    });
+
+                    args.Result = true; // Успешное завершение задачи
+                }
+                catch (Exception)
+                {
+                    args.Result = false; // Если произошла ошибка
+                }
+            };
+
+
+            worker.RunWorkerCompleted += (s, args) =>
+            {
+                if (args.Error != null)
+                {
+                    // Ошибка выполнения команды
+                    btnOpenWebsite1.Background = redBrush;
+                }
+                else if ((bool)args.Result)
+                {
+                    // Команда выполнена успешно
+                    btnOpenWebsite1.Background = greenBrush;
+                }
+                else
+                {
+                    // Ошибка при выполнении команды
+                    btnOpenWebsite1.Background = redBrush;
+                }
+            };
+
+            if (!worker.IsBusy)
+            {
+                // Запуск BackgroundWorker и обновление интерфейса UI
+                btnOpenWebsite1.Background = yellowBrush; // Желтый при старте
+                worker.RunWorkerAsync();
+            }
+
+
+        }
+
 
         //кнопка блок сайта end
 

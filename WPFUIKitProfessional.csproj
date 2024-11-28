@@ -50,6 +50,7 @@
     <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
       <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -110,20 +111,20 @@
     <Compile Include="Pages\Messages.xaml.cs">
       <DependentUpon>Messages.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\system.xaml.cs">
-      <DependentUpon>system.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Users.xaml.cs">
-      <DependentUpon>Users.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\WinX\Window1.xaml.cs">
+    <Compile Include="Pages\Store\Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WinX\Window2.xaml.cs">
+    <Compile Include="Pages\Store\Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WinX\Window3.xaml.cs">
+    <Compile Include="Pages\Store\Window3.xaml.cs">
       <DependentUpon>Window3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Store\Window4.xaml.cs">
+      <DependentUpon>Window4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\system.xaml.cs">
+      <DependentUpon>system.xaml</DependentUpon>
     </Compile>
     <Compile Include="Themes\ThemesController.cs" />
     <Page Include="Assets\Icons.xaml">
@@ -162,23 +163,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Store\Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Store\Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Store\Window3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Store\Window4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\system.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Users.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\WinX\Window1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\WinX\Window2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\WinX\Window3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,6 +222,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DisableBack3groundApps.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -276,7 +280,6 @@
     <Resource Include="Assets\Store\14.png" />
     <Resource Include="Assets\Store\15.png" />
     <Resource Include="Assets\Store\16.png" />
-    <Resource Include="Assets\Store\17.png" />
     <Resource Include="Assets\Store\18.png" />
     <Resource Include="Assets\Store\19.png" />
     <Resource Include="Assets\Store\2.png" />
@@ -299,6 +302,90 @@
     <Resource Include="Assets\79.png" />
     <Resource Include="Assets\80.png" />
     <Resource Include="Assets\77.png" />
+    <Resource Include="Assets\Home\V1\1.png" />
+    <Resource Include="Assets\Home\V1\10.png" />
+    <Resource Include="Assets\Home\V1\11.png" />
+    <Resource Include="Assets\Home\V1\12.png" />
+    <Resource Include="Assets\Home\V1\13.png" />
+    <Resource Include="Assets\Home\V1\14.png" />
+    <Resource Include="Assets\Home\V1\15.png" />
+    <Resource Include="Assets\Home\V1\16.png" />
+    <Resource Include="Assets\Home\V1\17.png" />
+    <Resource Include="Assets\Home\V1\18.png" />
+    <Resource Include="Assets\Home\V1\19.png" />
+    <Resource Include="Assets\Home\V1\2.png" />
+    <Resource Include="Assets\Home\V1\20.png" />
+    <Resource Include="Assets\Home\V1\21.png" />
+    <Resource Include="Assets\Home\V1\22.png" />
+    <Resource Include="Assets\Home\V1\23.png" />
+    <Resource Include="Assets\Home\V1\26.png" />
+    <Resource Include="Assets\Home\V1\27.png" />
+    <Resource Include="Assets\Home\V1\28.png" />
+    <Resource Include="Assets\Home\V1\29.png" />
+    <Resource Include="Assets\Home\V1\3.png" />
+    <Resource Include="Assets\Home\V1\30.png" />
+    <Resource Include="Assets\Home\V1\31.png" />
+    <Resource Include="Assets\Home\V1\32.png" />
+    <Resource Include="Assets\Home\V1\4.png" />
+    <Resource Include="Assets\Home\V1\5.png" />
+    <Resource Include="Assets\Home\V1\6.png" />
+    <Resource Include="Assets\Home\V1\7.png" />
+    <Resource Include="Assets\Home\V1\8.png" />
+    <Resource Include="Assets\Home\V1\9.png" />
+    <Resource Include="Assets\Store\25.png" />
+    <Resource Include="Assets\Store\28.png" />
+    <Resource Include="Assets\Store\29.png" />
+    <Resource Include="Assets\Store\30.png" />
+    <Resource Include="Assets\Store\31.png" />
+    <Resource Include="Assets\Store\32.png" />
+    <Resource Include="Assets\Store\33.png" />
+    <Resource Include="Assets\Store\34.png" />
+    <Resource Include="Assets\Store\35.png" />
+    <Resource Include="Assets\Store\36.png" />
+    <Resource Include="Assets\Store\37.png" />
+    <Resource Include="Assets\Store\38.png" />
+    <Resource Include="Assets\Store\39.png" />
+    <Resource Include="Assets\Store\40.png" />
+    <Resource Include="Assets\Store\41.png" />
+    <Resource Include="Assets\Store\42.png" />
+    <Resource Include="Assets\Store\43.png" />
+    <Resource Include="Assets\Store\44.png" />
+    <Resource Include="Assets\Store\45.png" />
+    <Resource Include="Assets\Store\46.png" />
+    <Resource Include="Assets\Store\47.png" />
+    <Resource Include="Assets\Store\48.png" />
+    <Resource Include="Assets\Store\49.png" />
+    <Resource Include="Assets\Store\50.png" />
+    <Resource Include="Assets\Store\51.png" />
+    <Resource Include="Assets\Store\52.png" />
+    <Resource Include="Assets\Store\53.png" />
+    <Resource Include="Assets\Store\54.png" />
+    <Resource Include="Assets\Store\55.png" />
+    <Resource Include="Assets\Store\56.png" />
+    <Resource Include="Assets\Store\57.png" />
+    <Resource Include="Assets\Store\58.png" />
+    <Resource Include="Assets\Store\59.png" />
+    <Resource Include="Assets\Store\60.png" />
+    <Resource Include="Assets\Store\61.png" />
+    <Resource Include="Assets\Store\62.png" />
+    <Resource Include="Assets\Store\63.png" />
+    <Resource Include="Assets\Store\64.png" />
+    <Resource Include="Assets\Store\65.png" />
+    <Resource Include="Assets\Store\66.png" />
+    <Resource Include="Assets\Store\67.png" />
+    <Resource Include="Assets\Store\68.png" />
+    <Resource Include="Assets\Store\69.png" />
+    <Resource Include="Assets\Store\70.png" />
+    <Resource Include="Assets\Store\71.png" />
+    <Resource Include="Assets\Store\72.png" />
+    <Resource Include="Assets\Store\73.png" />
+    <Resource Include="Assets\Store\74.png" />
+    <Resource Include="Assets\Store\75.png" />
+    <Resource Include="Assets\Store\76.png" />
+    <Resource Include="Assets\Store\77.png" />
+    <Resource Include="Assets\Store\26.png" />
+    <Resource Include="Assets\Home\wifi.png" />
+    <Resource Include="Assets\Home\generatkey.png" />
     <Content Include="Assets\Wallpaper\13.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

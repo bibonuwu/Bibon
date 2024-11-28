@@ -85,10 +85,7 @@ namespace WPFUIKitProfessional
             AnimateFrameContent(new Collections());
         }
 
-        private void rdUsers_Click(object sender, RoutedEventArgs e)
-        {
-            AnimateFrameContent(new Users());
-        }
+    
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {

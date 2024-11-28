@@ -4,125 +4,177 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WPFUIKitProfessional.Pages"
-      mc:Ignorable="d" 
-            Background="Transparent"
+      mc:Ignorable="d"
+      Background="Transparent"
       d:DesignHeight="700" d:DesignWidth="1100"
-      Title="Messages" FontFamily="Poppins">
+      FontFamily="Poppins">
 
     <!-- Добавьте ресурс для градиента -->
-    <Page.Resources>
-        <LinearGradientBrush x:Key="GradientBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#B2496FFF" Offset="0.0" />
-            <!-- Добавьте дополнительные цвета для градиента, если нужно -->
-            <GradientStop Offset="1.0" />
-        </LinearGradientBrush>
-    </Page.Resources>
+
     <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Grid>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+
+        
+                    <StackPanel Orientation="Horizontal">
+
+                        <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+Style="{DynamicResource CardBorderStyle1}" Padding="0,40,0,40" Height="550">
+
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                                <Image Source="/Assets/Home/wifi.png" Stretch="Uniform" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                <Label Content="WiFi Networks" FontSize="15" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,20"/>
 
 
-            <!-- Start: Container -->
-            <StackPanel x:Name="q1" Orientation="Horizontal"
-              VerticalAlignment="Center"
-              HorizontalAlignment="Center">
+                                <DataGrid 
+    ScrollViewer.VerticalScrollBarVisibility="Auto" 
+    x:Name="wifiDataGrid" 
+    AutoGenerateColumns="False" 
+    Background="White" 
+    BorderBrush="#FF496FFF" 
+    BorderThickness="1" 
+    FontWeight="Bold"
+    HeadersVisibility="Column" 
+    GridLinesVisibility="None" 
+    CanUserAddRows="False" 
+    IsReadOnly="True" 
+    ColumnHeaderHeight="40" 
+    AlternatingRowBackground="#F9F9F9" 
+    RowBackground="White" 
+    Margin="20,0,20,0">
 
-                <!-- Start: Free Card -->
-                <Border Width="290" CornerRadius="20">
-                    <Border.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="#0E244B" Offset="0" />
-                            <GradientStop Color="#091C3A" Offset="0.62" />
-                            <GradientStop Color="#091C3A" Offset="1" />
-                        </LinearGradientBrush>
-                    </Border.Background>
-                    <Grid>
-                        <StackPanel>
-                            <Image Source="/Assets/78.png" Width="70" Margin="0,50,0,20" />
+                                    <DataGrid.Resources>
+                                        <!-- Style for the DataGrid Column Headers -->
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="#FF496FFF" />
+                                            <Setter Property="Foreground" Value="White" />
+                                            <Setter Property="FontFamily" Value="Segoe UI" />
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                                            <Setter Property="Height" Value="40" />
+                                            <Setter Property="Padding" Value="10,0,10,0" />
+                                            <Setter Property="BorderBrush" Value="#FF496FFF" />
+                                            <Setter Property="BorderThickness" Value="0,0,0,1" />
+                                        </Style>
 
-                            <Label FontSize="22" Foreground="#FFEDF4FF" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50,0,50,0">
-                                <TextBlock TextWrapping="Wrap" TextAlignment="Center" FontFamily="Nirmala UI">Windows Design by bibon</TextBlock>
-                            </Label>
+                                        <!-- Style for the DataGrid Rows -->
+                                        <Style TargetType="DataGridRow">
+                                            <Setter Property="FontWeight" Value="Normal" />
+                                            <Setter Property="FontSize" Value="14" />
+                                            <Setter Property="Background" Value="White" />
+                                            <Setter Property="Margin" Value="0,0,0,5" />
+                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                        </Style>
 
-                        </StackPanel>
+                                        <!-- Style for the DataGrid Cells -->
+                                        <Style TargetType="DataGridCell">
+                                            <Setter Property="Padding" Value="15,5,15,5" />
+                                            <Setter Property="BorderThickness" Value="0,0,1,1" />
+                                            <Setter Property="BorderBrush" Value="#E0E0E0" />
+                                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGrid.Resources>
 
-                        <Button x:Name="OpenWebsiteButton14"
-        Style="{DynamicResource ProButtonStyle1}" Content="View"
-        VerticalAlignment="Bottom" Panel.ZIndex="1" Margin="20,0,20,20" Click="Window1" />
-
-                        <Image Source="/Assets/77.png" VerticalAlignment="Bottom" Margin="-20,0,-20,0" HorizontalAlignment="Center" Width="430" />
-
-                    </Grid>
-                </Border>
-                <!-- End: Free Card -->
-
-                <!-- Start: Pro Card -->
-                <Border Width="290" CornerRadius="20" Margin="20,0,20,0" Height="480" BorderBrush="#FF262626" OpacityMask="Black">
-                    <Border.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="#C4D9EE" Offset="0" />
-                            <GradientStop Color="#F5ECF1" Offset="1" />
-                        </LinearGradientBrush>
-                    </Border.Background>
-
-                    <Grid>
-                        <StackPanel>
-                            <Image Source="/Assets/78.png" Width="70" Margin="0,50,0,20" />
-
-                            <Label FontSize="22" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50,0,50,0">
-                                <TextBlock TextWrapping="Wrap" TextAlignment="Center" FontFamily="Nirmala UI">Windows Design by bibon</TextBlock>
-                            </Label>
-
-                        </StackPanel>
-
-                        <Button x:Name="OpenWebsiteButtosn14"
-Style="{DynamicResource ProButtonStyle1}" Content="View"
-VerticalAlignment="Bottom" Panel.ZIndex="1" Margin="20,0,20,20"  Click="Window2" />
-
-                        <Image Source="/Assets/79.png" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="420" Margin="-54,0,-20,0" />
-
-                    </Grid>
-
-                </Border>
-                <!-- End: Pro Card -->
-
-                <!-- Start: Team Card -->
-                <Border Width="290" CornerRadius="20" Height="480">
-                    <Border.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Color="#A3ADAF" Offset="0" />
-                            <GradientStop Color="#BABFC3" Offset="0.5" />
-                            <GradientStop Color="#A3ADAF" Offset="1" />
-                        </LinearGradientBrush>
-                    </Border.Background>
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="WiFi Name" Binding="{Binding ProfileName}" Width="*" />
+                                        <DataGridTextColumn Header="Password" Binding="{Binding Password}" Width="*" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <Label Content="Loading..." FontSize="15" Foreground="{DynamicResource PrimaryTextColor}" HorizontalAlignment="Center" Margin="0,50,0,0"/>
 
 
+                            </StackPanel>
 
-                <Grid>
-                        <StackPanel>
-                            <Image Source="/Assets/78.png" Width="70" Margin="0,50,0,20" />
+                        </Border>
 
-                            <Label FontSize="22" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50,0,50,0">
-                                <TextBlock TextWrapping="Wrap" TextAlignment="Center" FontFamily="Nirmala UI">Windows Design by bibon</TextBlock>
-                            </Label>
+                        <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+Style="{DynamicResource CardBorderStyle1}" Margin="20,0,0,0" Padding="0,40,0,40" Height="550">
 
-                        </StackPanel>
+                            <StackPanel VerticalAlignment="Top">
 
-                        <Button x:Name="OpenWebsiteBu2tton14"
-Style="{DynamicResource ProButtonStyle1}" Content="View"
-VerticalAlignment="Bottom" Panel.ZIndex="1" Margin="20,0,20,20"  Click="Window3" />
+                                <Image Source="/Assets/78.png" Stretch="Uniform" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-                        <Image Source="/Assets/80.png" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="400" Margin="-30,0,-30,0" />
+                                <Label Content="Windows 10 by bibon" FontSize="15" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,20"/>
+                                <Button Style="{DynamicResource PrimaryButtonStyle1}" x:Name="OpenWebsiteButton1" Content="Download" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Click="OpenWebsiteButton1_Click"/>
 
-                    </Grid>
+                        <TextBox Foreground="{DynamicResource PrimaryTextColor}"  Name="InfoTextBox" 
+                 HorizontalAlignment="Stretch" 
+                 VerticalAlignment="Stretch" 
+                 TextWrapping="Wrap" 
+                 IsReadOnly="True" 
+                 FontSize="14" 
+                 Margin="20,0,20,0" BorderBrush="{x:Null}" Background="{x:Null}"/>
+                            </StackPanel>
 
-                </Border>
-                <!-- End: Card Team -->
+                        </Border>
+                        
+                        <Border Background="{DynamicResource SecundaryBackgroundColor1}"
+Style="{DynamicResource CardBorderStyle1}" Margin="20,0,0,0" Padding="0,40,0,10" Height="550">
 
-            </StackPanel>
+                     
+                                <StackPanel>
+                                    
+                                <Image Source="/Assets/Home/generatkey.png" Stretch="Uniform" Height="50" HorizontalAlignment="Center"/>
 
-            <Frame x:Name="frameContent1" NavigationUIVisibility="Hidden" Navigated="FrameContent_Navigated"/>
+                                <!-- Заголовок -->
+                                <Label Content="Generate password" FontSize="15" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,20,0,20" HorizontalAlignment="Center"/>
 
-            <!-- End: Container -->
+                                <!-- Поле результата -->
+                                <TextBox Name="PasswordBox" IsReadOnly="True" FontSize="20" BorderBrush="#FF496FFF" Margin="20,0,20,20" HorizontalContentAlignment="Center"/>
+
+                                <!-- Кнопка "Generate" -->
+                                <Button Style="{DynamicResource PrimaryButtonStyle1}" Content="GENERATE" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Click="GeneratePassword"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                                    <Grid HorizontalAlignment="Center">
+                                        <Button  Click="DecreaseLength" Panel.ZIndex="1" Opacity="0"/>
+
+                                <Ellipse Fill="{DynamicResource SecundaryBackgroundColor}" Height="50" Width="50"></Ellipse>
+                                <Label Foreground="{DynamicResource PrimaryTextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36">-</Label>
+
+                                    </Grid>
+                            <TextBlock Name="PasswordLength" Text="8" Margin="10,0,10,0" VerticalAlignment="Center" FontSize="24" Foreground="{DynamicResource PrimaryTextColor}"/>
+
+                                    <Grid HorizontalAlignment="Center">
+                                        <Button Click="IncreaseLength"  Panel.ZIndex="1" Opacity="0"/>
+
+                                <Ellipse Height="50" Width="50" Fill="{DynamicResource SecundaryBackgroundColor}"></Ellipse>
+                                <Label Foreground="{DynamicResource PrimaryTextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36">+</Label>
+
+                                    </Grid>
+                                </StackPanel>
+                                    
+                        
+
+                                <!-- Настройки -->
+                        <Border Background="{DynamicResource SecundaryBackgroundColor}" Padding="10,10,10,10" CornerRadius="10,10,10,10" Margin="20,0,20,0">
+                            
+                                <StackPanel>
+                                <CheckBox Foreground="{DynamicResource PrimaryTextColor}" Name="IncludeUppercase" Content="Capitalize letter" IsChecked="True" Margin="0,5" BorderBrush="#FF496FFF" HorizontalContentAlignment="Stretch" FontSize="14"/>
+                                <CheckBox Foreground="{DynamicResource PrimaryTextColor}" Name="IncludeNumbers" Content="Number" IsChecked="True" Margin="0,5" BorderBrush="#FF496FFF" FontSize="14"/>
+                                <CheckBox Foreground="{DynamicResource PrimaryTextColor}" Name="IncludeLowercase" Content="Lowercase letters" IsChecked="True" Margin="0,5" BorderBrush="#FF496FFF" FontSize="14"/>
+                                <CheckBox Foreground="{DynamicResource PrimaryTextColor}" Name="IncludeSymbols" Content="Symbolism" IsChecked="True" Margin="0,5" BorderBrush="#FF496FFF" FontSize="14"/>
+                                </StackPanel>
+                            
+                        </Border>
+                        <TextBox Foreground="{DynamicResource PrimaryTextColor}"  Name="InfoTextBox1" 
+HorizontalAlignment="Stretch" 
+VerticalAlignment="Stretch" 
+TextWrapping="Wrap" 
+IsReadOnly="True" 
+FontSize="14" 
+Margin="20,10,20,0" BorderBrush="{x:Null}" Background="{x:Null}"/>
+
+                    </StackPanel>
+
+                       
+
+                        </Border>
+
+
+                    </StackPanel>
+
         </Grid>
     </Border>
 </Page>
