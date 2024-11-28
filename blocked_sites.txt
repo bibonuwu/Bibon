@@ -513,6 +513,62 @@
 0.0.0.0 www.vseigru.su
 0.0.0.0 start.heroeswm.ru
 0.0.0.0 www.start.heroeswm.ru
+0.0.0.0 vimeworld.com
+0.0.0.0 www.vimeworld.com
+0.0.0.0 utorrent.com
+0.0.0.0 www.utorrent.com
+0.0.0.0 webtorrent.io
+0.0.0.0 www.webtorrent.io
+0.0.0.0 qbittorrent.org
+0.0.0.0 www.qbittorrent.org
+0.0.0.0 getsharex.com
+0.0.0.0 www.getsharex.com
+0.0.0.0 sourceforge.net
+0.0.0.0 www.sourceforge.net
+0.0.0.0 1progs.ru
+0.0.0.0 www.1progs.ru
+0.0.0.0 p-vs-z.ru
+0.0.0.0 www.p-vs-z.ru
+0.0.0.0 plants-vs-zombies.ru.malavida.com
+0.0.0.0 www.plants-vs-zombies.ru.malavida.com
+0.0.0.0 plants-vs-zombies.en.uptodown.com
+0.0.0.0 www.plants-vs-zombies.en.uptodown.com
+0.0.0.0 rutracker.org
+0.0.0.0 www.rutracker.org
+0.0.0.0 itorrents-igruha.net
+0.0.0.0 www.itorrents-igruha.net
+0.0.0.0 stoigr.org
+0.0.0.0 www.stoigr.org
+0.0.0.0 UTorrentGames.ru
+0.0.0.0 www.UTorrentGames.ru
+0.0.0.0 ru.bignox.com
+0.0.0.0 www.ru.bignox.com
+0.0.0.0 utorrentgames.best
+0.0.0.0 www.utorrentgames.best
+0.0.0.0 plants-v-zombies.softonic.ru
+0.0.0.0 www.plants-v-zombies.softonic.ru
+0.0.0.0 byrutgame.org
+0.0.0.0 www.byrutgame.org
+0.0.0.0 thelastgame.org
+0.0.0.0 www.thelastgame.org
+0.0.0.0 torrentscity.net
+0.0.0.0 www.torrentscity.net
+0.0.0.0 winstation.ru
+0.0.0.0 www.winstation.ru
+0.0.0.0 ogotop.com
+0.0.0.0 www.ogotop.com
+0.0.0.0 thelastupd.org
+0.0.0.0 www.thelastupd.org
+0.0.0.0 pcvsetor.org
+0.0.0.0 www.pcvsetor.org
+0.0.0.0 freesoft.net
+0.0.0.0 www.freesoft.net
+0.0.0.0 plant-vs-zombie.ru
+0.0.0.0 www.plant-vs-zombie.ru
+0.0.0.0 BroTorrent.net
+0.0.0.0 www.BroTorrent.net
+0.0.0.0 nesabamedia.com
+0.0.0.0 www.nesabamedia.com
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
@@ -527,9 +583,4 @@
 0.0.0.0 www.
 0.0.0.0 
 0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
+
