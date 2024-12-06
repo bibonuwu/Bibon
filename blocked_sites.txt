@@ -595,12 +595,12 @@
 0.0.0.0 www.objects.githubusercontent.com
 0.0.0.0 apkapp.ru
 0.0.0.0 www.apkapp.ru
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
+0.0.0.0 bilibili.com
+0.0.0.0 www.bilibili.com
+0.0.0.0 space.bilibili.com
+0.0.0.0 www.space.bilibili.com
+0.0.0.0 stalcraft.net
+0.0.0.0 www.stalcraft.net
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
