@@ -585,10 +585,10 @@
 0.0.0.0 www.csgo-guides.ru
 0.0.0.0 plants-vs-zombies-hybrid.ru.malavida.com
 0.0.0.0 www.plants-vs-zombies-hybrid.ru.malavida.com
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
+0.0.0.0 pvz-fusion.com
+0.0.0.0 www.pvz-fusion.com
+0.0.0.0 plants-vs-zombies.ru
+0.0.0.0 www.plants-vs-zombies.ru
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
