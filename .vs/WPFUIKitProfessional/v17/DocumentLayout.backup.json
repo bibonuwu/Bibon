@@ -3,7 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\bibon\\Desktop\\Bibon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\pages\\messages.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\pages\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\pages\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\pages\\analytics.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\analytics.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\pages\\messages.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\messages.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -26,11 +38,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Pages\\Home.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Home.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\Home.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Home.xaml.cs",
+              "RelativeToolTip": "Pages\\Home.xaml.cs",
+              "ViewState": "AgIAAMwBAAAAAAAAAAASwOcBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T05:04:10.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Home.xaml",
+              "RelativeDocumentMoniker": "Pages\\Home.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Home.xaml",
+              "RelativeToolTip": "Pages\\Home.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-28T15:57:51.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Analytics.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Analytics.xaml",
+              "RelativeDocumentMoniker": "Pages\\Analytics.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Analytics.xaml",
+              "RelativeToolTip": "Pages\\Analytics.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-28T15:57:49.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Messages.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Messages.xaml",
+              "RelativeDocumentMoniker": "Pages\\Messages.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Messages.xaml",
+              "RelativeToolTip": "Pages\\Messages.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-27T07:16:24.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Pages\\Collections.xaml.cs",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Collections.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\Collections.xaml.cs",
@@ -42,30 +101,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Collections.xaml",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Collections.xaml",
               "RelativeDocumentMoniker": "Pages\\Collections.xaml",
               "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Collections.xaml",
               "RelativeToolTip": "Pages\\Collections.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-27T07:16:26.308Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Messages.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Messages.xaml",
-              "RelativeDocumentMoniker": "Pages\\Messages.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Messages.xaml",
-              "RelativeToolTip": "Pages\\Messages.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-27T07:16:24.912Z",
+              "WhenOpened": "2024-11-27T07:16:26.308Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",

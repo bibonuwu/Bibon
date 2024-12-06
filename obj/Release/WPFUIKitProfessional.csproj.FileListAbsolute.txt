@@ -65,9 +65,6 @@ C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Release\WPFUIKitProfessiona
 C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Release\WPFUIKit.A27DEA20.Up2Date
 C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Release\BIBON.exe
 C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Release\BIBON.pdb
-C:\Users\bibon\Desktop\Bibon\bin\Release\Assets\Wallpaper\13.jpg
-C:\Users\bibon\Desktop\Bibon\bin\Release\Assets\Wallpaper\17.jpg
-C:\Users\bibon\Desktop\Bibon\bin\Release\Assets\Wallpaper\18.jpg
 C:\Users\bibon\Desktop\Bibon\bin\Release\BIBON.exe.config
 C:\Users\bibon\Desktop\Bibon\bin\Release\BIBON.exe
 C:\Users\bibon\Desktop\Bibon\bin\Release\BIBON.pdb
@@ -104,7 +101,6 @@ C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\Home.g.cs
 C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\Messages.g.cs
 C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\system.g.cs
 C:\Users\bibon\Desktop\Bibon\obj\Release\App.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Release\BIBON_Content.g.cs
 C:\Users\bibon\Desktop\Bibon\obj\Release\BIBON_MarkupCompile.cache
 C:\Users\bibon\Desktop\Bibon\obj\Release\BIBON_MarkupCompile.lref
 C:\Users\bibon\Desktop\Bibon\obj\Release\App.baml
@@ -129,4 +125,3 @@ C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\Store\Window2.baml
 C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\Store\Window3.baml
 C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\Store\Window4.g.cs
 C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\Store\Window4.baml
-C:\Users\bibon\Desktop\Bibon\bin\Release\DisableBack3groundApps.ps1

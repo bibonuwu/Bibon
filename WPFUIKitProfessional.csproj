@@ -222,9 +222,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DisableBack3groundApps.ps1">
+    <Resource Include="DisableBack3groundApps.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -255,9 +255,15 @@
     <Resource Include="Assets\8.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Wallpaper\44.jpg" />
-    <Resource Include="Assets\Wallpaper\43.jpg" />
-    <Resource Include="Assets\Wallpaper\41.jpg" />
+    <Resource Include="Assets\Wallpaper\44.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Wallpaper\43.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Wallpaper\41.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Wallpaper\40.jpg" />
     <Resource Include="Assets\Welcome.png" />
     <Resource Include="ic_near.ico">
@@ -386,17 +392,17 @@
     <Resource Include="Assets\Store\26.png" />
     <Resource Include="Assets\Home\wifi.png" />
     <Resource Include="Assets\Home\generatkey.png" />
-    <Content Include="Assets\Wallpaper\13.jpg">
+    <Resource Include="Assets\Wallpaper\13.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Wallpaper\17.jpg">
+    <Resource Include="Assets\Wallpaper\17.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Wallpaper\18.jpg">
+    </Resource>
+    <Resource Include="Assets\Wallpaper\18.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
