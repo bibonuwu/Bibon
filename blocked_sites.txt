@@ -589,8 +589,8 @@
 0.0.0.0 www.pvz-fusion.com
 0.0.0.0 plants-vs-zombies.ru
 0.0.0.0 www.plants-vs-zombies.ru
-0.0.0.0 
-0.0.0.0 www.
+0.0.0.0 java-for-minecraft.com
+0.0.0.0 www.java-for-minecraft.com
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
