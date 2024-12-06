@@ -591,8 +591,8 @@
 0.0.0.0 www.plants-vs-zombies.ru
 0.0.0.0 java-for-minecraft.com
 0.0.0.0 www.java-for-minecraft.com
-0.0.0.0 
-0.0.0.0 www.
+0.0.0.0 objects.githubusercontent.com
+0.0.0.0 www.objects.githubusercontent.com
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
