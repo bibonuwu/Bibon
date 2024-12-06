@@ -569,6 +569,24 @@
 0.0.0.0 www.BroTorrent.net
 0.0.0.0 nesabamedia.com
 0.0.0.0 www.nesabamedia.com
+0.0.0.0 playground.ru
+0.0.0.0 www.playground.ru
+0.0.0.0 windows.apkpure.com
+0.0.0.0 www.windows.apkpure.com
+0.0.0.0 tuttop.com
+0.0.0.0 www.tuttop.com
+0.0.0.0 plants-vs-zombies.ru.uptodown.com
+0.0.0.0 www.plants-vs-zombies.ru.uptodown.com
+0.0.0.0 t.me
+0.0.0.0 www.t.me
+0.0.0.0 moddb.com
+0.0.0.0 www.moddb.com
+0.0.0.0 csgo-guides.ru
+0.0.0.0 www.csgo-guides.ru
+0.0.0.0 plants-vs-zombies-hybrid.ru.malavida.com
+0.0.0.0 www.plants-vs-zombies-hybrid.ru.malavida.com
+0.0.0.0 
+0.0.0.0 www.
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
