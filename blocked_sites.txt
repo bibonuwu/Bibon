@@ -603,12 +603,12 @@
 0.0.0.0 www.stalcraft.net
 0.0.0.0 pvz-hybrid.com
 0.0.0.0 www.pvz-hybrid.com
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
+0.0.0.0 mega.nz
+0.0.0.0 www.mega.nz
+0.0.0.0 pvz-fusion.com
+0.0.0.0 www.pvz-fusion.com
+0.0.0.0 youtube.com
+0.0.0.0 www.youtube.com
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
