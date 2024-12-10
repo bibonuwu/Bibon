@@ -641,6 +641,38 @@
 0.0.0.0 www.cloud.mail.ru
 0.0.0.0 pvsz2.ru
 0.0.0.0 www.pvsz2.ru
+0.0.0.0 instagram.com
+0.0.0.0 www.instagram.com
+0.0.0.0 techspot.com
+0.0.0.0 www.techspot.com
+0.0.0.0 gamesradar.com
+0.0.0.0 www.gamesradar.com
+0.0.0.0 edusupport.minecraft.net
+0.0.0.0 www.edusupport.minecraft.net
+0.0.0.0 radiotimes.com
+0.0.0.0 www.radiotimes.com
+0.0.0.0 minecraft.en.softonic.com
+0.0.0.0 www.minecraft.en.softonic.com
+0.0.0.0 en.softonic.com
+0.0.0.0 www.en.softonic.com
+0.0.0.0 eneba.com
+0.0.0.0 www.eneba.com
+0.0.0.0 minecraftskins.com
+0.0.0.0 www.minecraftskins.com
+0.0.0.0 itch.io
+0.0.0.0 www.itch.io
+0.0.0.0 cathy-nekonin.itch.io
+0.0.0.0 www.cathy-nekonin.itch.io
+0.0.0.0 itchio-mirror.cb031a832f44726753d6267436f3b414.r2.cloudflarestorage.com
+0.0.0.0 www.itchio-mirror.cb031a832f44726753d6267436f3b414.r2.cloudflarestorage.com
+0.0.0.0 cloudflarestorage.com
+0.0.0.0 www.cloudflarestorage.com
+0.0.0.0 zompedia.com
+0.0.0.0 www.zompedia.com
+0.0.0.0 plantsvszombies.wiki.gg
+0.0.0.0 www.plantsvszombies.wiki.gg
+0.0.0.0 
+0.0.0.0 www.
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
