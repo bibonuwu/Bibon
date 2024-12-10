@@ -621,6 +621,32 @@
 0.0.0.0 www.tl-launcher.ru
 0.0.0.0 gid-minecraft.ru
 0.0.0.0 www.gid-minecraft.ru
+0.0.0.0 github.com
+0.0.0.0 www.github.com
+0.0.0.0 drive.google.com
+0.0.0.0 www.drive.google.com
+0.0.0.0 tlauncher.softonic-th.com
+0.0.0.0 www.tlauncher.softonic-th.com
+0.0.0.0 filecache33.gamebanana.com
+0.0.0.0 www.filecache33.gamebanana.com
+0.0.0.0 plantsvszombies.fandom.com
+0.0.0.0 www.plantsvszombies.fandom.com
+0.0.0.0 nexusmods.com
+0.0.0.0 www.nexusmods.com
+0.0.0.0 gamejolt.com
+0.0.0.0 www.gamejolt.com
+0.0.0.0 gamejolt.com
+0.0.0.0 www.gamejolt.com
+0.0.0.0 cloud.mail.ru
+0.0.0.0 www.cloud.mail.ru
+0.0.0.0 pvsz2.ru
+0.0.0.0 www.pvsz2.ru
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
