@@ -609,6 +609,18 @@
 0.0.0.0 www.pvz-fusion.com
 0.0.0.0 youtube.com
 0.0.0.0 www.youtube.com
+0.0.0.0 gamebanana.com
+0.0.0.0 www.gamebanana.com
+0.0.0.0 pvzfusion.io
+0.0.0.0 www.pvzfusion.io
+0.0.0.0 an1.com
+0.0.0.0 www.an1.com
+0.0.0.0 minecraftium.ru
+0.0.0.0 www.minecraftium.ru
+0.0.0.0 tl-launcher.ru
+0.0.0.0 www.tl-launcher.ru
+0.0.0.0 gid-minecraft.ru
+0.0.0.0 www.gid-minecraft.ru
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
