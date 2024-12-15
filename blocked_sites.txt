@@ -671,8 +671,8 @@
 0.0.0.0 www.zompedia.com
 0.0.0.0 plantsvszombies.wiki.gg
 0.0.0.0 www.plantsvszombies.wiki.gg
-0.0.0.0 
-0.0.0.0 www.
+0.0.0.0 apps.microsoft.com
+0.0.0.0 www.apps.microsoft.com
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
