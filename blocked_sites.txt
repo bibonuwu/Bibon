@@ -682,46 +682,46 @@
 0.0.0.0 www.promo.wtlgame.com
 0.0.0.0 rustore.ru
 0.0.0.0 www.rustore.ru
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
+0.0.0.0 fmobile.kz
+0.0.0.0 www.fmobile.kz
+0.0.0.0 game-minecraft.ru
+0.0.0.0 www.game-minecraft.ru
+0.0.0.0 landing.minetoday.org
+0.0.0.0 www.landing.minetoday.org
+0.0.0.0 mcdownload.ru
+0.0.0.0 www.mcdownload.ru
+0.0.0.0 land.pixelsee.app
+0.0.0.0 www.land.pixelsee.app
+0.0.0.0 plus.yandex.kz
+0.0.0.0 www.plus.yandex.kz
+0.0.0.0 steam-account.ru
+0.0.0.0 www.steam-account.ru
+0.0.0.0 amongus-online.io
+0.0.0.0 www.amongus-online.io
+0.0.0.0 amongusgame.io
+0.0.0.0 www.amongusgame.io
+0.0.0.0 innersloth.com
+0.0.0.0 www.innersloth.com
+0.0.0.0 among-us.softonic.ru
+0.0.0.0 www.among-us.softonic.ru
+0.0.0.0 steam-account.ru
+0.0.0.0 www.steam-account.ru
+0.0.0.0 game-store.su
+0.0.0.0 www.game-store.su
+0.0.0.0 freebtc.vip
+0.0.0.0 www.freebtc.vip
+0.0.0.0 trashbox.ru
+0.0.0.0 www.trashbox.ru
+0.0.0.0 dw.uptodown.net
+0.0.0.0 www.dw.uptodown.net
+0.0.0.0 freesoft.ru
+0.0.0.0 www.freesoft.ru
+0.0.0.0 kemerovo.tsargrad.tv
+0.0.0.0 www.kemerovo.tsargrad.tv
+0.0.0.0 net.geo.opera.com
+0.0.0.0 www.net.geo.opera.com
+0.0.0.0 pdalife.to
+0.0.0.0 www.pdalife.to
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
