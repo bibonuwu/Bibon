@@ -6,7 +6,6 @@
 0.0.0.0 www.launcher-public-service-prod06.ol.epicgames.com
 0.0.0.0 help.epicgames.com
 0.0.0.0 support.epicgames.com
-
 0.0.0.0 store.steampowered.com
 0.0.0.0 www.store.steampowered.com
 0.0.0.0 cdn.cloudflare.steamstatic.com
