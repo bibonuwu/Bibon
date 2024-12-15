@@ -671,6 +671,56 @@
 0.0.0.0 www.plantsvszombies.wiki.gg
 0.0.0.0 apps.microsoft.com
 0.0.0.0 www.apps.microsoft.com
+0.0.0.0 promo.wtlgame.com
+0.0.0.0 www.promo.wtlgame.com
+0.0.0.0 stopgame.ru
+0.0.0.0 www.stopgame.ru
+0.0.0.0 byster.one
+0.0.0.0 www.byster.one
+0.0.0.0 multoigri.ru
+0.0.0.0 www.multoigri.ru
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
