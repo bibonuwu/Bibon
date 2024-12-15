@@ -621,8 +621,6 @@
 0.0.0.0 www.tl-launcher.ru
 0.0.0.0 gid-minecraft.ru
 0.0.0.0 www.gid-minecraft.ru
-0.0.0.0 github.com
-0.0.0.0 www.github.com
 0.0.0.0 drive.google.com
 0.0.0.0 www.drive.google.com
 0.0.0.0 tlauncher.softonic-th.com
