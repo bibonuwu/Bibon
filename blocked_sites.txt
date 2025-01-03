@@ -830,8 +830,8 @@
 0.0.0.0 www.popcap.com
 0.0.0.0 littlegiantgames.com
 0.0.0.0 www.littlegiantgames.com
-0.0.0.0
-0.0.0.0 www.
+0.0.0.0 zone.msn.com
+0.0.0.0 www.zone.msn.com
 0.0.0.0
 0.0.0.0 www.
 0.0.0.0
