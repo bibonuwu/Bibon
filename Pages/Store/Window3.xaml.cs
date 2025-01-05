@@ -65,7 +65,7 @@ namespace Bibon.Pages.Store
 
         private void OpenWebsite15_Click(object sender, RoutedEventArgs e)
         {
-            OpenWebsite("https://www.softportal.com/software-4539-unlocker.html", OpenWebsiteButton15);
+            OpenWebsite("https://unlocker1.ru/download.html", OpenWebsiteButton15);
         }
 
         private void OpenWebsite22_Click(object sender, RoutedEventArgs e)
@@ -105,7 +105,7 @@ namespace Bibon.Pages.Store
 
         private void OpenWebsite19_Click(object sender, RoutedEventArgs e)
         {
-            OpenWebsite("https://www.microsoft.com/ru-ru/software-download/windows10", OpenWebsiteButton19);
+            OpenWebsite("https://developer.android.com/studio?hl=ru", OpenWebsiteButton19);
         }
 
         private void OpenWebsite18_Click(object sender, RoutedEventArgs e)

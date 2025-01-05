@@ -139,20 +139,22 @@
                     <Grid Grid.Row="1">
                         <!-- Кнопка -->
                         <!-- Кнопка -->
-
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            
+                     
                         <!-- Лейбл -->
-                        <Label x:Name="welcomeLabel" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36"
- Margin="0,100,0,0" FontFamily="Segoe Script" Foreground="White" Content="Welcome!" />
+                        <Label x:Name="welcomeLabel" FontSize="36" FontFamily="Segoe Script" Foreground="White" Content="Welcome to BIBON" HorizontalAlignment="Center" Margin="0,0,0,20" />
 
-                        <Button x:Name="actionButton" Margin="3" Height="220" Width="200" FontWeight="Bold"
+                        <Button x:Name="actionButton" Height="220" Width="200" FontWeight="Bold"
                     Foreground="MediumPurple" Click="Button_Click_13">
                             <Button.Background>
                                 <ImageBrush ImageSource="/Assets/ic_near.png" Stretch="UniformToFill"/>
                             </Button.Background>
                         </Button>
 
+                        <Label Foreground="#FF898989" HorizontalAlignment="Center" Margin="0,20,0,0">BIBON v.4</Label>
 
-                       
+                        </StackPanel>
 
 
 

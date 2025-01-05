@@ -92,9 +92,9 @@ Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="600" >
 
 
                             <Grid  Grid.Row="1">
-                                <Image Source="/Assets/Store/1.png" Stretch="Uniform" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1" Margin="0,-24,0,0"/>
+                                <Image Source="/Assets/folder.png" Stretch="Uniform" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1" Margin="0,-30,0,0"/>
                                 <Grid Height="50">
-                                    <Button Style="{DynamicResource PrimaryButtonStyle1}" x:Name="OpenWebsiteButton1" Click="OpenWebsite1_Click"  Content="Android Studio" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Button Style="{DynamicResource PrimaryButtonStyle1}" x:Name="OpenWebsiteButton1" Click="OpenWebsite1_Click"  Content="QTTabBar" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                 </Grid>
 
@@ -125,7 +125,7 @@ Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="600" >
                                 <Grid Height="50">
                                     
 
-                                    <Button x:Name="OpenWebsiteButton4" Click="OpenWebsite4_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="VM Workstation" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button x:Name="OpenWebsiteButton4" Click="OpenWebsite4_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="VM Workstation" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5">
 
                                 </Button>
                                 </Grid>
@@ -133,20 +133,20 @@ Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="600" >
                             </Grid>
 
                             <Grid  Grid.Row="5" Margin="0,30,0,0">
-                                <Image Source="/Assets/Store/5.png" Stretch="Uniform" Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1" Margin="0,-24,0,0"/>
+                                <Image Source="/Assets/Store/18.png" Stretch="Uniform" Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1" Margin="0,-15,0,0"/>
                                 <Grid Height="50">
-                                    <Button x:Name="OpenWebsiteButton5" Click="OpenWebsite5_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="Steam" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button x:Name="OpenWebsiteButton5" Click="OpenWebsite5_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="WinRAR" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                                 </Button>
                                 </Grid>
                             </Grid>
 
                             <Grid  Grid.Row="6" Margin="0,30,0,0">
-                                <Image Source="/Assets/Store/6.png" Stretch="Uniform" Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1" Margin="0,-24,0,0"/>
+                                <Image Source="/Assets/Store/5.png" Stretch="Uniform" Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1" Margin="0,-24,0,0"/>
                                 <Grid Height="50">
 
-                             
-                                    <Button x:Name="OpenWebsiteButton6" Click="OpenWebsite6_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="AIDA" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+
+                                    <Button x:Name="OpenWebsiteButton6" Click="OpenWebsite6_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="Steam" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -154,8 +154,16 @@ Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Height="600" >
                 </StackPanel>
                 <StackPanel VerticalAlignment="Bottom">
                     <StackPanel Orientation="Horizontal" Margin="0,0,10,10" HorizontalAlignment="Right">
-                        <TextBox TextWrapping="Wrap" Background="{x:Null}" MaxWidth="400" HorizontalContentAlignment="Right" Margin="0,0,20,0" Foreground="{DynamicResource PrimaryTextColor}" BorderBrush="{x:Null}" FontSize="14" VerticalContentAlignment="Center">Өзіңізге қажетті бағдарламаларды оңай және жылдам жүктеп алуға мүмкіндік бар!
-                        </TextBox>
+                        <TextBlock TextWrapping="Wrap" 
+           Background="{x:Null}" 
+           MaxWidth="370" 
+           Margin="0,0,20,0" 
+           Foreground="{DynamicResource PrimaryTextColor}" 
+           FontSize="14" 
+           VerticalAlignment="Center" TextAlignment="Right">
+    Өзіңізге қажетті бағдарламаларды оңай және жылдам жүктеп алуға мүмкіндік бар!
+                        </TextBlock>
+
 
                         <Border Background="#FF496FFF" CornerRadius="10,10,10,10">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">

@@ -58,7 +58,7 @@ namespace WPFUIKitProfessional.Pages
 
         private void OpenWebsite1_Click(object sender, RoutedEventArgs e)
         {
-            OpenWebsite("https://developer.android.com/studio?hl=ru", OpenWebsiteButton1);
+            OpenWebsite("https://drive.google.com/file/d/1jCV7XXXORjhltvj67FTiLTLf_jal8gDA/view?usp=sharing", OpenWebsiteButton1);
         }
 
         private void OpenWebsite2_Click(object sender, RoutedEventArgs e)
@@ -78,26 +78,18 @@ namespace WPFUIKitProfessional.Pages
 
         private void OpenWebsite5_Click(object sender, RoutedEventArgs e)
         {
-            OpenWebsite("https://store.steampowered.com/about/", OpenWebsiteButton5);
+            OpenWebsite("https://www.rarlab.com/", OpenWebsiteButton5);
         }
 
         private void OpenWebsite6_Click(object sender, RoutedEventArgs e)
         {
-            OpenWebsite("https://aida64.it/scarica", OpenWebsiteButton6);
+            OpenWebsite("https://store.steampowered.com/about", OpenWebsiteButton6);
         }
 
      
      
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ForwardButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
 
         private void RadioButton_Click(object sender, RoutedEventArgs e)
         {

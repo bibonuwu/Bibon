@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Bibon.Pages;
 
 namespace WPFUIKitProfessional.Pages
 {
@@ -759,24 +760,49 @@ namespace WPFUIKitProfessional.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            // Создаем кисти для изменения цвета кнопки и прогресс бара
+            // Создаем кисти для изменения цвета кнопки
             var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
             var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
             var redBrush = (Brush)new BrushConverter().ConvertFromString("#FF453A");
+            string folderPath = @"C:\Windows\System32\drivers\etc";
 
             try
             {
-                if (!IsAdministrator())
+                if (!IsAdministrator1())
                 {
-                    RunAsAdmin();
+                    RunAsAdmin1();
+                    return; // Перезапустим приложение с правами администратора
+                }
+
+                // Скачиваем пароль с GitHub
+                string passwordUrl = "https://raw.githubusercontent.com/bibonuwu/Bibon/main/password.txt";
+                string correctPassword = (await DownloadPasswordAsync(passwordUrl)).Trim(); // Убираем лишние символы
+
+                // Запрашиваем пароль у пользователя через кастомное окно
+                var passwordWindow = new PasswordWindow2(); // Окно для ввода пароля (создается отдельно)
+                passwordWindow.ShowDialog();
+                string inputPassword = passwordWindow.EnteredPassword;
+
+                // Проверяем введенный пароль
+                if (string.IsNullOrEmpty(inputPassword) || inputPassword != correctPassword)
+                {
+                    MessageBox.Show("Құпия сөз еңгізілмеді немесе құпия сөз қате", "Қате", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
                 }
 
                 // Путь к файлу hosts
-                string filePath = @"C:\Windows\system32\drivers\etc\hosts";
+                string filePath = @"C:\Windows\System32\drivers\etc\hosts";
 
                 // Удаление файла, если он существует
                 if (File.Exists(filePath))
                 {
+                    // Изменяем владельца файла на текущего пользователя
+                    ChangeOwner(filePath);
+
+                    // Добавляем полный доступ для текущего пользователя
+                    AddFullAccess(filePath);
+
+                    // Удаляем файл
                     File.Delete(filePath);
                 }
 
@@ -790,13 +816,102 @@ namespace WPFUIKitProfessional.Pages
                 // Очистка DNS-кэша
                 FlushDNS();
 
+              
+
+                // Отключение Microsoft Store
+                DisableMicrosoftStore();
+
+                // Установка атрибута "Только для чтения"
+
+
+                if (Directory.Exists(folderPath))
+                {
+                    DirectoryInfo dirInfo = new DirectoryInfo(folderPath);
+                    dirInfo.Attributes |= FileAttributes.Hidden; // Устанавливаем атрибут скрытой папки
+                }
+                else
+                {
+                    MessageBox.Show("Папка не найдена.");
+                }
+                // Установка защиты от удаления
+                ProtectFileFromDeletion(filePath);
+
                 btnOpenWeb1site.Background = greenBrush;
             }
             catch (Exception ex)
             {
                 btnOpenWeb1site.Background = redBrush;
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+
+       
+
+
+        // Метод для установки атрибута "Только для чтения"
+      
+
+        // Метод для защиты файла от удаления
+        private void ProtectFileFromDeletion(string filePath)
+        {
+            var psi = new ProcessStartInfo("cmd.exe", $"/c icacls \"{filePath}\" /setowner SYSTEM && icacls \"{filePath}\" /inheritance:r && icacls \"{filePath}\" /grant SYSTEM:(F) && icacls \"{filePath}\" /deny Everyone:(F)")
+            {
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            Process.Start(psi)?.WaitForExit();
+        }
+
+        // Проверка наличия прав администратора
+        private bool IsAdministrator1()
+        {
+            var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
+            var principal = new System.Security.Principal.WindowsPrincipal(identity);
+            return principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
+        }
+
+        // Перезапуск приложения с правами администратора
+        private void RunAsAdmin1()
+        {
+            var psi = new ProcessStartInfo
+            {
+                FileName = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName,
+                UseShellExecute = true,
+                Verb = "runas"
+            };
+            Process.Start(psi);
+            Application.Current.Shutdown();
+        }
+
+
+        private void DisableMicrosoftStore()
+        {
+            try
+            {
+                // Запуск PowerShell-команды для удаления Microsoft Store
+                var processInfo = new ProcessStartInfo
+                {
+                    FileName = "powershell",
+                    Arguments = "Get-AppxPackage -AllUsers *WindowsStore* | Remove-AppxPackage",
+                    Verb = "runas", // Запуск от имени администратора
+                    UseShellExecute = true,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden // Нормальный стиль окна
+
+                };
+                var process = Process.Start(processInfo);
+                process.WaitForExit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось отключить Microsoft Store: " + ex.Message);
+            }
+        }
+
+
+
+
         private async Task<string> DownloadBlockedSitesAsync(string url)
         {
             using (HttpClient client = new HttpClient())
@@ -867,16 +982,18 @@ namespace WPFUIKitProfessional.Pages
             }
         }
 
-        private void DeleteHostsFile(object sender, RoutedEventArgs e)
+        private async void DeleteHostsFile(object sender, RoutedEventArgs e)
         {
-            // Создаем кисти для изменения цвета кнопки и прогресс бара
+            // Создаем кисти для изменения цвета кнопки и прогресс-бара
             var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
             var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
             var redBrush = (Brush)new BrushConverter().ConvertFromString("#FF453A");
 
-            string hostsPath = @"C:\Windows\system32\drivers\etc\hosts";
+            string folderPath = @"C:\Windows\System32\drivers\etc";
+            string hostsPath = Path.Combine(folderPath, "hosts");
 
-            if (!IsAdministrator())
+            // Проверяем, запущено ли приложение с правами администратора
+            if (!IsAdministrator2())
             {
                 // Перезапуск приложения с правами администратора
                 var processInfo = new ProcessStartInfo
@@ -885,6 +1002,7 @@ namespace WPFUIKitProfessional.Pages
                     FileName = Process.GetCurrentProcess().MainModule.FileName,
                     Verb = "runas"
                 };
+
                 try
                 {
                     Process.Start(processInfo);
@@ -892,8 +1010,26 @@ namespace WPFUIKitProfessional.Pages
                 catch (Exception ex)
                 {
                     btnOpen1Web1site.Background = redBrush;
+                    MessageBox.Show("Не удалось перезапустить приложение с правами администратора: " + ex.Message);
                 }
+
                 Application.Current.Shutdown();
+                return;
+            }
+
+            // Скачиваем пароль с GitHub
+            string passwordUrl = "https://raw.githubusercontent.com/bibonuwu/Bibon/main/password.txt";
+            string correctPassword = (await DownloadPasswordAsync(passwordUrl)).Trim(); // Убираем лишние символы
+
+            // Запрашиваем пароль у пользователя через кастомное окно
+            var passwordWindow = new PasswordWindow(); // Окно для ввода пароля (создается отдельно)
+            passwordWindow.ShowDialog();
+            string inputPassword = passwordWindow.EnteredPassword;
+
+            // Проверяем введенный пароль
+            if (string.IsNullOrEmpty(inputPassword) || inputPassword != correctPassword)
+            {
+                MessageBox.Show("Құпия сөз еңгізілмеді немесе құпия сөз қате", "Қате", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -901,19 +1037,137 @@ namespace WPFUIKitProfessional.Pages
             {
                 if (File.Exists(hostsPath))
                 {
+                    // Изменяем владельца файла на текущего пользователя
+                    ChangeOwner(hostsPath);
+
+                    // Добавляем полный доступ для текущего пользователя
+                    AddFullAccess(hostsPath);
+
+                    // Удаляем файл hosts
                     File.Delete(hostsPath);
+
+                    // Включение Microsoft Store
+                    EnableMicrosoftStore2();
+
+                    // Снимаем скрытые атрибуты с папки и её содержимого
+                    UnhideFolderAndContents(folderPath);
+
                     btnOpen1Web1site.Background = greenBrush;
                 }
                 else
                 {
+                    UnhideFolderAndContents(folderPath);
+
                     btnOpen1Web1site.Background = redBrush;
+                    MessageBox.Show("Файл hosts не найден.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)
             {
                 btnOpen1Web1site.Background = redBrush;
+                MessageBox.Show("Ошибка при удалении файла hosts: " + ex.Message);
             }
         }
+
+
+        private void UnhideFolderAndContents(string folderPath)
+        {
+            if (Directory.Exists(folderPath))
+            {
+                // Снимаем атрибут "Скрытый" с самой папки
+                DirectoryInfo dirInfo = new DirectoryInfo(folderPath);
+                dirInfo.Attributes &= ~FileAttributes.Hidden;
+
+                // Снимаем атрибут "Скрытый" с вложенных файлов
+                foreach (var file in dirInfo.GetFiles())
+                {
+                    file.Attributes &= ~FileAttributes.Hidden;
+                }
+
+                // Снимаем атрибут "Скрытый" с вложенных папок
+                foreach (var subDir in dirInfo.GetDirectories())
+                {
+                    subDir.Attributes &= ~FileAttributes.Hidden;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Папка не найдена.");
+            }
+        }
+
+
+        // Метод для изменения владельца файла
+        private void ChangeOwner(string filePath)
+        {
+            var psi = new ProcessStartInfo("cmd.exe", $"/c takeown /f \"{filePath}\" /a")
+            {
+                UseShellExecute = true,
+                CreateNoWindow = true,
+                Verb = "runas"
+            };
+            Process.Start(psi)?.WaitForExit();
+        }
+
+        // Метод для добавления полного доступа
+        private void AddFullAccess(string filePath)
+        {
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            var psi = new ProcessStartInfo("cmd.exe", $"/c icacls \"{filePath}\" /grant \"{userName}\":F")
+            {
+                UseShellExecute = true,
+                CreateNoWindow = true,
+                Verb = "runas"
+            };
+            Process.Start(psi)?.WaitForExit();
+        }
+
+        // Проверка наличия прав администратора
+        private bool IsAdministrator2()
+        {
+            var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
+            var principal = new System.Security.Principal.WindowsPrincipal(identity);
+            return principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
+        }
+
+        // Метод для включения Microsoft Store
+     
+        private async Task<string> DownloadPasswordAsync(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                return await client.GetStringAsync(url);
+            }
+        }
+
+
+
+        private void EnableMicrosoftStore2()
+        {
+            try
+            {
+                // Запуск PowerShell-команды для восстановления Microsoft Store
+                var processInfo = new ProcessStartInfo
+                {
+                    FileName = "powershell",
+                    Arguments = "Get-AppXPackage *WindowsStore* -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \\\"$($_.InstallLocation)\\AppXManifest.xml\\\"}",
+                    Verb = "runas", // Запуск от имени администратора
+                    UseShellExecute = true,
+                    CreateNoWindow = true, // Показывать окно
+                    WindowStyle = ProcessWindowStyle.Hidden // Нормальный стиль окна
+                };
+                var process = Process.Start(processInfo);
+                process.WaitForExit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось включить Microsoft Store: " + ex.Message);
+            }
+        }
+
+
+
 
 
 

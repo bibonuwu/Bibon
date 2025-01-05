@@ -55,9 +55,9 @@ namespace Bibon.Pages.Store
 
         private void OpenWebsite23_Click(object sender, RoutedEventArgs e)
         {
-            OpenWebsite("https://drive.google.com/file/d/1yEiwapt2XWfvBqHvjljfY_g5NLVe_Zmh/view?usp=sharing", OpenWebsiteButton23);
+            OpenWebsite("https://custom-cursor.com/ru/", OpenWebsiteButton23);
         }
-
+        
         private void OpenWebsite10_Click(object sender, RoutedEventArgs e)
         {
             OpenWebsite("https://lizardsystems.com/wi-fi-scanner/", OpenWebsiteButton10);

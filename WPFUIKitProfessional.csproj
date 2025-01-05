@@ -111,6 +111,12 @@
     <Compile Include="Pages\Messages.xaml.cs">
       <DependentUpon>Messages.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PasswordWindow.xaml.cs">
+      <DependentUpon>PasswordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PasswordWindow2.xaml.cs">
+      <DependentUpon>PasswordWindow2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Store\Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -160,6 +166,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Messages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PasswordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PasswordWindow2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -307,7 +321,6 @@
     <Resource Include="Assets\78.png" />
     <Resource Include="Assets\79.png" />
     <Resource Include="Assets\80.png" />
-    <Resource Include="Assets\77.png" />
     <Resource Include="Assets\Home\V1\1.png" />
     <Resource Include="Assets\Home\V1\10.png" />
     <Resource Include="Assets\Home\V1\11.png" />
@@ -403,6 +416,20 @@
     <Resource Include="Assets\Wallpaper\18.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Home\offblocksites.png" />
+    <Resource Include="Assets\Home\onblocksites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Home\hide.png" />
+    <Resource Include="Assets\Home\show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Store\CustomCursor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

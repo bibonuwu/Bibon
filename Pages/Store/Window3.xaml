@@ -195,9 +195,9 @@ Style="{DynamicResource CardBorderStyle1}" Padding="0,0,0,0" Width="240">
                             </Grid>
                         </Grid>
                         <Grid Grid.Row="5" Margin="0,30,0,0">
-                            <Image Source="/Assets/Store/77.png" Stretch="Uniform" Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1" Margin="0,-20,0,0"/>
+                            <Image Source="/Assets/Store/1.png" Stretch="Uniform" Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1" Margin="0,-20,0,0"/>
                             <Grid Height="50">
-                                <Button x:Name="OpenWebsiteButton19" Click="OpenWebsite19_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="Windows 10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Button x:Name="OpenWebsiteButton19" Click="OpenWebsite19_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="Android Studio" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                         </Grid>
                     </Grid>
