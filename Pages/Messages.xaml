@@ -21,73 +21,24 @@
                 <!-- Start: Free Card -->
                 <Border Background="{DynamicResource SecundaryBackgroundColor1}"
               Style="{DynamicResource CardBorderStyle1}">
-                    <Grid Cursor="">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
+                    <Grid>
+                        <StackPanel Margin="10">
+                            <TextBlock Text="Выберите элементы для очистки:" FontWeight="Bold" Margin="0,0,0,10"/>
 
-                        <!-- Start: Emoji -->
-                        <Border Grid.Row="0"
-                      Padding="5"
-                      Background="{DynamicResource PrimaryEmojiColor1}"
-                      HorizontalAlignment="Center" CornerRadius="50">
-                            <Ellipse Height="60"
-                           Width="60">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Resources/w3.png" Stretch="Fill"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-                        </Border>
-                        <!-- End: Emoji -->
+                            <CheckBox x:Name="chkTempFiles" Content="Временные файлы" Margin="0,0,0,5" 
+                Checked="chkTempFiles_Checked" Unchecked="chkTempFiles_Unchecked"/>
+                            <CheckBox x:Name="chkWinSxS" Content="WinSxS временные файлы" Margin="10,0,0,5"/>
+                            <CheckBox x:Name="chkWindowsLog" Content="Журнал Windows" Margin="10,0,0,5"/>
+                            <CheckBox x:Name="chkDriverCache" Content="Временная папка для распаковки драйверов" Margin="10,0,0,5"/>
+                            <CheckBox x:Name="chkRecycleBin" Content="Корзина" Margin="0,10,0,5"/>
 
-                        <!-- Start: Title -->
-                        <Label Grid.Row="1"
-                     HorizontalAlignment="Center"
-                     Content="Disign ART"
-                     Style="{DynamicResource FreeTeamTitlesLabelStyle1}"/>
-                        <!-- End: Title -->
+                            <TextBlock Text="Система:" FontWeight="Bold" Margin="0,10,0,5"/>
+                            <CheckBox x:Name="chkReports" Content="Отчеты Windows" Margin="10,0,0,5"/>
+                            <CheckBox x:Name="chkEvents" Content="События Windows" Margin="10,0,0,5"/>
 
-                        <!-- Start: Price And SubTitle -->
-                        <StackPanel Grid.Row="2"
-                          Orientation="Horizontal"
-                          HorizontalAlignment="Center">
-                            <Label Content="₸20000"
-                         Style="{DynamicResource FreeTeamPricingLabelStyle1}"/>
-                            <Label Content="/айына"
-                         Style="{DynamicResource FreeTeamSubTitlesLabelStyle1}"/>
+                            <ProgressBar x:Name="progressBar" Height="20" Margin="0,20,0,0" Minimum="0" Maximum="100"/>
+                            <Button Content="Очистить" Width="100" Margin="0,20,0,0" Click="CleanButton_Click"/>
                         </StackPanel>
-                        <!-- End: Price And SubTitle -->
-
-                        <!-- Start: Lists -->
-                        <StackPanel Grid.Row="3"
-                          Orientation="Vertical"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center">
-                            <Label Content="UI/UX"
-                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
-
-                            <Label Content="Figma"
-                         Margin="0 10 0 10"
-                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
-
-                            <Label Content="MagicaCSG"
-                         Style="{DynamicResource FreeTeamIconLabelsStyle1}"/>
-
-                       
-                        </StackPanel>
-                        <!-- End: Lists --> 
-
-                        <!-- Start: Button -->
-                        <Button Grid.Row="4"
-                      Content="Subscribe"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center"
-                      Style="{DynamicResource PrimaryButtonStyle1}" Click="Button_Click"/>
-                        <!-- End: Button -->
                     </Grid>
                 </Border>
                 <!-- End: Free Card -->
