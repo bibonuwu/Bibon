@@ -189,3 +189,11 @@ C:\Users\bib\Desktop\Bibon\obj\Release\Pages\PasswordWindow.g.cs
 C:\Users\bib\Desktop\Bibon\obj\Release\Pages\PasswordWindow.baml
 C:\Users\bib\Desktop\Bibon\obj\Release\Pages\PasswordWindow2.g.cs
 C:\Users\bib\Desktop\Bibon\obj\Release\Pages\PasswordWindow2.baml
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\PasswordWindow.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\PasswordWindow2.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\PasswordWindow.baml
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\PasswordWindow2.baml
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\Cookie.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\Cookie.baml
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\PasswordCookie.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Release\Pages\PasswordCookie.baml

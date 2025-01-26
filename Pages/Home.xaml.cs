@@ -756,10 +756,31 @@ namespace WPFUIKitProfessional.Pages
 
 
         //кнопка блок сайта start
-
+        private bool IsInternetAvailable()
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var response = client.GetAsync("https://www.google.com").Result;
+                    return response.IsSuccessStatusCode;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Проверяем наличие интернет-соединения
+            if (!IsInternetAvailable())
+            {
+                MessageBox.Show("Отсутствует интернет-соединение. Проверьте подключение и попробуйте снова.", "Ошибка подключения", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // Создаем кисти для изменения цвета кнопки
             var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
             var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");
@@ -984,6 +1005,13 @@ namespace WPFUIKitProfessional.Pages
 
         private async void DeleteHostsFile(object sender, RoutedEventArgs e)
         {
+            // Проверяем наличие интернет-соединения
+            if (!IsInternetAvailable())
+            {
+                MessageBox.Show("Отсутствует интернет-соединение. Проверьте подключение и попробуйте снова.", "Ошибка подключения", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // Создаем кисти для изменения цвета кнопки и прогресс-бара
             var yellowBrush = (Brush)new BrushConverter().ConvertFromString("#FFD60A");
             var greenBrush = (Brush)new BrushConverter().ConvertFromString("#32D74B");

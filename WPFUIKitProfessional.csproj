@@ -105,11 +105,17 @@
     <Compile Include="Pages\Collections.xaml.cs">
       <DependentUpon>Collections.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Cookie.xaml.cs">
+      <DependentUpon>Cookie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Messages.xaml.cs">
       <DependentUpon>Messages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PasswordCookie.xaml.cs">
+      <DependentUpon>PasswordCookie.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PasswordWindow.xaml.cs">
       <DependentUpon>PasswordWindow.xaml</DependentUpon>
@@ -161,11 +167,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Cookie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Messages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PasswordCookie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -430,6 +444,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Store\CustomCursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Cookie\77.png" />
+    <Resource Include="Assets\Cookie\78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Cookie\cookie.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

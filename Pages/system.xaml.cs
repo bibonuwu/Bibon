@@ -16,6 +16,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Threading;
 using Newtonsoft.Json.Linq;
+using System.Security.Principal;
 
 namespace Bibon.Pages
 {
@@ -30,6 +31,15 @@ namespace Bibon.Pages
         {
             InitializeComponent();
 
+            if (!IsRunAsAdmin())
+            {
+                RunAsAdmin();
+            }
+
+            else
+            {
+                // Обычная логика работы приложения
+            }
             // Проверка наличия интернета
             if (!IsInternetAvailable())
             {
@@ -52,6 +62,34 @@ namespace Bibon.Pages
             timer.Interval = TimeSpan.FromSeconds(1); // Задержка 1 секунда
             timer.Tick += Timer_Tick; // Подписываемся на событие
             timer.Start(); // Запускаем таймер
+        }
+
+        // Проверка на права администратора
+        private bool IsRunAsAdmin()
+        {
+            var wi = WindowsIdentity.GetCurrent();
+            var wp = new WindowsPrincipal(wi);
+            return wp.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+        // Запуск с правами администратора
+        private void RunAsAdmin()
+        {
+            ProcessStartInfo procStartInfo = new ProcessStartInfo
+            {
+                FileName = System.Reflection.Assembly.GetExecutingAssembly().Location,
+                Verb = "runas" // Запуск с правами администратора
+            };
+
+            try
+            {
+                Process.Start(procStartInfo);
+                Application.Current.Shutdown(); // Закрытие текущего процесса
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось запустить с правами администратора: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         // Метод для проверки наличия интернета

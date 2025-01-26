@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net.Http;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Bibon.Pages;
 
 namespace WPFUIKitProfessional.Pages
 {
@@ -20,7 +23,7 @@ namespace WPFUIKitProfessional.Pages
         public Messages()
         {
             InitializeComponent();
-            CheckAdministratorRights();
+            //  CheckAdministratorRights();
         }
 
         private void CheckAdministratorRights()
@@ -31,6 +34,8 @@ namespace WPFUIKitProfessional.Pages
                 return; // Перезапустим приложение с правами администратора
             }
         }
+
+
         private bool IsAdministrator1()
         {
             var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
@@ -243,9 +248,9 @@ namespace WPFUIKitProfessional.Pages
             chkWindowsLog.IsChecked = false;
             chkDriverCache.IsChecked = false;
         }
-    
-       
-       
+
+
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -260,22 +265,62 @@ namespace WPFUIKitProfessional.Pages
             });
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private async Task<string> DownloadPasswordAsync(string url)
         {
-            // Укажите URL вашего сайта
-            string url = "https://sites.google.com/view/antiha";
-
-            // Открыть сайт в браузере по умолчанию
-            Process.Start(new ProcessStartInfo
+            using (HttpClient client = new HttpClient())
             {
-                FileName = url,
-                UseShellExecute = true // Это важно для открытия в браузере по умолчанию
-            });
+                return await client.GetStringAsync(url);
+            }
+        }
+        private bool IsInternetAvailable()
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var response = client.GetAsync("https://www.google.com").Result;
+                    return response.IsSuccessStatusCode;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
 
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            // Проверяем наличие интернет-соединения
+            if (!IsInternetAvailable())
+            {
+                MessageBox.Show("Отсутствует интернет-соединение. Проверьте подключение и попробуйте снова.", "Ошибка подключения", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            try
+            {
+
+
+                // Скачиваем пароль с GitHub
+                string passwordUrl = "https://raw.githubusercontent.com/bibonuwu/Bibon/main/passwordcookie.txt";
+                string correctPassword = (await DownloadPasswordAsync(passwordUrl)).Trim(); // Убираем лишние символы
+
+                // Запрашиваем пароль у пользователя через кастомное окно
+                var passwordWindow = new PasswordCookie(); // Окно для ввода пароля (создается отдельно)
+                passwordWindow.ShowDialog();
+                string inputPassword = passwordWindow.EnteredPassword;
 
 
 
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
+
+        }
     }
 }
