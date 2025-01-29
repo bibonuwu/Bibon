@@ -832,6 +832,26 @@
 0.0.0.0 www.littlegiantgames.com
 0.0.0.0 zone.msn.com
 0.0.0.0 www.zone.msn.com
+0.0.0.0 miniclip.com  
+0.0.0.0 www.miniclip.com  
+0.0.0.0 addictinggames.com  
+0.0.0.0 www.addictinggames.com  
+0.0.0.0 kongregate.com  
+0.0.0.0 www.kongregate.com  
+0.0.0.0 armorgames.com  
+0.0.0.0 www.armorgames.com  
+0.0.0.0 crazygames.com  
+0.0.0.0 www.crazygames.com  
+0.0.0.0 poki.com  
+0.0.0.0 www.poki.com  
+0.0.0.0 y8.com  
+0.0.0.0 www.y8.com  
+0.0.0.0 newgrounds.com  
+0.0.0.0 www.newgrounds.com  
+0.0.0.0 bigfishgames.com  
+0.0.0.0 www.bigfishgames.com  
+0.0.0.0 pogo.com  
+0.0.0.0 www.pogo.com  
 0.0.0.0
 0.0.0.0 www.
 0.0.0.0
