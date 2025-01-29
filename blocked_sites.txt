@@ -852,13 +852,65 @@
 0.0.0.0 www.bigfishgames.com  
 0.0.0.0 pogo.com  
 0.0.0.0 www.pogo.com  
-0.0.0.0
+0.0.0.0 igra-pasyans.ru
+0.0.0.0 www.igra-pasyans.ru
+0.0.0.0 zuma.net.ua
+0.0.0.0 www.zuma.net.ua
+0.0.0.0 card-games.org
+0.0.0.0 www.card-games.org
+0.0.0.0 gamezz.ru
+0.0.0.0 www.gamezz.ru
+0.0.0.0 infox.ru
+0.0.0.0 www.infox.ru
+0.0.0.0 solitair.ru
+0.0.0.0 www.solitair.ru
+0.0.0.0 livegames.su
+0.0.0.0 www.livegames.su
+0.0.0.0 razloji.ru
+0.0.0.0 www.razloji.ru
+0.0.0.0 su.game-game.com
+0.0.0.0 www.su.game-game.com
+0.0.0.0 apps.apple.com
+0.0.0.0 www.apps.apple.com
+0.0.0.0 robixyd.ru
+0.0.0.0 www.robixyd.ru
+0.0.0.0 android.biblprog.org.ua
+0.0.0.0 www.android.biblprog.org.ua
+0.0.0.0 roblox.en.softonic.com
+0.0.0.0 www.roblox.en.softonic.com
+0.0.0.0 5play.org
+0.0.0.0 www.5play.org
+0.0.0.0 create.roblox.com
+0.0.0.0 www.create.roblox.com
+0.0.0.0 roblox.ru.aptoide.com
+0.0.0.0 www.roblox.ru.aptoide.com
+0.0.0.0 playsector.ru
+0.0.0.0 www.playsector.ru
+0.0.0.0 bloxshade.com
+0.0.0.0 www.bloxshade.com
+0.0.0.0 rbxscript.com
+0.0.0.0 www.rbxscript.com
+0.0.0.0 memuplay.com
+0.0.0.0 www.memuplay.com
+0.0.0.0 
+0.0.0.0 
 0.0.0.0 www.
-0.0.0.0
+0.0.0.0 
 0.0.0.0 www.
-0.0.0.0
+0.0.0.0 
+0.0.0.0 
 0.0.0.0 www.
-0.0.0.0
+0.0.0.0 
 0.0.0.0 www.
-0.0.0.0
+0.0.0.0 
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
 0.0.0.0 www.
