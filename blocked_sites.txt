@@ -832,8 +832,6 @@
 0.0.0.0 www.littlegiantgames.com
 0.0.0.0 zone.msn.com
 0.0.0.0 www.zone.msn.com
-0.0.0.0 youtube.com
-0.0.0.0 www.youtube.com
 0.0.0.0
 0.0.0.0 www.
 0.0.0.0
