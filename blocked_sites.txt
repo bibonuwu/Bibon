@@ -832,15 +832,111 @@
 0.0.0.0 www.littlegiantgames.com
 0.0.0.0 zone.msn.com
 0.0.0.0 www.zone.msn.com
-0.0.0.0 youtube.com
-0.0.0.0 www.youtube.com
-0.0.0.0
+0.0.0.0 miniclip.com  
+0.0.0.0 www.miniclip.com  
+0.0.0.0 addictinggames.com  
+0.0.0.0 www.addictinggames.com  
+0.0.0.0 kongregate.com  
+0.0.0.0 www.kongregate.com  
+0.0.0.0 armorgames.com  
+0.0.0.0 www.armorgames.com  
+0.0.0.0 crazygames.com  
+0.0.0.0 www.crazygames.com  
+0.0.0.0 poki.com  
+0.0.0.0 www.poki.com  
+0.0.0.0 y8.com  
+0.0.0.0 www.y8.com  
+0.0.0.0 newgrounds.com  
+0.0.0.0 www.newgrounds.com  
+0.0.0.0 bigfishgames.com  
+0.0.0.0 www.bigfishgames.com  
+0.0.0.0 pogo.com  
+0.0.0.0 www.pogo.com  
+0.0.0.0 igra-pasyans.ru
+0.0.0.0 www.igra-pasyans.ru
+0.0.0.0 zuma.net.ua
+0.0.0.0 www.zuma.net.ua
+0.0.0.0 card-games.org
+0.0.0.0 www.card-games.org
+0.0.0.0 gamezz.ru
+0.0.0.0 www.gamezz.ru
+0.0.0.0 infox.ru
+0.0.0.0 www.infox.ru
+0.0.0.0 solitair.ru
+0.0.0.0 www.solitair.ru
+0.0.0.0 livegames.su
+0.0.0.0 www.livegames.su
+0.0.0.0 razloji.ru
+0.0.0.0 www.razloji.ru
+0.0.0.0 su.game-game.com
+0.0.0.0 www.su.game-game.com
+0.0.0.0 apps.apple.com
+0.0.0.0 www.apps.apple.com
+0.0.0.0 robixyd.ru
+0.0.0.0 www.robixyd.ru
+0.0.0.0 android.biblprog.org.ua
+0.0.0.0 www.android.biblprog.org.ua
+0.0.0.0 roblox.en.softonic.com
+0.0.0.0 www.roblox.en.softonic.com
+0.0.0.0 5play.org
+0.0.0.0 www.5play.org
+0.0.0.0 create.roblox.com
+0.0.0.0 www.create.roblox.com
+0.0.0.0 roblox.ru.aptoide.com
+0.0.0.0 www.roblox.ru.aptoide.com
+0.0.0.0 playsector.ru
+0.0.0.0 www.playsector.ru
+0.0.0.0 bloxshade.com
+0.0.0.0 www.bloxshade.com
+0.0.0.0 rbxscript.com
+0.0.0.0 www.rbxscript.com
+0.0.0.0 memuplay.com
+0.0.0.0 www.memuplay.com
+0.0.0.0 loah5.r2games.com
+0.0.0.0 www.loah5.r2games.com
+0.0.0.0 titan.r2games.com
+0.0.0.0 www.titan.r2games.com
+0.0.0.0 revonline.ru
+0.0.0.0 www.revonline.ru
+0.0.0.0 conquerorsblade.com
+0.0.0.0 www.conquerorsblade.com
+0.0.0.0 genshin.hoyoverse.com
+0.0.0.0 www.genshin.hoyoverse.com
+0.0.0.0 mmorpg-blog.ru
+0.0.0.0 www.mmorpg-blog.ru
+0.0.0.0 ageofwushu.com
+0.0.0.0 www.ageofwushu.com
+0.0.0.0 9yin2.woniu.com
+0.0.0.0 www.9yin2.woniu.com
+0.0.0.0 wuxia.qq.com
+0.0.0.0 www.wuxia.qq.com
+0.0.0.0 arcgames.com
+0.0.0.0 www.arcgames.com
+0.0.0.0 gamegude.com
+0.0.0.0 www.gamegude.com
+0.0.0.0 gametarget.ru
+0.0.0.0 www.gametarget.ru
+0.0.0.0 xqn.163.com
+0.0.0.0 www.xqn.163.com
+0.0.0.0 pwonline.ru
+0.0.0.0 www.pwonline.ru
+0.0.0.0 
 0.0.0.0 www.
-0.0.0.0
+0.0.0.0 
 0.0.0.0 www.
-0.0.0.0
+0.0.0.0 
 0.0.0.0 www.
-0.0.0.0
+0.0.0.0 
 0.0.0.0 www.
-0.0.0.0
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
 0.0.0.0 www.
