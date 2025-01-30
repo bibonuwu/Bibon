@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WPFUIKitProfessional"
         mc:Ignorable="d" x:Name="home" 
         Title="BIBON" Height="720" Width="1100"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
         ResizeMode="NoResize" WindowState="Normal" FontFamily="Poppins">

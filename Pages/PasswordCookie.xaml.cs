@@ -21,14 +21,9 @@ namespace Bibon.Pages
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            EnteredPassword = PasswordBox.Password;
-            DialogResult = true;
-            // Открытие нового окна
-            Cookie newWindow = new Cookie(); // Здесь "NewWindow" — это класс вашего нового окна.
-            newWindow.Show(); // или newWindow.ShowDialog() для модального окна.
-
-
-            Close();
+            EnteredPassword = PasswordBox.Password; // Получаем введенный пароль
+            this.DialogResult = true;
+            this.Close(); // Закрываем окно
         }
 
         private void PasswordBox_KeyDown(object sender, KeyEventArgs e)

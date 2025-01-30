@@ -867,21 +867,40 @@ namespace WPFUIKitProfessional.Pages
         }
 
 
-       
+
 
 
         // Метод для установки атрибута "Только для чтения"
-      
+
 
         // Метод для защиты файла от удаления
         private void ProtectFileFromDeletion(string filePath)
         {
-            var psi = new ProcessStartInfo("cmd.exe", $"/c icacls \"{filePath}\" /setowner SYSTEM && icacls \"{filePath}\" /inheritance:r && icacls \"{filePath}\" /grant SYSTEM:(F) && icacls \"{filePath}\" /deny Everyone:(F)")
+            var commands = new[]
             {
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            Process.Start(psi)?.WaitForExit();
+        // Устанавливаем владельца (не обязательно, но повышает безопасность)
+        $"/c takeown /f \"{filePath}\"",
+        
+        // Сбрасываем наследование и удаляем все существующие права
+        $"/c icacls \"{filePath}\" /inheritance:r /grant:r *S-1-5-18:(F)", // Полные права для SYSTEM
+        
+        // Разрешаем чтение для всех пользователей
+        $"/c icacls \"{filePath}\" /grant *S-1-1-0:(RX)", // Everyone: Read & Execute
+        
+        // Запрещаем удаление для всех пользователей
+        $"/c icacls \"{filePath}\" /deny *S-1-1-0:(DE,DC,WDAC,WO)" // Deny Delete, DeleteChild, WriteDAC, WriteOwner
+    };
+
+            foreach (var cmd in commands)
+            {
+                var psi = new ProcessStartInfo("cmd.exe", cmd)
+                {
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden
+                };
+                Process.Start(psi)?.WaitForExit();
+            }
         }
 
         // Проверка наличия прав администратора
@@ -1066,10 +1085,8 @@ namespace WPFUIKitProfessional.Pages
                 if (File.Exists(hostsPath))
                 {
                     // Изменяем владельца файла на текущего пользователя
-                    ChangeOwner(hostsPath);
+                    ResetFilePermissions(hostsPath);
 
-                    // Добавляем полный доступ для текущего пользователя
-                    AddFullAccess(hostsPath);
 
                     // Удаляем файл hosts
                     File.Delete(hostsPath);
@@ -1097,6 +1114,49 @@ namespace WPFUIKitProfessional.Pages
             }
         }
 
+        private void ResetFilePermissions(string filePath)
+        {
+            var commands = new[]
+            {
+        // Берем владение файлом
+        $"/c takeown /f \"{filePath}\"",
+        
+        // Сбрасываем все права до исходных
+        $"/c icacls \"{filePath}\" /reset",
+        
+        // Явно даем полные права текущему пользователю
+        $"/c icacls \"{filePath}\" /grant %USERNAME%:F"
+    };
+
+            foreach (var cmd in commands)
+            {
+                ExecuteCommand(cmd);
+                Thread.Sleep(500); // Даем время на применение прав
+            }
+        }
+
+        private void ExecuteCommand(string command)
+        {
+            var psi = new ProcessStartInfo("cmd.exe", command)
+            {
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                Verb = "runas", // Запуск с правами администратора
+                WindowStyle = ProcessWindowStyle.Hidden
+            };
+
+            try
+            {
+                using (var process = Process.Start(psi))
+                {
+                    process?.WaitForExit();
+                }
+            }
+            catch (Win32Exception)
+            {
+                MessageBox.Show("Требуются права администратора!");
+            }
+        }
 
         private void UnhideFolderAndContents(string folderPath)
         {

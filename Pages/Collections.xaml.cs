@@ -46,6 +46,8 @@ namespace WPFUIKitProfessional.Pages
 
         private async void ShowWifiProfiles_Click(object sender, RoutedEventArgs e)
         {
+            StatusText.Text = "Wifi тізімі шығарудамын...";
+
             var psi = new ProcessStartInfo
             {
                 FileName = "powershell",
@@ -104,6 +106,8 @@ namespace WPFUIKitProfessional.Pages
                 {
                     wifiDataGrid.ItemsSource = wifiProfiles;
                 }
+                StatusText.Text = "Wifi тізімі";
+
             }
             catch (Exception ex)
             {

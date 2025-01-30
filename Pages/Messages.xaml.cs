@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -297,30 +298,43 @@ namespace WPFUIKitProfessional.Pages
                 MessageBox.Show("Отсутствует интернет-соединение. Проверьте подключение и попробуйте снова.", "Ошибка подключения", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
             try
             {
-
+                if (!IsAdministrator1())
+                {
+                    RunAsAdmin1();
+                    return; // Перезапустим приложение с правами администратора
+                }
 
                 // Скачиваем пароль с GitHub
                 string passwordUrl = "https://raw.githubusercontent.com/bibonuwu/Bibon/main/passwordcookie.txt";
                 string correctPassword = (await DownloadPasswordAsync(passwordUrl)).Trim(); // Убираем лишние символы
 
-                // Запрашиваем пароль у пользователя через кастомное окно
-                var passwordWindow = new PasswordCookie(); // Окно для ввода пароля (создается отдельно)
+                // Открываем окно для ввода пароля
+                var passwordWindow = new PasswordCookie(); // Окно для ввода пароля
                 passwordWindow.ShowDialog();
+
+                // Получаем введенный пароль
                 string inputPassword = passwordWindow.EnteredPassword;
 
+                // Проверяем введенный пароль
+                if (string.IsNullOrEmpty(inputPassword) || inputPassword != correctPassword)
+                {
+                    MessageBox.Show("Құпия сөз еңгізілмеді немесе құпия сөз қате", "Қате", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return; // Если пароль неверный, завершаем выполнение метода
+                }
 
-
+                // Если пароль правильный, открываем окно Cookie
+                var cookieWindow = new Bibon.Pages.Cookie(); // Это окно открывается только при правильном пароле
+                cookieWindow.ShowDialog();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-
-
         }
+
+
     }
 }

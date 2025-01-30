@@ -131,6 +131,15 @@ namespace WPFUIKitProfessional
             }
         }
 
+        // Обработчик для перетаскивания окна
+        private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
+
 
 
 
