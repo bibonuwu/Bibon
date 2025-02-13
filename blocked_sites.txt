@@ -966,6 +966,34 @@
 0.0.0.0 www.freesoftenot69.livejournal.com
 0.0.0.0 catonmat.net
 0.0.0.0 www.catonmat.net
+0.0.0.0 browsercloud.io
+0.0.0.0 www.browsercloud.io
+0.0.0.0 arc.net
+0.0.0.0 www.arc.net
+0.0.0.0 bitbrowser.ru
+0.0.0.0 www.bitbrowser.ru
+0.0.0.0 elcebador.ru
+0.0.0.0 www.elcebador.ru
+0.0.0.0 authentic8.com
+0.0.0.0 www.authentic8.com
+0.0.0.0 gologin.com
+0.0.0.0 www.gologin.com
+0.0.0.0 nstbrowser.io
+0.0.0.0 www.nstbrowser.io
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
+0.0.0.0 
+0.0.0.0 www.
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
