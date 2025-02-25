@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\
+C:\Users\Bibon\Desktop\VS\Bibon\obj\Debug\
 Bibon
 none
 false
 DEBUG;TRACE
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\App.xaml
-14-1482129319
-6-1231540579
-12435714482
-32-809309240
-Assets\Icons.xaml;Assets\Icons\Icons.xaml;MainWindow.xaml;Pages\Analytics.xaml;Pages\Collections.xaml;Pages\Home.xaml;Pages\Messages.xaml;Pages\system.xaml;Pages\Users.xaml;Styles\ButtonStyle.xaml;Styles\MainStyle.xaml;Styles\RadioButtonStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;
+C:\Users\Bibon\Desktop\VS\Bibon\App.xaml
+21-1112062466
 
-False
+201670822899
+30-1668796244
+Assets\Icons.xaml;Assets\Icons\Icons.xaml;MainWindow.xaml;Pages\Analytics.xaml;Pages\Collections.xaml;Pages\Cookie.xaml;Pages\Home.xaml;Pages\Messages.xaml;Pages\PasswordCookie.xaml;Pages\PasswordWindow.xaml;Pages\PasswordWindow2.xaml;Pages\Store\Window1.xaml;Pages\Store\Window2.xaml;Pages\Store\Window3.xaml;Pages\Store\Window4.xaml;Pages\system.xaml;Styles\ButtonStyle.xaml;Styles\MainStyle.xaml;Styles\RadioButtonStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;
+
+True
 
