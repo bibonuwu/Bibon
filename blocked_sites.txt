@@ -980,22 +980,36 @@
 0.0.0.0 www.gologin.com
 0.0.0.0 nstbrowser.io
 0.0.0.0 www.nstbrowser.io
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
-0.0.0.0 
-0.0.0.0 www.
+0.0.0.0 geometry-dash.ru.malavida.com
+0.0.0.0 www.geometry-dash.ru.malavida.com
+0.0.0.0 geometrydash-game.ru
+0.0.0.0 www.geometrydash-game.ru
+0.0.0.0 seksvideo.tv
+0.0.0.0 www.seksvideo.tv
+0.0.0.0 pinco000.win
+0.0.0.0 www.pinco000.win
+0.0.0.0 msn.com
+0.0.0.0 www.msn.com
+0.0.0.0 ru.porno365.best
+0.0.0.0 www.ru.porno365.best
+0.0.0.0 the-kinogo.biz
+0.0.0.0 www.the-kinogo.biz
+0.0.0.0 tiktok.com
+0.0.0.0 www.tiktok.com
+0.0.0.0 mcpehub.org
+0.0.0.0 www.mcpehub.org
+0.0.0.0 360totalsecurity.com
+0.0.0.0 www.360totalsecurity.com
+0.0.0.0 telamoncleaner.com
+0.0.0.0 www.telamoncleaner.com
+0.0.0.0 free.360totalsecurity.com
+0.0.0.0 www.free.360totalsecurity.com
+0.0.0.0 dwnld5.telamoncleaner.com
+0.0.0.0 www.dwnld5.telamoncleaner.com
+0.0.0.0 metarankings.ru
+0.0.0.0 www.metarankings.ru
+0.0.0.0 igromania.ru
+0.0.0.0 www.igromania.ru
 0.0.0.0 
 0.0.0.0 www.
 0.0.0.0 
