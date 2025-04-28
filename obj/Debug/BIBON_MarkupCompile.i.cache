@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\
+C:\Users\bibon\Desktop\Bibon\obj\Debug\
 Bibon
 none
 false
 DEBUG;TRACE
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\App.xaml
-14-1482129319
-6-1231540579
-13-1646374136
-32-809309240
-Assets\Icons.xaml;Assets\Icons\Icons.xaml;MainWindow.xaml;Pages\Analytics.xaml;Pages\Collections.xaml;Pages\Home.xaml;Pages\Messages.xaml;Pages\system.xaml;Pages\Users.xaml;Styles\ButtonStyle.xaml;Styles\MainStyle.xaml;Styles\RadioButtonStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;
+C:\Users\bibon\Desktop\Bibon\App.xaml
+17921823484
 
-True
+17915826220
+30-1092971993
+Assets\Icons.xaml;Assets\Icons\Icons.xaml;MainWindow.xaml;Pages\Analytics.xaml;Pages\Collections.xaml;Pages\Cookie.xaml;Pages\Home.xaml;Pages\Messages.xaml;Pages\PasswordCookie.xaml;Pages\PasswordWindow.xaml;Pages\PasswordWindow2.xaml;Pages\system.xaml;Styles\ButtonStyle.xaml;Styles\MainStyle.xaml;Styles\RadioButtonStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;
+
+False
 
