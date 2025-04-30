@@ -17,10 +17,13 @@ namespace WPFUIKitProfessional.Pages
         public Collections()
         {
             InitializeComponent();
+            InitializeInfoText();
             ShowWifiProfiles_Click(this, new RoutedEventArgs());
+        }
 
-            // Текст для отображения в TextBox
-            string infoText =
+        private void InitializeInfoText()
+        {
+            InfoTextBox.Text =
                 "Сайтқа өту арқылы bibon кейіпкері жасаған Windows 10 және 11 арналған сборкасын жүктеп алсаңыз болады.\n\n" +
                 "Бұл сброканың артықшылығы:\n" +
                 "- Windows жүйесіне жоғары деңгейдегі оптимизация.\n" +
@@ -28,21 +31,11 @@ namespace WPFUIKitProfessional.Pages
                 "- Барлық қажетсіз системалық бағдарламалар мен телеметрия өшірілген.\n" +
                 "- Жылдам жұмыс істеу қабілеті мен ресурстарды үнемдеу мүмкіндігі.\n" +
                 "- Қолдануға ыңғайлы әрі түсінікті интерфейс.";
-                
 
-            // Установка текста в TextBox
-            InfoTextBox.Text = infoText;
-
-            // Текст для отображения в TextBox
-            string infoText1 =
+            InfoTextBox1.Text =
                 "Генерация жүзеге асуы\n" +
                 "- Қазіргі уақыт милисекунды + жыл + рандом + батарея проценті";
-
-            // Установка текста в TextBox
-            InfoTextBox1.Text = infoText1;
         }
-        //----------------------------------------------------------------------
-
 
         private async void ShowWifiProfiles_Click(object sender, RoutedEventArgs e)
         {
@@ -58,59 +51,69 @@ namespace WPFUIKitProfessional.Pages
                 RedirectStandardError = true
             };
 
-            var process = new Process { StartInfo = psi };
             try
             {
-                var tcs = new TaskCompletionSource<bool>();
-
-                process.Exited += (s, ea) => tcs.SetResult(true);
-                process.EnableRaisingEvents = true;
-                process.Start();
-
-                var outputTask = process.StandardOutput.ReadToEndAsync();
-                var errorTask = process.StandardError.ReadToEndAsync();
-
-                await tcs.Task; // Ждем завершения процесса
-
-                string output = await outputTask;
-                string error = await errorTask;
-
-                if (!string.IsNullOrEmpty(error))
+                using (var process = new Process { StartInfo = psi })
                 {
-                    return;
-                }
+                    process.Start();
 
-                if (string.IsNullOrWhiteSpace(output))
-                {
-                    return;
-                }
+                    string output = await process.StandardOutput.ReadToEndAsync();
+                    string error = await process.StandardError.ReadToEndAsync();
 
-                List<WifiProfile> wifiProfiles = null;
-                try
-                {
-                    wifiProfiles = JsonConvert.DeserializeObject<List<WifiProfile>>(output);
-                }
-                catch (JsonSerializationException)
-                {
-                    var singleWifiProfile = JsonConvert.DeserializeObject<WifiProfile>(output);
-                    if (singleWifiProfile != null)
+                    process.WaitForExit();
+
+                    if (!string.IsNullOrWhiteSpace(error))
                     {
-                        wifiProfiles = new List<WifiProfile> { singleWifiProfile };
+                        StatusText.Text = "Ошибка PowerShell: " + error;
+                        MessageBox.Show("Ошибка PowerShell:\n" + error);
+                        return;
+                    }
+
+                    if (string.IsNullOrWhiteSpace(output))
+                    {
+                        StatusText.Text = "Нет данных от PowerShell";
+                        MessageBox.Show("PowerShell не вернул данные. Возможно, нет Wi-Fi профилей или нет прав.");
+                        return;
+                    }
+
+                    List<WifiProfile> wifiProfiles = null;
+                    try
+                    {
+                        wifiProfiles = JsonConvert.DeserializeObject<List<WifiProfile>>(output);
+                    }
+                    catch (JsonSerializationException)
+                    {
+                        try
+                        {
+                            var singleProfile = JsonConvert.DeserializeObject<WifiProfile>(output);
+                            if (singleProfile != null)
+                                wifiProfiles = new List<WifiProfile> { singleProfile };
+                        }
+                        catch (Exception ex2)
+                        {
+                            StatusText.Text = "Ошибка десериализации: " + ex2.Message;
+                            MessageBox.Show("Ошибка десериализации:\n" + ex2.Message + "\n\nRaw output:\n" + output);
+                            return;
+                        }
+                    }
+
+                    if (wifiProfiles == null || wifiProfiles.Count == 0)
+                    {
+                        StatusText.Text = "Wi-Fi профили не найдены";
+                        MessageBox.Show("Wi-Fi профили не найдены.\n\nRaw output:\n" + output);
+                        wifiDataGrid.ItemsSource = null;
+                    }
+                    else
+                    {
+                        wifiDataGrid.ItemsSource = wifiProfiles;
+                        StatusText.Text = "Wifi тізімі";
                     }
                 }
-
-                if (wifiProfiles == null || wifiProfiles.Count == 0)
-                {
-                }
-                else
-                {
-                    wifiDataGrid.ItemsSource = wifiProfiles;
-                }
-                StatusText.Text = "Wifi тізімі";
-
             }
             catch (Exception ex)
             {
+                StatusText.Text = "Ошибка: " + ex.Message;
+                MessageBox.Show("Ошибка:\n" + ex.Message);
             }
         }
 
@@ -119,30 +122,22 @@ namespace WPFUIKitProfessional.Pages
             public string ProfileName { get; set; }
             public string Password { get; set; }
         }
-        //----------------------------------------------------------------------
 
         private void OpenWebsite(string url, Button button)
         {
             Process.Start(new ProcessStartInfo
             {
                 FileName = url,
-                UseShellExecute = true // Необходим для открытия URL в браузере
+                UseShellExecute = true
             });
-
-            // Изменение цвета кнопки на цвет с кодом #32D74B
             button.Background = (Brush)new BrushConverter().ConvertFromString("#32D74B");
         }
 
         private void OpenWebsiteButton1_Click(object sender, RoutedEventArgs e)
         {
             OpenWebsite("https://sites.google.com/view/sbros-pc-by-bibon", OpenWebsiteButton1);
-
         }
-        //----------------------------------------------------------------------
 
-
-        // Уменьшить длину пароля
-        // Уменьшить длину пароля
         private void DecreaseLength(object sender, RoutedEventArgs e)
         {
             if (passwordLength > 4)
@@ -151,23 +146,7 @@ namespace WPFUIKitProfessional.Pages
                 PasswordLength.Text = passwordLength.ToString();
             }
         }
-        // Метод для получения процента заряда батареи
-        private int GetMemoryUsagePercentage()
-        {
-            try
-            {
-                var totalMemory = new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
-                var availableMemory = new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory;
-                double usedMemory = totalMemory - availableMemory;
-                return (int)((usedMemory / totalMemory) * 100);
-            }
-            catch
-            {
-                // Если информация недоступна, возвращаем 50% по умолчанию
-                return 50;
-            }
-        }
-        // Увеличить длину пароля
+
         private void IncreaseLength(object sender, RoutedEventArgs e)
         {
             if (passwordLength < 32)
@@ -177,13 +156,12 @@ namespace WPFUIKitProfessional.Pages
             }
         }
 
-        // Генерация пароля
         private void GeneratePassword(object sender, RoutedEventArgs e)
         {
-            bool includeUppercase = IncludeUppercase.IsChecked ?? false;
-            bool includeNumbers = IncludeNumbers.IsChecked ?? false;
-            bool includeLowercase = IncludeLowercase.IsChecked ?? false;
-            bool includeSymbols = IncludeSymbols.IsChecked ?? false;
+            bool includeUppercase = IncludeUppercase.IsChecked == true;
+            bool includeNumbers = IncludeNumbers.IsChecked == true;
+            bool includeLowercase = IncludeLowercase.IsChecked == true;
+            bool includeSymbols = IncludeSymbols.IsChecked == true;
 
             if (!includeUppercase && !includeNumbers && !includeLowercase && !includeSymbols)
             {
@@ -194,14 +172,14 @@ namespace WPFUIKitProfessional.Pages
             PasswordBox.Text = GenerateRandomPassword(passwordLength, includeUppercase, includeNumbers, includeLowercase, includeSymbols);
         }
 
-        private string GenerateRandomPassword(int length, bool includeUppercase, bool includeNumbers, bool includeLowercase, bool includeSymbols)
+        private static string GenerateRandomPassword(int length, bool includeUppercase, bool includeNumbers, bool includeLowercase, bool includeSymbols)
         {
             const string uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             const string lowercase = "abcdefghijklmnopqrstuvwxyz";
             const string numbers = "0123456789";
             const string symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
-            StringBuilder characterPool = new StringBuilder();
+            var characterPool = new StringBuilder();
             if (includeUppercase) characterPool.Append(uppercase);
             if (includeLowercase) characterPool.Append(lowercase);
             if (includeNumbers) characterPool.Append(numbers);
@@ -209,53 +187,31 @@ namespace WPFUIKitProfessional.Pages
 
             if (characterPool.Length == 0) return string.Empty;
 
-            // Используем текущее время, год и процент загруженной памяти
             DateTime now = DateTime.Now;
-            int year = now.Year;
-            int memoryUsage = GetMemoryUsagePercentage();
-            int seed = now.Millisecond + now.Second + now.Minute + now.Hour + year + memoryUsage;
-            Random random = new Random(seed);
+            int seed = now.Millisecond + now.Second + now.Minute + now.Hour + now.Year + GetMemoryUsagePercentage();
+            var random = new Random(seed);
 
-            StringBuilder password = new StringBuilder();
-
+            var password = new StringBuilder(length);
             for (int i = 0; i < length; i++)
             {
                 int index = random.Next(characterPool.Length);
                 password.Append(characterPool[index]);
             }
-
             return password.ToString();
         }
 
-
-        //----------------------------------------------------------------------
-       
-        
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-        //----------------------------------------------------------------------
-
-
-
-
+        private static int GetMemoryUsagePercentage()
+        {
+            try
+            {
+                var info = new Microsoft.VisualBasic.Devices.ComputerInfo();
+                double usedMemory = info.TotalPhysicalMemory - info.AvailablePhysicalMemory;
+                return (int)((usedMemory / info.TotalPhysicalMemory) * 100);
+            }
+            catch
+            {
+                return 50;
+            }
+        }
     }
 }
-
-
-
-
-

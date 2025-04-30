@@ -153,12 +153,36 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
 
+                <Border Background="{DynamicResource SecundaryBackgroundColor1}"  Margin="20,20,10,20" Padding="30,30,30,30" CornerRadius="20,20,20,20">
+
+                    <StackPanel>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="/Assets/1.png" StretchDirection="DownOnly" Width="20"/>
+                            <Label Content="FPS Speed" FontSize="25" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}" Margin="10,0,10,0"/>
+                            <Image Source="/Assets/1.png" StretchDirection="DownOnly" Width="20"/>
+
+                        </StackPanel>
 
 
 
 
-                      
-                </StackPanel>
+
+
+                        <Grid Height="50">
+                            <Button Name="btnDisabl1eBackgroundApps3" Click="Button_Click_2" Style="{DynamicResource PrimaryButtonStyle1}" Content="Style by bibon"  HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
+                        </Grid>
+                       
+
+                    </StackPanel>
+
+                </Border>
+
+
+
+
+
+            </StackPanel>
         </Grid>
     </Border>
 </Page>

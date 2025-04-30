@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
-using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
+using Bibon.Pages;
 
 namespace WPFUIKitProfessional.Pages
 {
@@ -18,17 +18,61 @@ namespace WPFUIKitProfessional.Pages
         private readonly Brush yellowBrush = new BrushConverter().ConvertFromString("#FFD60A") as Brush;
         private readonly Brush greenBrush = new BrushConverter().ConvertFromString("#32D74B") as Brush;
         private readonly Brush redBrush = new BrushConverter().ConvertFromString("#FF453A") as Brush;
+        private static readonly HttpClient httpClient = new HttpClient();
 
         public Home()
         {
             InitializeComponent();
         }
 
+        // Проверка администратора
+        private static bool IsAdministrator()
+        {
+            var identity = WindowsIdentity.GetCurrent();
+            var principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+        // Запуск от имени администратора
+        private static void EnsureRunAsAdmin()
+        {
+            if (!IsAdministrator())
+            {
+                var psi = new ProcessStartInfo
+                {
+                    FileName = Process.GetCurrentProcess().MainModule.FileName,
+                    UseShellExecute = true,
+                    Verb = "runas"
+                };
+                Process.Start(psi);
+                Application.Current.Shutdown();
+            }
+        }
+
+        // Проверка наличия интернета
+        private static async Task<bool> IsInternetAvailableAsync()
+        {
+            try
+            {
+                var response = await httpClient.GetAsync("https://www.google.com");
+                return response.IsSuccessStatusCode;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // Скачивание пароля
+        private static async Task<string> DownloadPasswordAsync(string url)
+        {
+            return (await httpClient.GetStringAsync(url)).Trim();
+        }
+
+        // Универсальный запуск команд
         private async void ExecuteCommandAsync(Button button, string fileName, string arguments, bool useShellExecute = false)
         {
-            button.IsEnabled = false;
-            button.Background = yellowBrush;
-            button.Content = "Processing...";
+            SetButtonState(button, false, yellowBrush, "Processing...");
 
             bool success = await Task.Run(() =>
             {
@@ -54,33 +98,33 @@ namespace WPFUIKitProfessional.Pages
                 }
             });
 
-            button.Background = success ? greenBrush : redBrush;
-            button.Content = success ? "Completed" : "Error";
-            button.IsEnabled = true;
+            SetButtonState(button, true, success ? greenBrush : redBrush, success ? "Completed" : "Error");
         }
 
-     
+        private void SetButtonState(Button button, bool enabled, Brush background, string content)
+        {
+            button.IsEnabled = enabled;
+            button.Background = background;
+            button.Content = content;
+        }
 
+        // Запуск .bat файла с правами администратора
         private void btnDisableBack3groundApps2_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                // Получаем путь к .bat файлу внутри проекта (например, рядом с .exe)
-                string batPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "all_scripts.bat");
-
-                // Проверяем, существует ли файл
+                string batPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "all_scripts.bat");
                 if (!File.Exists(batPath))
                 {
                     MessageBox.Show("Файл all_scripts.bat не найден!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
 
-                // Запускаем .bat файл
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
                     FileName = batPath,
                     UseShellExecute = true,
-                    Verb = "runas" // Запуск от имени администратора
+                    Verb = "runas"
                 };
 
                 Process.Start(psi);
@@ -91,28 +135,13 @@ namespace WPFUIKitProfessional.Pages
             }
         }
 
-
+        // Запуск PowerShell-скрипта
         private void ExecutePowerShell_Click(object sender, RoutedEventArgs e)
         {
             ExecuteCommandAsync(btnExecutePowerShell, "powershell", "-Command \"irm https://get.activated.win | iex\"");
         }
 
-     
-
-        private void btnOpenWebsite_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("https://gist.github.com/PurpleVibe32/1e9b30754ff18d69ad48155ed29d83de") { UseShellExecute = true });
-        }
-
-        private void btnOpenWebsite_Click1(object sender, RoutedEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("https://www.cybermania.ws/") { UseShellExecute = true });
-        }
-
-
-
-
-
+        // Установка обоев
         [DllImport("user32.dll", SetLastError = true)]
         private static extern bool SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
 
@@ -123,26 +152,29 @@ namespace WPFUIKitProfessional.Pages
         private void Button_Click_13(object sender, RoutedEventArgs e) => SetWallpaper("13.jpg");
         private void Button_Click_16(object sender, RoutedEventArgs e) => SetWallpaper("18.jpg");
         private void Button_Click_17(object sender, RoutedEventArgs e) => SetWallpaper("17.jpg");
+
         private void SetWallpaper(string fileName)
         {
             try
             {
-                string sourcePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Wallpaper", fileName);
+                string sourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Wallpaper", fileName);
                 if (!File.Exists(sourcePath))
                 {
                     MessageBox.Show($"Файл не найден: {sourcePath}");
                     return;
                 }
 
-                string bmpPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "wallpaper.bmp");
+                string bmpPath = Path.Combine(Path.GetTempPath(), "wallpaper.bmp");
                 using (var img = System.Drawing.Image.FromFile(sourcePath))
                 {
                     img.Save(bmpPath, System.Drawing.Imaging.ImageFormat.Bmp);
                 }
 
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true);
-                key.SetValue(@"WallpaperStyle", "2");
-                key.SetValue(@"TileWallpaper", "0");
+                using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true))
+                {
+                    key.SetValue(@"WallpaperStyle", "2");
+                    key.SetValue(@"TileWallpaper", "0");
+                }
 
                 SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, bmpPath, SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
             }
@@ -152,24 +184,10 @@ namespace WPFUIKitProfessional.Pages
             }
         }
 
-        private bool IsAdministrator() => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
-
-        private void RunAsAdmin()
-        {
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = Process.GetCurrentProcess().MainModule.FileName,
-                UseShellExecute = true,
-                Verb = "runas"
-            });
-            Application.Current.Shutdown();
-        }
-
+        // Кнопка блокировки сайтов
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            btnOpenWeb1site.IsEnabled = false;
-            btnOpenWeb1site.Content = "Processing...";
-            btnOpenWeb1site.Background = yellowBrush;
+            SetButtonState(btnOpenWeb1site, false, yellowBrush, "Processing...");
 
             bool success = await Task.Run(() =>
             {
@@ -177,13 +195,13 @@ namespace WPFUIKitProfessional.Pages
                 {
                     if (!IsAdministrator())
                     {
-                        RunAsAdmin();
+                        EnsureRunAsAdmin();
                         return false;
                     }
 
                     string filePath = @"C:\Windows\System32\drivers\etc\hosts";
                     string url = "https://raw.githubusercontent.com/bibonuwu/Bibon/main/blocked_sites.txt";
-                    string content = new HttpClient().GetStringAsync(url).Result;
+                    string content = httpClient.GetStringAsync(url).Result;
 
                     File.WriteAllText(filePath, content + Environment.NewLine);
 
@@ -208,16 +226,13 @@ namespace WPFUIKitProfessional.Pages
                 }
             });
 
-            btnOpenWeb1site.Background = success ? greenBrush : redBrush;
-            btnOpenWeb1site.Content = success ? "Completed" : "Error";
-            btnOpenWeb1site.IsEnabled = true;
+            SetButtonState(btnOpenWeb1site, true, success ? greenBrush : redBrush, success ? "Completed" : "Error");
         }
 
+        // Кнопка удаления hosts
         private async void DeleteHostsFile(object sender, RoutedEventArgs e)
         {
-            btnOpen1Web1site.IsEnabled = false;
-            btnOpen1Web1site.Content = "Processing...";
-            btnOpen1Web1site.Background = yellowBrush;
+            SetButtonState(btnOpen1Web1site, false, yellowBrush, "Processing...");
 
             bool success = await Task.Run(() =>
             {
@@ -225,7 +240,7 @@ namespace WPFUIKitProfessional.Pages
                 {
                     if (!IsAdministrator())
                     {
-                        RunAsAdmin();
+                        EnsureRunAsAdmin();
                         return false;
                     }
 
@@ -257,35 +272,37 @@ namespace WPFUIKitProfessional.Pages
                 }
             });
 
-            btnOpen1Web1site.Background = success ? greenBrush : redBrush;
-            btnOpen1Web1site.Content = success ? "Completed" : "Error";
-            btnOpen1Web1site.IsEnabled = true;
+            SetButtonState(btnOpen1Web1site, true, success ? greenBrush : redBrush, success ? "Completed" : "Error");
         }
+
+        // Защита файла от удаления
         private void ProtectFileFromDeletion(string filePath)
         {
             string[] commands = {
-        $"/c takeown /f \"{filePath}\"",
-        $"/c icacls \"{filePath}\" /inheritance:r /grant:r *S-1-5-18:(F)",
-        $"/c icacls \"{filePath}\" /grant *S-1-1-0:(RX)",
-        $"/c icacls \"{filePath}\" /deny *S-1-1-0:(DE,DC,WDAC,WO)"
-    };
+                $"/c takeown /f \"{filePath}\"",
+                $"/c icacls \"{filePath}\" /inheritance:r /grant:r *S-1-5-18:(F)",
+                $"/c icacls \"{filePath}\" /grant *S-1-1-0:(RX)",
+                $"/c icacls \"{filePath}\" /deny *S-1-1-0:(DE,DC,WDAC,WO)"
+            };
 
             foreach (var cmd in commands)
                 ExecuteCmdCommand(cmd);
         }
 
+        // Сброс прав файла
         private void ResetFilePermissions(string filePath)
         {
             string[] commands = {
-        $"/c takeown /f \"{filePath}\"",
-        $"/c icacls \"{filePath}\" /reset",
-        $"/c icacls \"{filePath}\" /grant %USERNAME%:F"
-    };
+                $"/c takeown /f \"{filePath}\"",
+                $"/c icacls \"{filePath}\" /reset",
+                $"/c icacls \"{filePath}\" /grant %USERNAME%:F"
+            };
 
             foreach (var cmd in commands)
                 ExecuteCmdCommand(cmd);
         }
 
+        // Выполнение команды cmd
         private void ExecuteCmdCommand(string cmd)
         {
             var psi = new ProcessStartInfo("cmd.exe", cmd)
@@ -297,16 +314,58 @@ namespace WPFUIKitProfessional.Pages
             Process.Start(psi)?.WaitForExit();
         }
 
+        // Отключение Microsoft Store
         private void DisableMicrosoftStore()
         {
             ExecuteCmdCommand("/c powershell Get-AppxPackage -AllUsers *WindowsStore* | Remove-AppxPackage");
         }
 
+        // Включение Microsoft Store
         private void EnableMicrosoftStore()
         {
             ExecuteCmdCommand("/c powershell Get-AppXPackage *WindowsStore* -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}");
         }
 
-    }
+        // Кнопка для ввода пароля и показа Cookie
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            // Проверка прав администратора
+            if (!IsAdministrator())
+            {
+                EnsureRunAsAdmin();
+                return;
+            }
 
+            // Проверка интернета
+            if (!await IsInternetAvailableAsync())
+            {
+                MessageBox.Show("Отсутствует интернет-соединение. Проверьте подключение и попробуйте снова.", "Ошибка подключения", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            try
+            {
+                string passwordUrl = "https://raw.githubusercontent.com/bibonuwu/Bibon/main/passwordcookie.txt";
+                string correctPassword = await DownloadPasswordAsync(passwordUrl);
+
+                var passwordWindow = new PasswordCookie();
+                passwordWindow.ShowDialog();
+
+                string inputPassword = passwordWindow.EnteredPassword;
+
+                if (string.IsNullOrEmpty(inputPassword) || inputPassword != correctPassword)
+                {
+                    MessageBox.Show("Құпия сөз еңгізілмеді немесе құпия сөз қате", "Қате", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                var cookieWindow = new Bibon.Pages.Cookie();
+                cookieWindow.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+    }
 }

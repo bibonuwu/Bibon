@@ -20,12 +20,12 @@ namespace WPFUIKitProfessional.Pages
 
             RecommendedApps = new ObservableCollection<AppCard>
             {
-                new AppCard { ButtonContent="Office",   ImageSource="/Assets/Store/9.png" ,       Url="https://drive.google.com/file/d/19fIYUcW8nXwfkqdcvPe3pp77JLAie4IV/view?usp=sharing" },
+                new AppCard { ImageSource="/Assets/Store/9.png",  ButtonContent="Office",         Url="https://gravesoft.dev/office_c2r_links#russian-ru-ru" },
                 new AppCard { ImageSource="/Assets/Store/2.png",  ButtonContent="NVIDIA",         Url="https://www.nvidia.com/ru-ru/software/nvidia-app/" },
                 new AppCard { ImageSource="/Assets/Store/3.png",  ButtonContent="Visual Studio",  Url="https://visualstudio.microsoft.com/ru/" },
                 new AppCard { ImageSource="/Assets/Store/31.png", ButtonContent="GitHub Desktop", Url="https://desktop.github.com/download/" },
-                new AppCard { ImageSource="/Assets/Store/18.png", ButtonContent="WinRAR",         Url="https://www.rarlab.com/" },
-                new AppCard { ImageSource="/Assets/Store/15.png", ButtonContent="Malwarebytes",   Url="https://www.malwarebytes.com/" }
+                new AppCard { ImageSource="/Assets/Store/18.png", ButtonContent="WinRAR",         Url="https://www.win-rar.com/download.html?&L=4" },
+                new AppCard { ImageSource="/Assets/Store/15.png", ButtonContent="Malwarebytes",   Url="https://www.malwarebytes.com/mwb-download/thankyou" }
             };
             GamesApps = new ObservableCollection<AppCard>
             {
