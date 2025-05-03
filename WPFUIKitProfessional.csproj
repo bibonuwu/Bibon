@@ -103,17 +103,11 @@
     <Compile Include="Pages\Analytics.xaml.cs">
       <DependentUpon>Analytics.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Collections.xaml.cs">
-      <DependentUpon>Collections.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Cookie.xaml.cs">
       <DependentUpon>Cookie.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Messages.xaml.cs">
-      <DependentUpon>Messages.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PasswordCookie.xaml.cs">
       <DependentUpon>PasswordCookie.xaml</DependentUpon>
@@ -133,8 +127,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Assets\Icons\Icons.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -152,19 +146,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Collections.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\Cookie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Home.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Messages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -236,9 +222,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Icons\Logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -248,7 +231,6 @@
     <Resource Include="Assets\4.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\5.png" />
     <Resource Include="Assets\6.png" />
     <Resource Include="Assets\7.png" />
   </ItemGroup>
@@ -293,41 +275,8 @@
     <Resource Include="Assets\Store\23.png" />
     <Resource Include="Assets\Store\24.png" />
     <Resource Include="Assets\ic_near.png" />
-    <Resource Include="Assets\Icons\whitecion.png" />
     <Resource Include="Assets\angle-left.png" />
     <Resource Include="Assets\78.png" />
-    <Resource Include="Assets\79.png" />
-    <Resource Include="Assets\80.png" />
-    <Resource Include="Assets\Home\V1\1.png" />
-    <Resource Include="Assets\Home\V1\10.png" />
-    <Resource Include="Assets\Home\V1\11.png" />
-    <Resource Include="Assets\Home\V1\12.png" />
-    <Resource Include="Assets\Home\V1\13.png" />
-    <Resource Include="Assets\Home\V1\14.png" />
-    <Resource Include="Assets\Home\V1\15.png" />
-    <Resource Include="Assets\Home\V1\16.png" />
-    <Resource Include="Assets\Home\V1\17.png" />
-    <Resource Include="Assets\Home\V1\18.png" />
-    <Resource Include="Assets\Home\V1\19.png" />
-    <Resource Include="Assets\Home\V1\2.png" />
-    <Resource Include="Assets\Home\V1\20.png" />
-    <Resource Include="Assets\Home\V1\21.png" />
-    <Resource Include="Assets\Home\V1\22.png" />
-    <Resource Include="Assets\Home\V1\23.png" />
-    <Resource Include="Assets\Home\V1\26.png" />
-    <Resource Include="Assets\Home\V1\27.png" />
-    <Resource Include="Assets\Home\V1\28.png" />
-    <Resource Include="Assets\Home\V1\29.png" />
-    <Resource Include="Assets\Home\V1\3.png" />
-    <Resource Include="Assets\Home\V1\30.png" />
-    <Resource Include="Assets\Home\V1\31.png" />
-    <Resource Include="Assets\Home\V1\32.png" />
-    <Resource Include="Assets\Home\V1\4.png" />
-    <Resource Include="Assets\Home\V1\5.png" />
-    <Resource Include="Assets\Home\V1\6.png" />
-    <Resource Include="Assets\Home\V1\7.png" />
-    <Resource Include="Assets\Home\V1\8.png" />
-    <Resource Include="Assets\Home\V1\9.png" />
     <Resource Include="Assets\Store\25.png" />
     <Resource Include="Assets\Store\28.png" />
     <Resource Include="Assets\Store\31.png" />
@@ -367,6 +316,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Store\bittorrent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\whitecion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

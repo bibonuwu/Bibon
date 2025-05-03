@@ -77,12 +77,10 @@ namespace WPFUIKitProfessional
 
         private void rdMessages_Click(object sender, RoutedEventArgs e)
         {
-            AnimateFrameContent(new Messages());
         }
 
         private void rdCollections_Click(object sender, RoutedEventArgs e)
         {
-            AnimateFrameContent(new Collections());
         }
 
     

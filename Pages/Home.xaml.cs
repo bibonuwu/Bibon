@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 using Bibon.Pages;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace WPFUIKitProfessional.Pages
 {
@@ -23,8 +25,110 @@ namespace WPFUIKitProfessional.Pages
         public Home()
         {
             InitializeComponent();
+
+            ShowWifiProfiles_Click(this, new RoutedEventArgs());
+
         }
 
+        private async void ShowWifiProfiles_Click(object sender, RoutedEventArgs e)
+        {
+            StatusText.Text = "Wifi тізімі шығарудамын...";
+
+            var psi = new ProcessStartInfo
+            {
+                FileName = "powershell",
+                Arguments = "-Command \"(netsh wlan show profiles) | Select-String '\\:(.+)$' | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name=\\\"$name\\\" key=clear)} | Select-String 'Содержимое ключа\\W+\\:(.+)$' | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ ProfileName=$name; Password=$pass }} | ConvertTo-Json -Compress\"",
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            };
+
+            try
+            {
+                using (var process = new Process { StartInfo = psi })
+                {
+                    process.Start();
+
+                    string output = await process.StandardOutput.ReadToEndAsync();
+                    string error = await process.StandardError.ReadToEndAsync();
+
+                    process.WaitForExit();
+
+                    if (!string.IsNullOrWhiteSpace(error))
+                    {
+                        StatusText.Text = "Ошибка PowerShell: " + error;
+                        MessageBox.Show("Ошибка PowerShell:\n" + error);
+                        return;
+                    }
+
+                    if (string.IsNullOrWhiteSpace(output))
+                    {
+                        StatusText.Text = "Нет данных от PowerShell";
+                        MessageBox.Show("PowerShell не вернул данные. Возможно, нет Wi-Fi профилей или нет прав.");
+                        return;
+                    }
+
+                    List<WifiProfile> wifiProfiles = null;
+                    try
+                    {
+                        wifiProfiles = JsonConvert.DeserializeObject<List<WifiProfile>>(output);
+                    }
+                    catch (JsonSerializationException)
+                    {
+                        try
+                        {
+                            var singleProfile = JsonConvert.DeserializeObject<WifiProfile>(output);
+                            if (singleProfile != null)
+                                wifiProfiles = new List<WifiProfile> { singleProfile };
+                        }
+                        catch (Exception ex2)
+                        {
+                            StatusText.Text = "Ошибка десериализации: " + ex2.Message;
+                            MessageBox.Show("Ошибка десериализации:\n" + ex2.Message + "\n\nRaw output:\n" + output);
+                            return;
+                        }
+                    }
+
+                    if (wifiProfiles == null || wifiProfiles.Count == 0)
+                    {
+                        StatusText.Text = "Wi-Fi профили не найдены";
+                        MessageBox.Show("Wi-Fi профили не найдены.\n\nRaw output:\n" + output);
+                        wifiDataGrid.ItemsSource = null;
+                    }
+                    else
+                    {
+                        wifiDataGrid.ItemsSource = wifiProfiles;
+                        StatusText.Text = "Wifi тізімі";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusText.Text = "Ошибка: " + ex.Message;
+                MessageBox.Show("Ошибка:\n" + ex.Message);
+            }
+        }
+
+        public class WifiProfile
+        {
+            public string ProfileName { get; set; }
+            public string Password { get; set; }
+        }
+
+        private static int GetMemoryUsagePercentage()
+        {
+            try
+            {
+                var info = new Microsoft.VisualBasic.Devices.ComputerInfo();
+                double usedMemory = info.TotalPhysicalMemory - info.AvailablePhysicalMemory;
+                return (int)((usedMemory / info.TotalPhysicalMemory) * 100);
+            }
+            catch
+            {
+                return 50;
+            }
+        }
         // Проверка администратора
         private static bool IsAdministrator()
         {
@@ -366,6 +470,50 @@ namespace WPFUIKitProfessional.Pages
             {
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void clDefender(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "windowsdefender://threatsettings",
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось открыть настройки: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void clMalwarebytes(object sender, RoutedEventArgs e)
+        {
+            string mbamPath = @"C:\Program Files\Malwarebytes\Anti-Malware\mbam.exe";
+            if (System.IO.File.Exists(mbamPath))
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = mbamPath,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                // Открыть сайт загрузки Malwarebytes
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "https://www.malwarebytes.com/mwb-download/thankyou",
+                    UseShellExecute = true
+                });
+            }
+        }
+
+        private void Buttodsfn_Click(object sender, RoutedEventArgs e)
+        {
+            PasswordCookie window = new PasswordCookie();
+            window.Show();
         }
     }
 }

@@ -1,102 +1,33 @@
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\bin\Debug\WPFUIKitProfessional.exe.config
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\bin\Debug\WPFUIKitProfessional.exe
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\bin\Debug\WPFUIKitProfessional.pdb
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional.csproj.AssemblyReference.cache
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional.csproj.SuggestedBindingRedirects.cache
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Themes\DarkTheme.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Themes\LightTheme.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\MainWindow.g.cs
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\App.g.cs
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional_MarkupCompile.cache
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional_MarkupCompile.lref
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\App.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\MainWindow.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional.g.resources
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional.Properties.Resources.resources
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional.csproj.GenerateResource.cache
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional.csproj.CoreCompileInputs.cache
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional.exe
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\WPFUIKitProfessional.pdb
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Assets\Icons\Icons.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Styles\RadioButtonStyle.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Styles\ButtonStyle.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Home.g.cs
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Home.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Analytics.g.cs
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Collections.g.cs
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Messages.g.cs
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Users.g.cs
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Analytics.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Collections.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Messages.baml
-C:\Users\JEYDERHT\Desktop\WPF UI Design\WPFUIKitProfessional\obj\Debug\Pages\Users.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\WPFUIKitProfessional.csproj.AssemblyReference.cache
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Styles\ButtonStyle.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Styles\RadioButtonStyle.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Themes\DarkTheme.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Themes\LightTheme.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\MainWindow.g.cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Analytics.g.cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Collections.g.cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Home.g.cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Users.g.cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\App.g.cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\App.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\MainWindow.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Analytics.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Collections.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Home.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Users.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\WPFUIKitProfessional.csproj.GenerateResource.cache
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\WPFUIKitProfessional.csproj.CoreCompileInputs.cache
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Assets\Wallpaper\13.jpg
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Assets\Wallpaper\17.jpg
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Assets\Wallpaper\18.jpg
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Styles\MainStyle.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Messages.g.cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\Messages.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Assets\Icons.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Assets\Icons\Icons.baml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Microsoft.Web.WebView2.Core.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Microsoft.Web.WebView2.Core.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\WPFUIKit.A27DEA20.Up2Date
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\System.CodeDom.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\System.CodeDom.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\BIBON.exe.config
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\BIBON.exe
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\BIBON.pdb
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\BIBON_Content.g.cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\BIBON_MarkupCompile.cache
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\BIBON_MarkupCompile.lref
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\BIBON.g.resources
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\BIBON.exe
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\BIBON.pdb
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Bibon.Properties.Resources.resources
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\AForge.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\AForge.Video.DirectShow.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\AForge.Video.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Newtonsoft.Json.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\System.ComponentModel.Annotations.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Telegram.Bot.dll
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\AForge.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\AForge.Video.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\AForge.Video.DirectShow.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Newtonsoft.Json.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Telegram.Bot.pdb
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\bin\Debug\Telegram.Bot.xml
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\system.g.cs
-C:\Users\bibon\Desktop\WPFUIKitProfessional-main\obj\Debug\Pages\system.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\WPFUIKitProfessional.csproj.AssemblyReference.cache
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\system.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Styles\ButtonStyle.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Styles\MainStyle.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Styles\RadioButtonStyle.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Themes\DarkTheme.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Themes\LightTheme.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\MainWindow.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Analytics.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Cookie.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Home.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordCookie.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordWindow.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordWindow2.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\system.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\App.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\BIBON_MarkupCompile.cache
+C:\Users\bibon\Desktop\Bibon\obj\Debug\BIBON_MarkupCompile.lref
+C:\Users\bibon\Desktop\Bibon\obj\Debug\App.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Assets\Icons.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\MainWindow.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Analytics.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Cookie.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Home.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordCookie.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordWindow.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordWindow2.baml
+C:\Users\bibon\Desktop\Bibon\obj\Debug\BIBON.exe
+C:\Users\bibon\Desktop\Bibon\obj\Debug\BIBON.pdb
+C:\Users\bibon\Desktop\Bibon\bin\Debug\all_scripts.bat
 C:\Users\bibon\Desktop\Bibon\bin\Debug\BIBON.exe.config
 C:\Users\bibon\Desktop\Bibon\bin\Debug\BIBON.exe
 C:\Users\bibon\Desktop\Bibon\bin\Debug\BIBON.pdb
@@ -118,43 +49,9 @@ C:\Users\bibon\Desktop\Bibon\bin\Debug\System.Runtime.CompilerServices.Unsafe.xm
 C:\Users\bibon\Desktop\Bibon\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\bibon\Desktop\Bibon\bin\Debug\Telegram.Bot.pdb
 C:\Users\bibon\Desktop\Bibon\bin\Debug\Telegram.Bot.xml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\WPFUIKitProfessional.csproj.AssemblyReference.cache
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Assets\Icons\Icons.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\system.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Styles\ButtonStyle.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Styles\MainStyle.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Styles\RadioButtonStyle.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Themes\DarkTheme.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Themes\LightTheme.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\MainWindow.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Analytics.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Collections.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Cookie.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Home.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Messages.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordCookie.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordWindow.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordWindow2.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\system.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\App.g.cs
-C:\Users\bibon\Desktop\Bibon\obj\Debug\BIBON_MarkupCompile.cache
-C:\Users\bibon\Desktop\Bibon\obj\Debug\BIBON_MarkupCompile.lref
-C:\Users\bibon\Desktop\Bibon\obj\Debug\App.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Assets\Icons.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\MainWindow.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Analytics.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Collections.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Cookie.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Home.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\Messages.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordCookie.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordWindow.baml
-C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\PasswordWindow2.baml
 C:\Users\bibon\Desktop\Bibon\obj\Debug\BIBON.g.resources
 C:\Users\bibon\Desktop\Bibon\obj\Debug\Bibon.Properties.Resources.resources
 C:\Users\bibon\Desktop\Bibon\obj\Debug\WPFUIKitProfessional.csproj.GenerateResource.cache
 C:\Users\bibon\Desktop\Bibon\obj\Debug\WPFUIKitProfessional.csproj.CoreCompileInputs.cache
 C:\Users\bibon\Desktop\Bibon\obj\Debug\WPFUIKit.A27DEA20.Up2Date
-C:\Users\bibon\Desktop\Bibon\obj\Debug\BIBON.exe
-C:\Users\bibon\Desktop\Bibon\obj\Debug\BIBON.pdb
-C:\Users\bibon\Desktop\Bibon\bin\Debug\all_scripts.bat
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Assets\Icons\Icons.baml
