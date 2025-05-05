@@ -15,10 +15,10 @@
 
             </StackPanel>
             <Image Source="/Assets/Icons/whitecion.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="0,100,0,100" />
-            <Label Foreground="White" HorizontalAlignment="Center" FontSize="16" FontFamily="Nirmala UI" Opacity="0.9">loading...</Label>
-
+            <Label x:Name="statusLabel" HorizontalAlignment="Center" FontSize="10" FontFamily="Nirmala UI" Margin="0,10,0,0" FontStyle="Italic" Foreground="#7FFFFFFF"/>
+            <ProgressBar x:Name="progressBar" Margin="0,10,0,0" Minimum="0" Maximum="6" Value="0" Height="5"/>
             <Label Foreground="White" HorizontalAlignment="Center" FontSize="24" FontFamily="Nirmala UI">Welcome to BIBON</Label>
-            <Label Foreground="White" HorizontalAlignment="Center" FontSize="14" FontFamily="Nirmala UI" Margin="0,0,0,30" Opacity="0.5">Version: 4 PRO</Label>
+            <Label Foreground="White" HorizontalAlignment="Center" FontSize="14" FontFamily="Nirmala UI" Margin="0,0,0,30" Opacity="0.5">Version: V</Label>
 
         </StackPanel>
         

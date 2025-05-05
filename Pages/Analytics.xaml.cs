@@ -33,8 +33,8 @@ namespace WPFUIKitProfessional.Pages
                 new AppCard { ImageSource="/Assets/Store/8.png",  ButtonContent="Epic Games",     Url="https://store.epicgames.com/ru/" },
                 new AppCard { ImageSource="/Assets/Store/28.png", ButtonContent="ArtMoney",       Url="https://www.artmoney.ru/r_download.htm" },
                 new AppCard { ImageSource="/Assets/Store/69.png", ButtonContent="Flowframes",     Url="https://nmkd.itch.io/flowframes" },
-                new AppCard { ImageSource="/Assets/Store/23.png", ButtonContent="Premiere Pro",   Url="https://vk.com/topic-187744169_46000270" },
-                new AppCard { ImageSource="/Assets/Store/26.png", ButtonContent="After Effects",  Url="https://vk.com/topic-187744169_49271176" }
+                new AppCard { ImageSource="/Assets/Store/23.png", ButtonContent="Premiere Pro",   Url="https://rutracker.org/forum/tracker.php?nm=premiere" },
+                new AppCard { ImageSource="/Assets/Store/26.png", ButtonContent="After Effects",  Url="https://rutracker.org/forum/tracker.php?nm=After%20Effects" }
             };
             SocialApps = new ObservableCollection<AppCard>
             {

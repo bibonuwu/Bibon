@@ -22,6 +22,12 @@ namespace WPFUIKitProfessional.Pages
         private readonly Brush redBrush = new BrushConverter().ConvertFromString("#FF453A") as Brush;
         private static readonly HttpClient httpClient = new HttpClient();
 
+
+
+        [DllImport("Shell32.dll", CharSet = CharSet.Unicode)]
+        private static extern int SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, uint dwFlags);
+
+        private long totalCleanedBytes = 0;
         public Home()
         {
             InitializeComponent();
@@ -116,19 +122,6 @@ namespace WPFUIKitProfessional.Pages
             public string Password { get; set; }
         }
 
-        private static int GetMemoryUsagePercentage()
-        {
-            try
-            {
-                var info = new Microsoft.VisualBasic.Devices.ComputerInfo();
-                double usedMemory = info.TotalPhysicalMemory - info.AvailablePhysicalMemory;
-                return (int)((usedMemory / info.TotalPhysicalMemory) * 100);
-            }
-            catch
-            {
-                return 50;
-            }
-        }
         // Проверка администратора
         private static bool IsAdministrator()
         {
@@ -510,10 +503,5 @@ namespace WPFUIKitProfessional.Pages
             }
         }
 
-        private void Buttodsfn_Click(object sender, RoutedEventArgs e)
-        {
-            PasswordCookie window = new PasswordCookie();
-            window.Show();
-        }
     }
 }

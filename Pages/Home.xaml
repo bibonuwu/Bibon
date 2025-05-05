@@ -38,7 +38,7 @@
     <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
 
         <Grid>
-<Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
 
@@ -72,12 +72,12 @@
                             </StackPanel>
 
 
-                        
+
 
 
 
                             <Grid Height="50">
-                                <Button Name="btnDisableBackgroundApps3" Click="btnDisableBack3groundApps2_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="Style by bibon"  HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
+                                <Button Name="btnDisableBackgroundApps3" Click="btnDisableBack3groundApps2_Click" Style="{DynamicResource PrimaryButtonStyle1}" Content="Booster by bibon"  HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
                             </Grid>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Image Source="/Assets/4.png" StretchDirection="DownOnly" Width="20"/>
@@ -124,8 +124,8 @@
 
                     </Border>
 
-                  
-                
+
+
                 </Grid>
 
 
@@ -215,10 +215,16 @@ Orientation="Vertical">
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Image Source="/Assets/cookielogo.png" StretchDirection="DownOnly" Width="20"/>
 
-                                <Label Content="Cookies looking" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}" VerticalAlignment="Center"/>
+                                    <Label Content="Cookies looking" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}" Margin="5,0,0,0"/>
+
+                                </StackPanel>
+                           
+
                                 <Grid Height="50" Grid.Column="1">
-                                    <Button Name="btnOpdenWeb1site" Click="Buttodsfn_Click" Content="View" Style="{DynamicResource PrimaryButtonStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
+                                    <Button Name="btnOpdenWeb1site" Click="Button_Click_2" Content="View" Style="{DynamicResource PrimaryButtonStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
                                 </Grid>
                             </Grid>
 
@@ -227,74 +233,78 @@ Orientation="Vertical">
 
                     </Grid>
                 </Grid>
-              
-                
-                
+
+
+
             </Grid>
-            
+
             <Border Background="{DynamicResource PrimaryBackgroundColor}" Width="10" Grid.Column="1" />
 
             <Grid Grid.Column="2">
 
                 <Border Background="{DynamicResource SecundaryBackgroundColor1}"
            Padding="0,40" Margin="20,20,20,20" CornerRadius="20,20,20,20">
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
-                        <Image Source="/Assets/Home/wifi.png" Height="50" HorizontalAlignment="Center"/>
-                        <Label Content="WiFi Networks"  FontSize="20" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}" HorizontalAlignment="Center" Margin="0,20,0,17"/>
-                        <DataGrid x:Name="wifiDataGrid"
-                    AutoGenerateColumns="False"
-                    Background="White"
-                    BorderBrush="#FF496FFF"
-                    BorderThickness="1"
-                    HeadersVisibility="Column"
-                    GridLinesVisibility="None"
-                    CanUserAddRows="False"
-                    IsReadOnly="True"
-                    ColumnHeaderHeight="40"
-                    AlternatingRowBackground="#F9F9F9"
-                    RowBackground="White"
-                    Margin="20,0,20,0"
-                    ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="15" FontFamily="Segoe UI">
-                            <DataGrid.Resources>
-                                <Style TargetType="DataGridColumnHeader">
-                                    <Setter Property="Background" Value="#FF496FFF" />
-                                    <Setter Property="Foreground" Value="White" />
-                                    <Setter Property="FontFamily" Value="Segoe UI" />
-                                    <Setter Property="FontWeight" Value="Bold" />
-                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
-                                    <Setter Property="VerticalContentAlignment" Value="Center" />
-                                    <Setter Property="Height" Value="40" />
-                                    <Setter Property="Padding" Value="10,0,10,0" />
-                                    <Setter Property="BorderBrush" Value="#FF496FFF" />
-                                    <Setter Property="BorderThickness" Value="0,0,0,1" />
-                                </Style>
-                                <Style TargetType="DataGridRow">
-                                    <Setter Property="FontWeight" Value="Normal" />
-                                    <Setter Property="FontSize" Value="15" />
-                                    <Setter Property="Background" Value="White" />
-                                    <Setter Property="Margin" Value="0,0,0,5" />
-                                    <Setter Property="VerticalAlignment" Value="Center" />
-                                </Style>
-                                <Style TargetType="DataGridCell">
-                                    <Setter Property="Padding" Value="15,5,15,5" />
-                                    <Setter Property="BorderThickness" Value="0,0,1,1" />
-                                    <Setter Property="BorderBrush" Value="#E0E0E0" />
-                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
-                                    <Setter Property="VerticalContentAlignment" Value="Center" />
-                                </Style>
-                            </DataGrid.Resources>
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="WiFi Name" Binding="{Binding ProfileName}" Width="*" />
-                                <DataGridTextColumn Header="Password" Binding="{Binding Password}" Width="*" />
-                            </DataGrid.Columns>
-                        </DataGrid>
-                        <TextBlock x:Name="StatusText" FontSize="16" Foreground="{DynamicResource PrimaryTextColor}"
-                     VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0"/>
-                    </StackPanel>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Assets/Home/wifi.png" Height="50" HorizontalAlignment="Center"/>
+                            <Label Content="WiFi Networks"  FontSize="20" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}" HorizontalAlignment="Center" Margin="0,20,0,17"/>
+                            <DataGrid x:Name="wifiDataGrid"
+AutoGenerateColumns="False"
+Background="White"
+BorderBrush="#FF496FFF"
+BorderThickness="1"
+HeadersVisibility="Column"
+GridLinesVisibility="None"
+CanUserAddRows="False"
+IsReadOnly="True"
+ColumnHeaderHeight="40"
+AlternatingRowBackground="#F9F9F9"
+RowBackground="White"
+Margin="20,0,20,0"
+ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="15" FontFamily="Segoe UI">
+                                <DataGrid.Resources>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="Background" Value="#FF496FFF" />
+                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter Property="FontFamily" Value="Segoe UI" />
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                                        <Setter Property="Height" Value="40" />
+                                        <Setter Property="Padding" Value="10,0,10,0" />
+                                        <Setter Property="BorderBrush" Value="#FF496FFF" />
+                                        <Setter Property="BorderThickness" Value="0,0,0,1" />
+                                    </Style>
+                                    <Style TargetType="DataGridRow">
+                                        <Setter Property="FontWeight" Value="Normal" />
+                                        <Setter Property="FontSize" Value="15" />
+                                        <Setter Property="Background" Value="White" />
+                                        <Setter Property="Margin" Value="0,0,0,5" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="Padding" Value="15,5,15,5" />
+                                        <Setter Property="BorderThickness" Value="0,0,1,1" />
+                                        <Setter Property="BorderBrush" Value="#E0E0E0" />
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGrid.Resources>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="WiFi Name" Binding="{Binding ProfileName}" Width="*" />
+                                    <DataGridTextColumn Header="Password" Binding="{Binding Password}" Width="*" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <TextBlock x:Name="StatusText" FontSize="16" Foreground="{DynamicResource PrimaryTextColor}"
+ VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+                        </StackPanel>
+                    </ScrollViewer>
+
+
                 </Border>
 
             </Grid>
         </Grid>
-        
+
     </Border>
 </Page>

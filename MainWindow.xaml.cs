@@ -5,6 +5,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using WPFUIKitProfessional.Themes;
 using WPFUIKitProfessional.Pages;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace WPFUIKitProfessional
 {
@@ -22,18 +25,29 @@ namespace WPFUIKitProfessional
             this.Loaded += MainWindow_Loaded; // Подписываемся на событие Loaded
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+
+
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            // Создаем анимацию для изменения непрозрачности
+            // Анимация появления
             DoubleAnimation fadeInAnimation = new DoubleAnimation
             {
-                From = 0,    // Начальное значение
-                To = 1,      // Конечное значение
-                Duration = TimeSpan.FromSeconds(1) // Длительность анимации
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(1)
             };
-
-            // Применяем анимацию к свойству непрозрачности окна
             this.BeginAnimation(Window.OpacityProperty, fadeInAnimation);
+
+            // Ждём 2 секунды
+            await Task.Delay(2000);
+
+            // Снимаем и выставляем IsChecked для гарантии
+            rdHome.IsChecked = false;
+            rdHome.IsChecked = true;
+
+            // Вручную вызываем Click (если IsChecked не сработал)
+            var clickEvent = new RoutedEventArgs(Button.ClickEvent, rdHome);
+            rdHome.RaiseEvent(clickEvent);
         }
 
 
@@ -75,13 +89,6 @@ namespace WPFUIKitProfessional
             AnimateFrameContent(new Analytics());
         }
 
-        private void rdMessages_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void rdCollections_Click(object sender, RoutedEventArgs e)
-        {
-        }
 
     
 
@@ -137,17 +144,6 @@ namespace WPFUIKitProfessional
                 this.DragMove();
             }
         }
-
-
-
-
-
-
-
-
-
-        //bibon
-
 
 
     }

