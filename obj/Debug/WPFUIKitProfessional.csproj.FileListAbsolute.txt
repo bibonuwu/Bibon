@@ -55,3 +55,5 @@ C:\Users\bibon\Desktop\Bibon\obj\Debug\Bibon.Properties.Resources.resources
 C:\Users\bibon\Desktop\Bibon\obj\Debug\WPFUIKitProfessional.csproj.GenerateResource.cache
 C:\Users\bibon\Desktop\Bibon\obj\Debug\WPFUIKitProfessional.csproj.CoreCompileInputs.cache
 C:\Users\bibon\Desktop\Bibon\obj\Debug\WPFUIKit.A27DEA20.Up2Date
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\ProgressWindow.g.cs
+C:\Users\bibon\Desktop\Bibon\obj\Debug\Pages\ProgressWindow.baml

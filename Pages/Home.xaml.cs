@@ -12,6 +12,7 @@ using Microsoft.Win32;
 using Bibon.Pages;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Windows.Navigation;
 
 namespace WPFUIKitProfessional.Pages
 {
@@ -206,7 +207,7 @@ namespace WPFUIKitProfessional.Pages
         }
 
         // Запуск .bat файла с правами администратора
-        private void btnDisableBack3groundApps2_Click(object sender, RoutedEventArgs e)
+        private async void btnDisableBack3groundApps2_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -216,22 +217,51 @@ namespace WPFUIKitProfessional.Pages
                     MessageBox.Show("Файл all_scripts.bat не найден!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
+     
+                var progressWindow = new Bibon.Pages.ProgressWindow();
+                progressWindow.Owner = Window.GetWindow(this); // если метод в Page, иначе просто уберите эту строку
+                progressWindow.Show();
 
-                ProcessStartInfo psi = new ProcessStartInfo
+                await Task.Run(() =>
                 {
-                    FileName = batPath,
-                    UseShellExecute = true,
-                    Verb = "runas"
-                };
+                    ProcessStartInfo psi = new ProcessStartInfo
+                    {
+                        FileName = batPath,
+                        UseShellExecute = true,
+                        Verb = "runas"
+                    };
+                    Process process = Process.Start(psi);
+                    process.WaitForExit();
+                });
 
-                Process.Start(psi);
+                progressWindow.Close();
+                RestartExplorer();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Произошла ошибка при запуске скрипта:\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        private void RestartExplorer()
+        {
+            try
+            {
+                // Завершаем все процессы explorer.exe
+                foreach (var process in Process.GetProcessesByName("explorer"))
+                {
+                    process.Kill();
+                    process.WaitForExit();
+                }
 
+                // Запускаем explorer.exe снова
+                Process.Start("explorer.exe");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при перезапуске проводника:\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
         // Запуск PowerShell-скрипта
         private void ExecutePowerShell_Click(object sender, RoutedEventArgs e)
         {
@@ -323,7 +353,7 @@ namespace WPFUIKitProfessional.Pages
                 }
             });
 
-            SetButtonState(btnOpenWeb1site, true, success ? greenBrush : redBrush, success ? "Completed" : "Error");
+            SetButtonState(btnOpenWeb1site, true, success ? greenBrush : redBrush, success ? "Block sites on" : "Block sites on");
         }
 
         // Кнопка удаления hosts
@@ -369,7 +399,7 @@ namespace WPFUIKitProfessional.Pages
                 }
             });
 
-            SetButtonState(btnOpen1Web1site, true, success ? greenBrush : redBrush, success ? "Completed" : "Error");
+            SetButtonState(btnOpen1Web1site, true, success ? greenBrush : redBrush, success ? "Block sites off" : "Block sites off");
         }
 
         // Защита файла от удаления

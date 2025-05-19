@@ -1,0 +1,14 @@
+﻿<Window x:Class="Bibon.Pages.ProgressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+Background="Transparent" AllowsTransparency="True"
+        Height="120" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True">
+    <Border Background="{DynamicResource SecundaryBackgroundColor1}" Padding="30,30,30,30" CornerRadius="20,20,20,20">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Loading up FPS..." FontSize="16" Margin="0,10,0,10" HorizontalAlignment="Center"/>
+            <ProgressBar IsIndeterminate="True" Height="20" Width="220" Foreground="#0084FF"/>
+        </StackPanel>
+    </Border>
+
+    
+</Window>

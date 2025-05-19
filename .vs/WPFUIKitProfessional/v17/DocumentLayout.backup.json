@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\bibon\\Desktop\\Bibon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\pages\\system.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\system.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\pages\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\pages\\system.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\system.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,65 +30,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\App.config",
-              "RelativeDocumentMoniker": "App.config",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\App.config",
-              "RelativeToolTip": "App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-05-05T22:23:14.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-05T21:42:04.588Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Home.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Home.xaml",
-              "RelativeDocumentMoniker": "Pages\\Home.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Home.xaml",
-              "RelativeToolTip": "Pages\\Home.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-04T13:02:16.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
+              "Title": "system.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\system.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\system.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\system.xaml.cs",
+              "RelativeToolTip": "Pages\\system.xaml.cs",
+              "ViewState": "AgIAABMBAAAAAAAAAAAuwDABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T10:47:42.68Z",
+              "WhenOpened": "2025-05-16T12:08:29.65Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
+              "DocumentIndex": 1,
+              "Title": "system.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\system.xaml",
+              "RelativeDocumentMoniker": "Pages\\system.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\system.xaml",
+              "RelativeToolTip": "Pages\\system.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-03T18:46:45.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-16T12:08:27.593Z"
             }
           ]
         }

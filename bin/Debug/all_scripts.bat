@@ -125,30 +125,3 @@ tzutil /s "West Asia Standard Time"
 echo Disabling background apps...
 REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" /v GlobalUserDisabled /t REG_DWORD /d 1 /f
 
-echo Disabling diagnostic data and telemetry...
-:: (Telemetry disabling commands unchanged)
-
-echo [1/4] Removing Copilot (Web Experience Pack)...
-:: (List unchanged)
-
-echo 🔒 Disabling Copilot via registry...
-
-echo [2/4] Removing Outlook (new)...
-:: (List unchanged)
-
-echo [3/4] Removing OneDrive...
-:: (List unchanged)
-
-echo [4/4] Clearing app cache...
-:: (List unchanged)
-
-echo ✅ Copilot, Outlook, and OneDrive removed or disabled.
-echo 🔁 Restart your computer to complete the process.
-pause
-
-echo Hiding "Network" from File Explorer...
-:: (List unchanged)
-
-:: Restart Explorer to apply changes
-taskkill /f /im explorer.exe >nul
-start explorer.exe

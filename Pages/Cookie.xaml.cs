@@ -248,7 +248,7 @@ namespace Bibon.Pages
             {
                 // Обработка исключений
                 StatusText.Text = "Статус: Ошибка";
-                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"1-2 этапты басып шығыңыз!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

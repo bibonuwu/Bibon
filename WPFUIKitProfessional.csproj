@@ -119,6 +119,9 @@
     <Compile Include="Pages\PasswordWindow2.xaml.cs">
       <DependentUpon>PasswordWindow2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ProgressWindow.xaml.cs">
+      <DependentUpon>ProgressWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\system.xaml.cs">
       <DependentUpon>system.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PasswordWindow2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProgressWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -258,7 +265,6 @@
     <Resource Include="Assets\Store\19.png" />
     <Resource Include="Assets\Store\2.png" />
     <Resource Include="Assets\Store\20.png" />
-    <Resource Include="Assets\Store\3.png" />
     <Resource Include="Assets\Store\4.png" />
     <Resource Include="Assets\Store\5.png" />
     <Resource Include="Assets\Store\8.png" />
@@ -321,6 +327,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Store\3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
