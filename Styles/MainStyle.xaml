@@ -15,7 +15,7 @@
     <!-- Start: TitleLabelStyle  -->
     <Style x:Key="TitleLabelStyle" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor}"/>
-        <Setter Property="FontWeight" Value="700"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -40,7 +40,7 @@
     <!-- Start: PriceLabelStyle  -->
     <Style x:Key="PriceLabelStyle" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor}"/>
-        <Setter Property="FontWeight" Value="700"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -66,7 +66,7 @@
     <!-- Start: SubTitleLabelStyle  -->
     <Style x:Key="SubTitleLabelStyle" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor}"/>
-        <Setter Property="FontWeight" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -93,7 +93,7 @@
     <!-- Start: IconLabelStyle  -->
     <Style x:Key="IconLabelStyle" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor}"/>
-        <Setter Property="FontWeight" Value="400"/>
+        <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -139,7 +139,7 @@
     <Style x:Key="ProButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{DynamicResource ProButtonColor}"/>
         <Setter Property="Foreground" Value="{DynamicResource ButtonTextColor}"/>
-        <Setter Property="FontWeight" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="Padding" Value="12 6"/>
         <Setter Property="BorderThickness" Value="0"/>
         <!--<Setter Property="MaxHeight" Value="40"/>
@@ -193,7 +193,7 @@
     <!-- Start: FreeTeamTitlesLabelStyle  -->
     <Style x:Key="FreeTeamTitlesLabelStyle" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="FontWeight" Value="700"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -218,7 +218,7 @@
     <!-- Start: FreeTeamPricingLabelStyle -->
     <Style x:Key="FreeTeamPricingLabelStyle" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="FontWeight" Value="700"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -244,7 +244,7 @@
     <!-- Start: FreeTeamSubTitlesLabelStyle -->
     <Style x:Key="FreeTeamSubTitlesLabelStyle" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="FontWeight" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -271,7 +271,7 @@
     <!-- Start: FreeTeamIconLabelsStyle -->
     <Style x:Key="FreeTeamIconLabelsStyle" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"/>
-        <Setter Property="FontWeight" Value="400"/>
+        <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -316,7 +316,7 @@
     <Style x:Key="PrimaryButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBlueColor}"/>
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor}"/>
-        <Setter Property="FontWeight" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="Padding" Value="12 6"/>
         <Setter Property="BorderThickness" Value="0"/>
         <!--<Setter Property="MaxHeight" Value="40"/>
@@ -479,7 +479,7 @@
     <!-- Start: TitleLabelStyle  -->
     <Style x:Key="TitleLabelStyle1" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor1}"/>
-        <Setter Property="FontWeight" Value="700"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -504,7 +504,7 @@
     <!-- Start: PriceLabelStyle  -->
     <Style x:Key="PriceLabelStyle1" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor1}"/>
-        <Setter Property="FontWeight" Value="700"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -530,7 +530,7 @@
     <!-- Start: SubTitleLabelStyle  -->
     <Style x:Key="SubTitleLabelStyle1" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor1}"/>
-        <Setter Property="FontWeight" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -557,7 +557,7 @@
     <!-- Start: IconLabelStyle  -->
     <Style x:Key="IconLabelStyle1" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor1}"/>
-        <Setter Property="FontWeight" Value="400"/>
+        <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -603,7 +603,7 @@
     <Style x:Key="ProButtonStyle1" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{DynamicResource ProButtonColor1}"/>
         <Setter Property="Foreground" Value="{DynamicResource ButtonTextColor1}"/>
-        <Setter Property="FontWeight" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="Padding" Value="12 6"/>
         <Setter Property="BorderThickness" Value="0"/>
         <!--<Setter Property="MaxHeight" Value="40"/>
@@ -657,7 +657,7 @@
     <!-- Start: FreeTeamTitlesLabelStyle  -->
     <Style x:Key="FreeTeamTitlesLabelStyle1" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor1}"/>
-        <Setter Property="FontWeight" Value="700"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -682,7 +682,7 @@
     <!-- Start: FreeTeamPricingLabelStyle -->
     <Style x:Key="FreeTeamPricingLabelStyle1" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor1}"/>
-        <Setter Property="FontWeight" Value="700"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -708,7 +708,7 @@
     <!-- Start: FreeTeamSubTitlesLabelStyle -->
     <Style x:Key="FreeTeamSubTitlesLabelStyle1" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor1}"/>
-        <Setter Property="FontWeight" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -735,7 +735,7 @@
     <!-- Start: FreeTeamIconLabelsStyle -->
     <Style x:Key="FreeTeamIconLabelsStyle1" TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor1}"/>
-        <Setter Property="FontWeight" Value="400"/>
+        <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="Width" Value="Auto"/>
@@ -780,7 +780,7 @@
     <Style x:Key="PrimaryButtonStyle1" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBlueColor1}"/>
         <Setter Property="Foreground" Value="{DynamicResource ProTextColor1}"/>
-        <Setter Property="FontWeight" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="ClipToBounds" Value="True"/>
         <Setter Property="Padding" Value="10 5"/>
         <Setter Property="FontSize" Value="16"/>

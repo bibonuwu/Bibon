@@ -249,15 +249,6 @@
     <Resource Include="ic_near.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\w1.png" />
-    <Resource Include="Resources\w2.png" />
-    <Resource Include="Resources\w3.png" />
-    <Resource Include="Resources\q1.png" />
-    <Resource Include="Resources\q2.png" />
-    <Resource Include="Resources\q3.png" />
-    <Resource Include="Resources\free.png" />
-    <Resource Include="Resources\pro.png" />
-    <Resource Include="Resources\team.png" />
     <Resource Include="Assets\Store\10.png" />
     <Resource Include="Assets\Store\12.png" />
     <Resource Include="Assets\Store\15.png" />
