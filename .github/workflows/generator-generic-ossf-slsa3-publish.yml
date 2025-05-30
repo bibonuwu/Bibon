@@ -1,0 +1,45 @@
+name: SLSA generic generator
+
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    outputs:
+      digests: ${{ steps.hash.outputs.digests }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Build Installer Project (.vdproj)
+      - name: Build MSI using Visual Studio Installer Project
+        run: |
+          "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" ^
+            "MyAppInstaller/MyAppInstaller.vdproj" /p:Configuration=Release
+
+      # Copy MSI to root (для удобства дальнейших шагов)
+      - name: Copy MSI to root for provenance
+        run: copy "MyAppInstaller\bin\Release\BIBON.V.msi" "BIBON.V.msi"
+
+      # Generate provenance subject
+      - name: Generate subject for provenance
+        id: hash
+        shell: bash
+        run: |
+          set -euo pipefail
+          files="BIBON.V.msi"
+          echo "hashes=$(sha256sum $files | base64 -w0)" >> "${GITHUB_OUTPUT}"
+
+  provenance:
+    needs: [build]
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.4.0
+    with:
+      base64-subjects: "${{ needs.build.outputs.digests }}"
+      upload-assets: true
