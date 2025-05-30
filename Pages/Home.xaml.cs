@@ -65,14 +65,12 @@ namespace WPFUIKitProfessional.Pages
                     if (!string.IsNullOrWhiteSpace(error))
                     {
                         StatusText.Text = "Ошибка PowerShell: " + error;
-                        MessageBox.Show("Ошибка PowerShell:\n" + error);
                         return;
                     }
 
                     if (string.IsNullOrWhiteSpace(output))
                     {
                         StatusText.Text = "Нет данных от PowerShell";
-                        MessageBox.Show("PowerShell не вернул данные. Возможно, нет Wi-Fi профилей или нет прав.");
                         return;
                     }
 
@@ -92,7 +90,6 @@ namespace WPFUIKitProfessional.Pages
                         catch (Exception ex2)
                         {
                             StatusText.Text = "Ошибка десериализации: " + ex2.Message;
-                            MessageBox.Show("Ошибка десериализации:\n" + ex2.Message + "\n\nRaw output:\n" + output);
                             return;
                         }
                     }
@@ -100,7 +97,6 @@ namespace WPFUIKitProfessional.Pages
                     if (wifiProfiles == null || wifiProfiles.Count == 0)
                     {
                         StatusText.Text = "Wi-Fi профили не найдены";
-                        MessageBox.Show("Wi-Fi профили не найдены.\n\nRaw output:\n" + output);
                         wifiDataGrid.ItemsSource = null;
                     }
                     else
