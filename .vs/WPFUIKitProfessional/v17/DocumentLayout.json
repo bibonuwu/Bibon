@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\bibon\\Desktop\\Bibon\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\pages\\system.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\system.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\styles\\mainstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:styles\\mainstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\pages\\cookie.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\pages\\cookie.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\cookie.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,15 +23,11 @@
       "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\pages\\system.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\system.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\pages\\analytics.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\pages\\analytics.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\analytics.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|c:\\users\\bibon\\desktop\\bibon\\pages\\cookie.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|C:\\Users\\bibon\\Desktop\\Bibon\\pages\\cookie.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F33269E7-0955-4C6C-B8C3-496AA2F2F8D2}|WPFUIKitProfessional.csproj|solutionrelative:pages\\cookie.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,19 +55,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Cookie.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Cookie.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\Cookie.xaml.cs",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Cookie.xaml.cs",
-              "RelativeToolTip": "Pages\\Cookie.xaml.cs",
-              "ViewState": "AgIAAOwAAAAAAAAAAAD4v/YAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T22:42:33.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "MainStyle.xaml",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Styles\\MainStyle.xaml",
               "RelativeDocumentMoniker": "Styles\\MainStyle.xaml",
@@ -79,6 +66,18 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cookie.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Cookie.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\Cookie.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Cookie.xaml.cs",
+              "RelativeToolTip": "Pages\\Cookie.xaml.cs",
+              "ViewState": "AgIAAOwAAAAAAAAAAAD4v/YAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T22:42:33.506Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Cookie.xaml",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Cookie.xaml",
@@ -86,8 +85,7 @@
               "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Cookie.xaml",
               "RelativeToolTip": "Pages\\Cookie.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-30T22:25:50.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T22:25:50.644Z"
             },
             {
               "$type": "Document",
@@ -98,25 +96,24 @@
               "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Analytics.xaml",
               "RelativeToolTip": "Pages\\Analytics.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-30T22:25:46.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T22:25:46.842Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "system.xaml.cs",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\system.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\system.xaml.cs",
               "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\system.xaml.cs",
               "RelativeToolTip": "Pages\\system.xaml.cs",
-              "ViewState": "AgIAANEBAAAAAAAAAAAqwPIBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAQwMEAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-16T12:08:29.65Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Home.xaml.cs",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Home.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\Home.xaml.cs",
@@ -124,20 +121,18 @@
               "RelativeToolTip": "Pages\\Home.xaml.cs",
               "ViewState": "AgIAAFAAAAAAAAAAAAAgwGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T22:13:05.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T22:13:05.389Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Home.xaml",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Home.xaml",
               "RelativeDocumentMoniker": "Pages\\Home.xaml",
               "ToolTip": "C:\\Users\\bibon\\Desktop\\Bibon\\Pages\\Home.xaml",
               "RelativeToolTip": "Pages\\Home.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-30T22:13:00.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T22:13:00.005Z"
             },
             {
               "$type": "Document",
